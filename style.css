@@ -1,0 +1,394 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: white;
+    color: #000;
+    font-family: 'Poppins', sans-serif;
+}
+header{
+    display: flex;
+    justify-content: end;
+    padding: 20px;
+    border-bottom: 2px solid #333;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    z-index: 1000;
+}
+nav{
+    display: flex;
+    gap: 20px;
+}
+nav li{
+    list-style: none;
+    color: #000;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+}
+nav li a{
+    color: #000;
+    text-decoration: none;
+}
+.search-bar{
+    justify-content: center;
+    margin: 30px 0;
+}
+.search-bar input{
+    /* width: 98%; */
+   /* padding: 10px 60px;
+    border: 2px solid #333;
+    border-radius: 50px;
+    font-size: 16px;
+}
+.search-btn{
+    padding: 15px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.main{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.main .container{
+    text-align: center;
+}
+.main .container h3{
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+.main .container p{
+    font-size: 18px;
+    color: #555;
+}
+.music-list{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+}
+.music-item{
+    width: 99%;
+    height: 90px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 1px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: row;
+}
+.music-item img{
+    width: 25%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    padding: 10px;
+}
+.music-item .music-info{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}
+.gobtn{
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 20px;
+} */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+ 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ 
+body {
+    background-color: #121212;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+}
+ 
+/* ── HEADER ── */
+header {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #282828;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+header h2 {
+    content: 'ipLaY';
+    font-size: 20px;
+    font-weight: 700;
+    color: #1db954;
+    letter-spacing: 2px;
+    margin-right: auto;
+}
+ 
+nav {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+ 
+nav li {
+    list-style: none;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+ 
+nav li a {
+    color: #b3b3b3;
+    text-decoration: none;
+    transition: color 0.2s ease;
+    /* position: relative; */
+    padding-bottom: 4px;
+}
+ 
+nav li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #1db954;
+    border-radius: 2px;
+    transition: width 0.25s ease;
+} 
+ 
+nav li a:hover {
+    color: #ffffff;
+}
+ 
+nav li a:hover::after {
+    width: 100%;
+}
+ 
+/* ── MAIN SECTION ── */
+.main {
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 24px 120px;
+}
+ 
+/* ── SEARCH BAR ── */
+.search-bar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    border: 1px solid #1db954;
+    border-radius: 50px 50px 50px 50px;
+}
+ 
+.search-bar input {
+    
+    width: 70%;
+    align-items: start;
+    padding: 10px 25px;
+    background-color: #282828;
+    border: 1.5px solid #3a3a3a;
+    border-radius: 50px 0px 0px 50px;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    outline: none;
+    transition: border-color 0.2s ease, background-color 0.2s ease;
+    
+}
+ 
+.search-bar input::placeholder {
+    color: #6a6a6a;
+}
+ 
+.search-bar input:focus {
+    border-color: #1db954;
+    background-color: #2a2a2a;
+}
+ 
+.search-btn {
+    padding: 11.4px 29px;
+    background-color: #1db954;
+    color: #000000;
+    border: 1px solid #1db954;
+    border-radius: 0px 50px 50px 0px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.04em;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+ 
+.search-btn:hover {
+    background-color: #1ed760;
+    transform: scale(1.03);
+}
+ 
+.search-btn:active {
+    transform: scale(0.97);
+}
+ 
+/* ── HERO CONTAINER ── */
+.main .container {
+    text-align: center;
+    margin-bottom: 40px;
+}
+ 
+.main .container h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+}
+ 
+.main .container h3 span {
+    color: #1db954;
+}
+ 
+.main .container p {
+    font-size: 15px;
+    color: #b3b3b3;
+}
+ 
+/* ── MUSIC LIST ── */
+.music-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    max-width: 640px;
+}
+ 
+/* ── MUSIC ITEM CARD ── */
+.music-item {
+    width: 100%;
+    height: 80px;
+    background-color: #1c1c1c;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid #282828;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
+    position: relative;
+}
+ 
+.music-item::before {
+    content: '▶';
+    position: absolute;
+    right: 18px;
+    font-size: 13px;
+    color: #1db954;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+ 
+.music-item:hover {
+    background-color: #282828;
+    border-color: #1db954;
+    transform: translateX(4px);
+}
+ 
+.music-item:hover::before {
+    opacity: 1;
+}
+ 
+.music-item img {
+    width: 80px;
+    height: 100%;
+    object-fit: cover;
+    flex-shrink: 0;
+    border-radius: 0;
+}
+ 
+.music-item .music-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 16px;
+    flex: 1;
+}
+ 
+.music-item .music-info h3 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+ 
+.music-item .music-info p {
+    font-size: 13px;
+    color: #b3b3b3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+ 
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar {
+    width: 6px;
+}
+::-webkit-scrollbar-track {
+    background: #121212;
+}
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #1db954;
+}
+
+.gobtn {
+    padding: 5px 8px;
+    margin-right: 20px;
+    background-color: #1db954;
+    color: #000000;
+    border: 1px solid #1db954;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.04em;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+#no-results{
+    color: #1db954;
+}
