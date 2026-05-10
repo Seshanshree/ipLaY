@@ -1,115 +1,3 @@
-/* *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-body{
-    background-color: white;
-    color: #000;
-    font-family: 'Poppins', sans-serif;
-}
-header{
-    display: flex;
-    justify-content: end;
-    padding: 20px;
-    border-bottom: 2px solid #333;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background-color: white;
-    z-index: 1000;
-}
-nav{
-    display: flex;
-    gap: 20px;
-}
-nav li{
-    list-style: none;
-    color: #000;
-    text-transform: uppercase;
-    font-weight: 500;
-    font-size: 14px;
-}
-nav li a{
-    color: #000;
-    text-decoration: none;
-}
-.search-bar{
-    justify-content: center;
-    margin: 30px 0;
-}
-.search-bar input{
-    /* width: 98%; */
-   /* padding: 10px 60px;
-    border: 2px solid #333;
-    border-radius: 50px;
-    font-size: 16px;
-}
-.search-btn{
-    padding: 15px 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-}
-
-.main{
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-.main .container{
-    text-align: center;
-}
-.main .container h3{
-    font-size: 32px;
-    margin-bottom: 10px;
-}
-.main .container p{
-    font-size: 18px;
-    color: #555;
-}
-.music-list{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 20px;
-}
-.music-item{
-    width: 99%;
-    height: 90px;
-    background-color: #f0f0f0;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 1px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: row;
-}
-.music-item img{
-    width: 25%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 50%;
-    padding: 10px;
-}
-.music-item .music-info{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 10px;
-}
-.gobtn{
-    padding: 10px 20px;
-    background-color: #333;
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    margin-top: 20px;
-} */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
  
@@ -288,6 +176,8 @@ nav li a:hover::after {
     gap: 10px;
     width: 100%;
     max-width: 640px;
+    height: 90%;
+    margin-bottom: 80px;
 }
  
 /* ── MUSIC ITEM CARD ── */
@@ -402,6 +292,8 @@ footer {
     font-size: 14px;
 }
 .audio-player {
+    display:flex;
+    flex-wrap: wrap;
     position: fixed;
     bottom: 0;
     left: 0;
@@ -433,4 +325,32 @@ footer {
 }
 .control-btn:active {
     transform: scale(0.95);
+}
+
+.progress-container{
+    width:90%;
+    display:flex;
+    align-items:center;
+    align-content:center;
+    gap:10px;
+}
+
+#progress{
+    flex:1;
+    height:3px;
+    cursor:pointer;
+    color:#1db954;
+    margin: 15px 0px;
+}
+
+#current-time,
+#duration{
+    color:#fff;
+    font-size:12px;
+    min-width:35px;
+}
+.current-song{
+    color:#fff;
+    font-size:14px;
+    margin-bottom:10px;
 }

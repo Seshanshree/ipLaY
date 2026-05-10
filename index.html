@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Music App</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <header>
         <h2 class="logo">ipLaY</h2>
@@ -16,34 +18,35 @@
         </nav>
     </header>
     <section class="main">
-        <search class="search-bar" >
+        <search class="search-bar">
             <input id="search-input" type="text" placeholder="Search for songs...">
             <button class="search-btn">Search</button>
         </search>
-        
+
         <div class="container">
             <h3>Welcome to <span class="logo">ipLaY</span> App</h3>
             <p>Discover and enjoy your favorite music..</p>
         </div>
         <div class="music-list" id="music-list"></div>
-        
+
     </section>
 
 
     <div control id="audio-player" class="audio-player">
+        <div id="current-song" class="current-song">
+            No song playing
+        </div>
+        <div class="progress-container">
+            <span id="current-time">0:00</span>
+            <input type="range" id="progress" value="0" min="0" max="100">
+            <span id="duration">0:00</span>
+        </div>
         <button id="prev-btn" class="control-btn" onclick="songDec()">⏮</button>
         <button id="play-btn" class="control-btn" onclick="songPlay()">▶</button>
         <button id="next-btn" class="control-btn" onclick="songInc()">⏭</button>
-        <div id="current-song" class="current-song">No song playing</div>
     </div>
 
-
-
-
-
-
-
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>

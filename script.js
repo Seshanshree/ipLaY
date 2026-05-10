@@ -85,8 +85,8 @@ const availableMovies = {
       "varisu/Jimikki-Ponnu-MassTamilan.dev.mp3",
       "varisu/Ranjithame-MassTamilan.dev (1).mp3",
       "varisu/Soul-Of-Varisu-MassTamilan.dev.mp3",
-      "varisu/Vaa-Vaathi-MassTamilan.dev.mp3",
-      "varisu/Thee-Thalapathy-MassTamilan.dev.mp3"
+      "varisu/Thee-Thalapathy-MassTamilan.dev.mp3",
+      "varisu/Vaa-Thalaivaa-MassTamilan.dev.mp3"
     ],
   },
   songKey: {
@@ -121,8 +121,8 @@ const availableMovies = {
         "Jimikki-Ponnu", 
         "Ranjithame", 
         "Soul-Of-Varisu",
-        "Vaa-Vaathi",
-        "Thee-Thalapathy"
+        "Thee-Thalapathy",
+        "Vaa-Thalaivaa"
     ],
   },
 };
@@ -140,6 +140,7 @@ for (let i = 1; i <= Object.keys(availableMovies.title).length; i++) {
         </div>
     `;
 }
+
 
 // ── Search bar ─────────────────────────────────────────────────────────────
 const searchInput = document.querySelector(".search-bar input");
@@ -189,6 +190,7 @@ function songsavailable(i) {
   const icon = availableMovies.icon[i];
   const list = availableMovies.songs[key];
   musicList.innerHTML = "";
+  musicList.innerHTML += `<span id="back-btn" onclick="index.html"> < </span>  `;
 
   for (let j = 0; j < availableMovies.songs[key].length; j++) {
     const content = `
@@ -292,4 +294,55 @@ function songDec() {
 // Auto next when song ends
 audio.addEventListener("ended", () => {
   songInc();
+});
+
+
+
+const progress = document.getElementById("progress");
+
+const currentTimeEl =
+    document.getElementById("current-time");
+
+const durationEl =
+    document.getElementById("duration");
+
+// format time
+function formatTime(time) {
+
+    const minutes =
+        Math.floor(time / 60);
+
+    const seconds =
+        Math.floor(time % 60);
+
+    return `${minutes}:${
+        seconds < 10 ? "0" : ""
+    }${seconds}`;
+}
+
+// update progress bar
+audio.addEventListener("timeupdate", () => {
+
+    const currentTime = audio.currentTime;
+
+    const duration = audio.duration;
+
+    if (duration) {
+
+        progress.value =
+            (currentTime / duration) * 100;
+
+        currentTimeEl.innerText =
+            formatTime(currentTime);
+
+        durationEl.innerText =
+            formatTime(duration);
+    }
+});
+
+// seek song
+progress.addEventListener("input", () => {
+
+    audio.currentTime =
+        (progress.value / 100) * audio.duration;
 });
