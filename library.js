@@ -39,19 +39,24 @@ function displayPlaylist() {
 
 displayPlaylist();
 
+
 function displayPlaylistSongs(playlistId) {
   const songs = playlist.songsinplaylist[playlistId];
   let songsHTML = "";
-  songs.forEach((song) => {
-    if (song) {
-      songsHTML += `<p>${song}</p>`;
+  for (let i = 0; i < songs.length; i++) {
+    if (songs[i]) {
+      songsHTML += `<p>${songs[i]}</p>`;
     }
-  });
-  playlistContainer.innerHTML = `
-    <div class="playlist-info">
-      <h3>${playlist.title[playlistId]}</h3>
+    playlistContainer.innerHTML = `
+    <div class="playlist-item">
+    
+    <div class="music-info">
+      <h5>${playlist.title[playlistId]}</h5>
       ${songsHTML}
-      <button onclick="displayPlaylist()">Back to Playlists</button>
+    </div>
+    <button onclick="displayPlaylist()">Back to Playlists</button>
     </div>
   `;
+  }
+  
 }
