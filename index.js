@@ -128,18 +128,27 @@ const availableMovies = {
 };
 
 // ── Render all movie cards ──────────────────────────────────────────────────
-for (let i = 1; i <= Object.keys(availableMovies.title).length; i++) {
-  musicList.innerHTML += `
-        <div class="music-item">
-            <img src="${availableMovies.icon[i]}" alt="${availableMovies.title[i]}">
-            <div class="music-info">
-                <h3>${availableMovies.title[i]}</h3>
-                <p>${availableMovies.artist[i]}</p>
-            </div>
-            <button onclick="songsavailable(${i})" class="gobtn">▶</button>
-        </div>
+function displayMovies() {
+  musicList.innerHTML = "";
+
+  for (let i = 1; i <= Object.keys(availableMovies.title).length; i++) {
+    musicList.innerHTML += `
+      <div class="music-item" onclick="songsavailable(${i})">
+          <img src="${availableMovies.icon[i]}" alt="${availableMovies.title[i]}">
+          <div class="music-info">
+              <h5>${availableMovies.title[i]}</h5>
+              <p style="font-size: 10.8px; color: #b3b3b3;">
+                ${availableMovies.artist[i]}
+              </p>
+          </div>
+          <button onclick="songsavailable(${i})" class="gobtn">▶</button>
+      </div>
     `;
+  }
 }
+
+// 👇 ADD THIS
+displayMovies();
 
 
 // ── Search bar ─────────────────────────────────────────────────────────────
@@ -153,7 +162,7 @@ function doSearch() {
   let found = 0;
   items.forEach((item) => {
     const title = item
-      .querySelector(".music-info h3")
+      .querySelector(".music-info h5")
       .textContent.toLowerCase();
     const artist = item
       .querySelector(".music-info p")
@@ -190,15 +199,18 @@ function songsavailable(i) {
   const icon = availableMovies.icon[i];
   const list = availableMovies.songs[key];
   musicList.innerHTML = "";
-  musicList.innerHTML += `<span id="back-btn" onclick="index.html"> < </span>  `;
+  musicList.innerHTML += `
+<button id="back-btn" onclick="displayMovies()">← Back</button>
+`;
+
 
   for (let j = 0; j < availableMovies.songs[key].length; j++) {
     const content = `
-        <div class="music-item">
+        <div class="music-item" onclick="playMusic(${key}, ${j})">
             <img src="${availableMovies.songlistpicture[key][j]}" alt="${availableMovies.title[i]}">
             <div class="music-info">
-                <h3>${availableMovies.songs[key][j]}</h3>
-                <p>${availableMovies.artist[key]}</p>
+                <h5>${availableMovies.songs[key][j]}</h5>
+                <p style="font-size: 10.8px; color: #b3b3b3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-top: 3px;">${availableMovies.artist[key]}</p>
             </div>
             <button onclick="playMusic(${key}, ${j})" class="gobtn">▶</button>
         </div>
@@ -220,129 +232,8 @@ function playMusic(movieKey, songIndex) {
 
   audio.play();
 
-  playBtn.innerHTML = "<p style='font-size: 24px; color: #000;'>||</p>";
+  playBtn.innerHTML = "<p style='font-size: 15px; color: #000;'>||</p>";
 
   currentSong.innerHTML = songName;
 }
 
-// ── AUDIO PLAYER ─────────────────────────────────────
-
-const audio = new Audio();
-
-let currentMovieKey = 1;
-let currentSongIndex = 0;
-
-const playBtn = document.getElementById("play-btn");
-const currentSong = document.getElementById("current-song");
-
-// Load song
-function loadSong(movieKey, songIndex) {
-  currentMovieKey = movieKey;
-  currentSongIndex = songIndex;
-
-  // audio path
-  audio.src = availableMovies.songsList[movieKey][songIndex];
-
-  // song name
-  currentSong.innerText = availableMovies.songs[movieKey][songIndex];
-}
-
-// Play / Pause button
-function songPlay() {
-  // if no song loaded
-  if (!audio.src) {
-    loadSong(1, 0);
-  }
-
-  if (audio.paused) {
-    audio.play();
-    playBtn.innerHTML = "<p style='font-size: 24px; color: #000;'>||</p>";
-  } else {
-    audio.pause();
-    playBtn.innerHTML = "<p style='font-size: 24px; color: #000;'>▶</p>";
-  }
-}
-
-// Next button
-function songInc() {
-  currentSongIndex++;
-
-  if (currentSongIndex >= availableMovies.songs[currentMovieKey].length) {
-    currentSongIndex = 0;
-  }
-
-  loadSong(currentMovieKey, currentSongIndex);
-
-  audio.play();
-  playBtn.innerHTML = "<p style='font-size: 24px; color: #000;'>||</p>";
-}
-
-// Previous button
-function songDec() {
-  currentSongIndex--;
-
-  if (currentSongIndex < 0) {
-    currentSongIndex = availableMovies.songs[currentMovieKey].length - 1;
-  }
-
-  loadSong(currentMovieKey, currentSongIndex);
-
-  audio.play();
-  playBtn.innerHTML = "<p style='font-size: 24px; color: #000;'>||</p>";
-}
-
-// Auto next when song ends
-audio.addEventListener("ended", () => {
-  songInc();
-});
-
-
-
-const progress = document.getElementById("progress");
-
-const currentTimeEl =
-    document.getElementById("current-time");
-
-const durationEl =
-    document.getElementById("duration");
-
-// format time
-function formatTime(time) {
-
-    const minutes =
-        Math.floor(time / 60);
-
-    const seconds =
-        Math.floor(time % 60);
-
-    return `${minutes}:${
-        seconds < 10 ? "0" : ""
-    }${seconds}`;
-}
-
-// update progress bar
-audio.addEventListener("timeupdate", () => {
-
-    const currentTime = audio.currentTime;
-
-    const duration = audio.duration;
-
-    if (duration) {
-
-        progress.value =
-            (currentTime / duration) * 100;
-
-        currentTimeEl.innerText =
-            formatTime(currentTime);
-
-        durationEl.innerText =
-            formatTime(duration);
-    }
-});
-
-// seek song
-progress.addEventListener("input", () => {
-
-    audio.currentTime =
-        (progress.value / 100) * audio.duration;
-});
