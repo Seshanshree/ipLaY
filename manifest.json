@@ -1,0 +1,14 @@
+{
+  "name": "ipLaY",
+  "short_name": "ipLaY",
+  "icons": [
+    {
+      "src": "iplay_icon.png",
+      "sizes": "1024x1024",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#0c081c",
+  "background_color": "#0c081c",
+  "display": "standalone"
+}
