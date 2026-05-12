@@ -5,7 +5,7 @@ const availableMovies = {
     1: "Jananayagan",
     2: "Leo",
     3: "Varisu",
-    4: "",
+    4: "The Greatest of All Time",
     5: "",
     6: "",
     7: "",
@@ -33,7 +33,7 @@ const availableMovies = {
     1: "icon/jananayagan.jpg",
     2: "https://www.masstamilan.dev/w/leo-tamil-2023.webp",
     3: "https://www.masstamilan.dev/w/varisu-tamil-2023.webp",
-    4: "",
+    4: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbL8VaAb2GLq38_SAAYRy-dcir-hBjk4fomA&s",
     5: "",
     6: "",
     7: "",
@@ -65,6 +65,12 @@ const availableMovies = {
         "https://www.masstamilan.dev/w/varisu-tamil-2023.webp",
         "https://www.masstamilan.dev/w/varisu-tamil-2023.webp",
     ],
+    4: [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbL8VaAb2GLq38_SAAYRy-dcir-hBjk4fomA&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbL8VaAb2GLq38_SAAYRy-dcir-hBjk4fomA&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbL8VaAb2GLq38_SAAYRy-dcir-hBjk4fomA&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbL8VaAb2GLq38_SAAYRy-dcir-hBjk4fomA&s",
+    ],
   },
   songsList: {
     1: [
@@ -80,28 +86,26 @@ const availableMovies = {
       "leo/Lokiverse-2.0-MassTamilan.dev.mp3",
       "leo/Glimpse-of-Harold-Das-MassTamilan.dev.mp3",
     ],
-    3: [
-      "varisu/Celebration-Of-Varisu-MassTamilan.dev.mp3",
-      "varisu/Jimikki-Ponnu-MassTamilan.dev.mp3",
-      "varisu/Ranjithame-MassTamilan.dev (1).mp3",
-      "varisu/Soul-Of-Varisu-MassTamilan.dev.mp3",
-      "varisu/Thee-Thalapathy-MassTamilan.dev.mp3",
-      "varisu/Vaa-Thalaivaa-MassTamilan.dev.mp3"
-    ],
-  },
+      3: [
+        "varisu/Celebration-Of-Varisu-MassTamilan.dev.mp3",
+        "varisu/Jimikki-Ponnu-MassTamilan.dev.mp3",
+        "varisu/Ranjithame-MassTamilan.dev (1).mp3",
+        "varisu/Soul-Of-Varisu-MassTamilan.dev.mp3",
+        "varisu/Thee-Thalapathy-MassTamilan.dev.mp3",
+        "varisu/Vaa-Thalaivaa-MassTamilan.dev.mp3"
+      ],
+      4: [
+        "GOAT/Chinna Chinna Kangal.mp3",
+        "GOAT/Matta.mp3",
+        "GOAT/Spark.mp3",
+        "GOAT/Whistle Podu.mp3",
+      ]
+    },
   songKey: {
     1: 1,
     2: 2,
     3: 3,
-    4: 1,
-    5: 2,
-    6: 3,
-    7: 1,
-    8: 2,
-    9: 3,
-    10: 1,
-    11: 2,
-    12: 3,
+    4: 4,
   },
   songs: {
     1: [
@@ -124,6 +128,11 @@ const availableMovies = {
         "Thee-Thalapathy",
         "Vaa-Thalaivaa"
     ],
+    4: ["Chinna Chinna Kangal", 
+        "Matta", 
+        "Spark", 
+        "Whistle Podu",
+    ]
   },
 };
 
