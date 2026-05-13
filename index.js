@@ -70,10 +70,10 @@ const availableMovies = {
   },
   songsList: {
     1: [
-      "jananayagan/Chella-Magale-MassTamilan.dev.mp3",
-      "jananayagan/Oru-Pere-Varalaaru-MassTamilan.dev.mp3",
-      "jananayagan/Raavana-Mavandaa-MassTamilan.dev.mp3",
-      "jananayagan/Thalapathy Kacheri.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678628/Chella-Magale-MassTamilan.dev_qgjxyf.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678616/Oru-Pere-Varalaaru-MassTamilan.dev_yys7mt.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678616/Raavana-Mavandaa-MassTamilan.dev_t8o665.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678617/Thalapathy_Kacheri_ymxdbx.mp3",
     ],
     2: [
       "leo/Naa-Ready-MassTamilan.dev.mp3",
@@ -91,18 +91,19 @@ const availableMovies = {
         "varisu/Vaa-Thalaivaa-MassTamilan.dev.mp3"
       ],
       4: [
-        "GOAT/Chinna Chinna Kangal.mp3",
-        "GOAT/Matta.mp3",
-        "GOAT/Spark.mp3",
-        "GOAT/Whistle Podu.mp3",
+        "https://res.cloudinary.com/seshancloudy/video/upload/v1778677796/Chinna_Chinna_Kangal_lhwhxb.mp3",
+        "https://res.cloudinary.com/seshancloudy/video/upload/v1778677816/Matta_dysr8z.mp3",
+        "https://res.cloudinary.com/seshancloudy/video/upload/v1778677799/Spark_fyxqn8.mp3",
+        "https://res.cloudinary.com/seshancloudy/video/upload/v1778677857/Whistle_Podu_dykdzh.mp3"
+        // "GOAT/Whistle Podu.mp3",
       ],
       5: [
-        "jeans/Anbe-Anbe.mp3",
-        "jeans/Columbus-Columbu.mp3",
-        "jeans/Ennake-Ennaka.mp3",
-        "jeans/Kannodu-Kaanberallam.mp3",
-        "jeans/Poovukkul.mp3",
-        "jeans/Varaya-Thozhi.mp3"
+        "https://res.cloudinary.com/seshancloudy/video/upload/v1778678920/Anbe-Anbe_z5jtdv.mp3",
+        "https://res.cloudinary.com/seshancloudy/video/upload/v1778679063/Columbus-Columbu_cflsmy.mp3",
+        "https://res.cloudinary.com/seshancloudy/video/upload/v1778678940/Ennake-Ennaka_e1tqne.mp3",
+        "https://res.cloudinary.com/seshancloudy/video/upload/v1778678979/Kannodu-Kaanberallam_wctkai.mp3",
+        "https://res.cloudinary.com/seshancloudy/video/upload/v1778679083/Poovukkul_l4b3cj.mp3",
+        "https://res.cloudinary.com/seshancloudy/video/upload/v1778679099/Varaya-Thozhi_vvdoij.mp3"
       ],
     },
   songKey: {
