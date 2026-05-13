@@ -6,18 +6,30 @@ const availableMovies = {
     2: "Leo",
     3: "Varisu",
     4: "The Greatest of All Time",
+    5: "Jeans",
+    6: "",
   },
   artist: {
     1: "Anirudh Ravichander and Team",
     2: "Anirudh Ravichander and Team",
     3: "Thaman S and Team",
     4: "Yuvan Shankar Raja and Team",
+    5: "A.R.Rahman and Team",
+    6: "",
   },
   icon: {
     1: "icon/jananayagan.jpg",
     2: "https://www.masstamilan.dev/w/leo-tamil-2023.webp",
     3: "https://www.masstamilan.dev/w/varisu-tamil-2023.webp",
     4: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbL8VaAb2GLq38_SAAYRy-dcir-hBjk4fomA&s",
+    5: "https://www.masstamilan.dev/w/jeans-1998.webp",
+    6: "",
+    7: "",
+    8: "",
+    9: "",
+    10: "",
+    11: "",
+    12: "",
   },
   songlistpicture: {
     1: [
@@ -47,6 +59,14 @@ const availableMovies = {
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbL8VaAb2GLq38_SAAYRy-dcir-hBjk4fomA&s",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbL8VaAb2GLq38_SAAYRy-dcir-hBjk4fomA&s",
     ],
+    5: [
+      "https://www.masstamilan.dev/w/jeans-1998.webp",
+      "https://www.masstamilan.dev/w/jeans-1998.webp",
+      "https://www.masstamilan.dev/w/jeans-1998.webp",
+      "https://www.masstamilan.dev/w/jeans-1998.webp",
+      "https://www.masstamilan.dev/w/jeans-1998.webp",
+      "https://www.masstamilan.dev/w/jeans-1998.webp",
+    ],
   },
   songsList: {
     1: [
@@ -75,13 +95,22 @@ const availableMovies = {
         "GOAT/Matta.mp3",
         "GOAT/Spark.mp3",
         "GOAT/Whistle Podu.mp3",
-      ]
+      ],
+      5: [
+        "jeans/Anbe-Anbe.mp3",
+        "jeans/Columbus-Columbu.mp3",
+        "jeans/Ennake-Ennaka.mp3",
+        "jeans/Kannodu-Kaanberallam.mp3",
+        "jeans/Poovukkul.mp3",
+        "jeans/Varaya-Thozhi.mp3"
+      ],
     },
   songKey: {
     1: 1,
     2: 2,
     3: 3,
     4: 4,
+    5: 5,
   },
   songs: {
     1: [
@@ -108,6 +137,13 @@ const availableMovies = {
         "Matta", 
         "Spark", 
         "Whistle Podu",
+    ],
+    5: ["Anbe Anbe", 
+        "Columbus Columbu", 
+        "Ennake Ennaka", 
+        "Kannodu Kaanberallam",
+        "Poovukkul",
+        "Varaya Thozhi"
     ]
   },
 };
