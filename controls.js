@@ -118,3 +118,41 @@ progress.addEventListener("input", () => {
     audio.currentTime =
         (progress.value / 100) * audio.duration;
 });
+
+
+//_-------
+
+// ── PERSIST PLAYBACK ACROSS PAGE NAVIGATION ───────────────────────────────
+
+// Save state right before the page unloads (nav to home or library)
+window.addEventListener("beforeunload", () => {
+  localStorage.setItem("iplay_src", audio.src);
+  localStorage.setItem("iplay_time", audio.currentTime);
+  localStorage.setItem("iplay_playing", !audio.paused);
+  localStorage.setItem("iplay_movieKey", currentMovieKey);
+  localStorage.setItem("iplay_songIndex", currentSongIndex);
+  localStorage.setItem("iplay_songName", currentSong.innerText);
+});
+
+// Restore state when the new page loads
+window.addEventListener("load", () => {
+  const src = localStorage.getItem("iplay_src");
+  const time = parseFloat(localStorage.getItem("iplay_time") || "0");
+  const wasPlaying = localStorage.getItem("iplay_playing") === "true";
+  const movieKey = parseInt(localStorage.getItem("iplay_movieKey") || "1");
+  const songIndex = parseInt(localStorage.getItem("iplay_songIndex") || "0");
+  const songName = localStorage.getItem("iplay_songName") || "";
+
+  if (src) {
+    currentMovieKey = movieKey;
+    currentSongIndex = songIndex;
+    audio.src = src;
+    audio.currentTime = time;
+    currentSong.innerText = songName;
+
+    if (wasPlaying) {
+      audio.play();
+      playBtn.innerHTML = "<p style='font-size: 24px; color: #000;'>||</p>";
+    }
+  }
+});
