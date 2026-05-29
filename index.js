@@ -158,8 +158,8 @@ function displayMovies() {
       <div class="music-item" onclick="songsavailable(${i})">
           <img src="${availableMovies.icon[i]}" alt="${availableMovies.title[i]}">
           <div class="music-info">
-              <h5>${availableMovies.title[i]}</h5>
-              <p style="font-size: 10.8px; color: #b3b3b3;">
+              <h5 style="font-size: 9.5px;">${availableMovies.title[i]}</h5>
+              <p style="font-size: 8px; color: #b3b3b3;">
                 ${availableMovies.artist[i]}
               </p>
           </div>
