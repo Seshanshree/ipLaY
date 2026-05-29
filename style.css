@@ -175,7 +175,7 @@ nav li a:hover::after {
     flex-direction: column;
     gap: 10px;
     width: 100%;
-    max-width: 640px;
+    /* max-width: 640px; */
     height: 90%;
     margin-bottom: 80px;
 }
