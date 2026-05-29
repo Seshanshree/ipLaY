@@ -29,10 +29,10 @@ function songPlay() {
 
   if (audio.paused) {
     audio.play();
-    playBtn.innerHTML = "<p style='font-size: 24px; color: #000;'>||</p>";
+    playBtn.innerHTML = "<p style='color: #000;'>||</p>";
   } else {
     audio.pause();
-    playBtn.innerHTML = "<p  style='color: #000; font-weight: 600; font-family: \"Poppins\", sans-serif; font-letter-spacing: 0.04em; font-size: 15px; '>▶</p>";
+    playBtn.innerHTML = "<p style='color: #000; '>▶</p>";
   }
 }
 
@@ -47,7 +47,7 @@ function songInc() {
   loadSong(currentMovieKey, currentSongIndex);
 
   audio.play();
-  playBtn.innerHTML = "<p style='font-size: 24px; color: #000;'>||</p>";
+  playBtn.innerHTML = "<p style=' color: #000;'>||</p>";
 }
 
 // Previous button
@@ -61,7 +61,7 @@ function songDec() {
   loadSong(currentMovieKey, currentSongIndex);
 
   audio.play();
-  playBtn.innerHTML = "<p style='font-size: 24px; color: #000;'>||</p>";
+  playBtn.innerHTML = "<p style=' color: #000;'>||</p>";
 }
 
 // Auto next when song ends
@@ -152,7 +152,7 @@ window.addEventListener("load", () => {
 
     if (wasPlaying) {
       audio.play();
-      playBtn.innerHTML = "<p style='font-size: 24px; color: #000;'>||</p>";
+      playBtn.innerHTML = "<p style=' color: #000;'>||</p>";
     }
   }
 });
