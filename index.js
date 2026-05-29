@@ -163,7 +163,7 @@ function displayMovies() {
                 ${availableMovies.artist[i]}
               </p>
           </div>
-          <button onclick="songsavailable(${i})" class="gobtn">▶</button>
+          <button onclick="songsavailable(${i})" class="gobtn">▶</button><br>
       </div>
     `;
   }
