@@ -121,24 +121,47 @@ var availableMovies = {
       "https://www.masstamilan.dev/w/rowthiram-2011.webp",
       "https://www.masstamilan.dev/w/mayakkam-enna-2011.webp",
       "https://koshalworld.com/siteuploads/thumb/sft74/36719_4.webp",
-      "https://www.masstamilan.dev/w/kadhal-ondru-kanden-short-film-tamil-2020.webp"
+      "https://www.masstamilan.dev/w/kadhal-ondru-kanden-short-film-tamil-2020.webp",
     ],
   },
 };
 
 // ── PLAYLIST GRID METADATA ────────────────────────────────────────────────────
 var playlists = {
-  1: { title: "Kadhal Veesum", movieKey: 1 },
-  2: { title: "Thalapathy Hits", movieKey: 2 },
-  3: { title: "Anirudh's Best", movieKey: 3 },
-  4: { title: "Top Tamil Songs", movieKey: 4 },
-  5: { title: "V Songs", movieKey: 5 },
-  6: { title: "Romantic Tamil Songs", movieKey: null },
-  7: { title: "Dance Hits", movieKey: null },
-  8: { title: "Melody Mix", movieKey: null },
-  9: { title: "Party Anthems", movieKey: null },
-  10: { title: "Sad Tamil Songs", movieKey: null },
-  
+  1: {
+    title: "Kadhal Veesum",
+    movieKey: 1,
+    imageUrl: availableMovies.songlistpicture[1][0],
+  },
+  2: {
+    title: "Thalapathy Hits",
+    movieKey: 2,
+    imageUrl: availableMovies.songlistpicture[2][0],
+  },
+  3: {
+    title: "Anirudh's Best",
+    movieKey: 3,
+    imageUrl: availableMovies.songlistpicture[3][0],
+  },
+  4: {
+    title: "Top Tamil Songs",
+    movieKey: 4,
+    imageUrl: availableMovies.songlistpicture[4][0],
+  },
+  5: {
+    title: "V Songs",
+    movieKey: 5,
+    imageUrl: availableMovies.songlistpicture[5][0],
+  },
+  6: {
+    title: "Romantic Tamil Songs",
+    movieKey: null,
+    imageUrl: availableMovies.songlistpicture[3][0],
+  },
+  7: { title: "Dance Hits", movieKey: null, imageUrl: "" },
+  8: { title: "Melody Mix", movieKey: null, imageUrl: "" },
+  9: { title: "Party Anthems", movieKey: null, imageUrl: "" },
+  10: { title: "Sad Tamil Songs", movieKey: null, imageUrl: "" },
 };
 
 // ── DOM ───────────────────────────────────────────────────────────────────────
@@ -152,6 +175,7 @@ function displayPlaylist() {
   for (var id in playlists) {
     playlistContainer.innerHTML += `
       <div class="playlist-item" onclick="displayPlaylistSongs(${id})">
+        <img src="${playlists[id].imageUrl || ""}" alt="${playlists[id].title}" onerror="this.style.display='none'" />
         <div class="playlist-info">
           <h5>${playlists[id].title}</h5>
         </div>
@@ -181,14 +205,13 @@ function displayPlaylistSongs(playlistId) {
       songsHTML += `
         <div class="music-item" onclick="playLibrarySong(${movieKey}, ${j})">
           <img src="${pictures[j] || ""}"
-               onerror="this.style.display='none'"
-               alt="${songs[j]}" />
+              onerror="this.style.display='none'"
+              alt="${songs[j]}" />
           <div class="music-info">
-            <h5>${songs[j]}</h5>
+            <h5 style="font-size:12px;font-weight:600;color:#ffffff;">${songs[j]}</h5>
             <p style="font-size:10.8px;color:#b3b3b3;">${title}</p>
           </div>
-          <button class="gobtn"
-                  onclick="event.stopPropagation(); playLibrarySong(${movieKey}, ${j})">▶</button>
+          <button class="gobtn" onclick="event.stopPropagation(); playLibrarySong(${movieKey}, ${j})">▶</button>
         </div>`;
     }
   }
@@ -213,5 +236,5 @@ function playLibrarySong(movieKey, songIndex) {
   audio.play();
 
   currentSong.innerText = availableMovies.songs[movieKey][songIndex];
-  playBtn.innerHTML = "<p style='font-size:24px;color:#000;'>||</p>";
+  playBtn.innerHTML = "<p style='color:#000;'>||</p>";
 }
