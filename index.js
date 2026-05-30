@@ -9,7 +9,10 @@ const availableMovies = {
     5: "Jeans",
     6: "Karuppu",
     7: "Love Insurance Kompany Lik",
-    8: "Meesaya Murukku 2"
+    8: "Meesaya Murukku 2",
+    9: "Dude",
+    10: "Youth",
+    11: "3"
   },
   artist: {
     1: "Anirudh Ravichander and Team",
@@ -19,7 +22,10 @@ const availableMovies = {
     5: "A.R.Rahman and Team",
     6: "Sai Abhyankkar and Team",
     7: "Anirudh Ravichander and Team",
-    8: "Hiphop Tamizha"
+    8: "Hiphop Tamizha and Team",
+    9: "Sai Abhyankkar and Team",
+    10: "G. V. Prakash Kumar and Team",
+    11: "Anirudh Ravichander and Team"
   },
   icon: {
     1: "icon/jananayagan.jpg",
@@ -29,7 +35,10 @@ const availableMovies = {
     5: "https://www.masstamilan.dev/w/jeans-1998.webp",
     6: "https://www.masstamilan.dev/w/karuppu-tamil-2026.webp",
     7: "https://www.masstamilan.dev/w/love-insurance-kompany-lik-tamil-2026.webp",
-    8: "https://www.masstamilan.dev/w/meesaya-murukku-2-tamil-2026.webp"
+    8: "https://www.masstamilan.dev/w/meesaya-murukku-2-tamil-2026.webp",
+    9: "https://www.masstamilan.dev/w/dude-tamil-2025.webp",
+    10: "https://www.masstamilan.dev/w/youth-tamil-2026.webp",
+    11: "https://www.masstamilan.dev/w/3-moonu-tamil-2012.webp"
 
   },
   songlistpicture: {
@@ -91,6 +100,33 @@ const availableMovies = {
         "https://www.masstamilan.dev/w/meesaya-murukku-2-tamil-2026.webp",
         "https://www.masstamilan.dev/w/meesaya-murukku-2-tamil-2026.webp",
         "https://www.masstamilan.dev/w/meesaya-murukku-2-tamil-2026.webp"
+    ],
+    9: [
+        "https://www.masstamilan.dev/w/dude-tamil-2025.webp",
+        "https://www.masstamilan.dev/w/dude-tamil-2025.webp",
+        "https://www.masstamilan.dev/w/dude-tamil-2025.webp",
+        "https://www.masstamilan.dev/w/dude-tamil-2025.webp",
+        "https://www.masstamilan.dev/w/dude-tamil-2025.webp",
+        "https://www.masstamilan.dev/w/dude-tamil-2025.webp"
+    ],
+    10: [
+        "https://www.masstamilan.dev/w/youth-tamil-2026.webp",
+        "https://www.masstamilan.dev/w/youth-tamil-2026.webp",
+        "https://www.masstamilan.dev/w/youth-tamil-2026.webp",
+        "https://www.masstamilan.dev/w/youth-tamil-2026.webp",
+        "https://www.masstamilan.dev/w/youth-tamil-2026.webp",
+        "https://www.masstamilan.dev/w/youth-tamil-2026.webp",
+        "https://www.masstamilan.dev/w/youth-tamil-2026.webp",
+        "https://www.masstamilan.dev/w/youth-tamil-2026.webp",
+    ],
+    11: [
+        "https://www.masstamilan.dev/w/3-moonu-tamil-2012.webp",
+        "https://www.masstamilan.dev/w/3-moonu-tamil-2012.webp",
+        "https://www.masstamilan.dev/w/3-moonu-tamil-2012.webp",
+        "https://www.masstamilan.dev/w/3-moonu-tamil-2012.webp",
+        "https://www.masstamilan.dev/w/3-moonu-tamil-2012.webp",
+        "https://www.masstamilan.dev/w/3-moonu-tamil-2012.webp",
+        "https://www.masstamilan.dev/w/3-moonu-tamil-2012.webp"
     ]
   },
   songsList: {
@@ -152,6 +188,33 @@ const availableMovies = {
           "meesaya murukku 2/Pappali Pazhamey.mp3",
           "meesaya murukku 2/Aura 10-10.mp3",
           "meesaya murukku 2/Goindhamma.mp3"
+      ],
+      9: [
+        "https://res.cloudinary.com/seshancloudy/video/upload/v1780153988/Oorum_Blood_kkxuwk.mp3",
+        "https://res.cloudinary.com/seshancloudy/video/upload/v1780153991/Singari_jddjzo.mp3",
+        "https://res.cloudinary.com/seshancloudy/video/upload/v1780153991/Kannukulla_li5i45.mp3",
+        "https://res.cloudinary.com/seshancloudy/video/upload/v1780153985/Yumabaibesa_n5dwdj.mp3",
+        "https://res.cloudinary.com/seshancloudy/video/upload/v1780153994/Nallaru_Po_alkjpp.mp3",
+        "https://res.cloudinary.com/seshancloudy/video/upload/v1780153981/Blud_Is_On_His_Way_etgs16.mp3"
+      ],
+      10: [
+         "https://res.cloudinary.com/seshancloudy/video/upload/v1780154936/Mutta_Kalakki_w1ql1z.mp3",
+         "https://res.cloudinary.com/seshancloudy/video/upload/v1780154932/Aasa_Pulla_htecgn.mp3",
+         "https://res.cloudinary.com/seshancloudy/video/upload/v1780154936/Paranthene_Penne_dsl4fv.mp3",
+         "https://res.cloudinary.com/seshancloudy/video/upload/v1780154933/Loveah_Sollitalea_zpoksp.mp3",
+         "https://res.cloudinary.com/seshancloudy/video/upload/v1780154932/Alapuzha_Sandhayila_keo87b.mp3",
+         "https://res.cloudinary.com/seshancloudy/video/upload/v1780154935/Thanga_Magan_uc2zls.mp3",
+         "https://res.cloudinary.com/seshancloudy/video/upload/v1780154935/Ponmaaney_upoewt.mp3",
+         "https://res.cloudinary.com/seshancloudy/video/upload/v1780154934/Poga_Poga_r9yj79.mp3"
+      ],
+      11: [
+          "https://res.cloudinary.com/seshancloudy/video/upload/v1780155606/Idhazhin_Oram_The_Innocence_of_Love_za3yt4.mp3",
+          "https://res.cloudinary.com/seshancloudy/video/upload/v1780155631/Kannazhaga_The_Kiss_of_Love_qgffcm.mp3",
+          "https://res.cloudinary.com/seshancloudy/video/upload/v1780155755/Po_Nee_Po_The_Pain_of_Love_lx71ny.mp3",
+          "https://res.cloudinary.com/seshancloudy/video/upload/v1780155752/Po_Nee_Po_Remix_-_The_Scream_of_Love_xlintm.mp3",
+          "https://res.cloudinary.com/seshancloudy/video/upload/v1780155755/Why_This_Kolaveri_Di_The_Soup_of_Love_xlgi0r.mp3",
+          "https://res.cloudinary.com/seshancloudy/video/upload/v1780155750/Nee_Paartha_Vizhigal_The_Touch_of_Love_h4ws4w.mp3",
+          "https://res.cloudinary.com/seshancloudy/video/upload/v1780155550/Come_on_Girls_The_Celebration_of_Love_xlvwlg.mp3"
       ]
     },
   songKey: {
@@ -163,6 +226,9 @@ const availableMovies = {
     6: 6,
     7: 7,
     8: 8,
+    9: 9,
+    10: 10,
+    11: 11
   },
   songs: {
     1: [
@@ -218,6 +284,33 @@ const availableMovies = {
         "Pappali Pazhamey",
         "Aura 10/10",
         "Goindhamma"
+    ],
+    9: [
+      "Oorum Blood",
+      "Singari",
+      "Kannukulla",
+      "Yumabaibesa",
+      "Nallaru Po",
+      "Blud is on his Way"
+    ],
+    10: [
+        "Mutta Kalakki",
+        "Aasa Pulla",
+        "Paranthene Penne",
+        "Loveah Sollitalea",
+        "Alapuzha Sandhayila",
+        "Thanga Magan",
+        "Ponmaaney",
+        "Poga Poga"
+    ],
+    11: [
+        "Idhazhin Oram",
+        "Kannazhaga",
+        "Po Nee Po",
+        "Po Nee PO (Remix)",
+        "Why this Kolaveri Di",
+        "Ne Paartha Vizhigal",
+        "Come on Girls"
     ]
   },
 };
