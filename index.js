@@ -7,7 +7,9 @@ const availableMovies = {
     3: "Varisu",
     4: "The Greatest of All Time",
     5: "Jeans",
-    6: "",
+    6: "Karuppu",
+    7: "Love Insurance Kompany Lik",
+    8: "Meesaya Murukku 2"
   },
   artist: {
     1: "Anirudh Ravichander and Team",
@@ -15,7 +17,9 @@ const availableMovies = {
     3: "Thaman S and Team",
     4: "Yuvan Shankar Raja and Team",
     5: "A.R.Rahman and Team",
-    6: "",
+    6: "Sai Abhyankkar and Team",
+    7: "Anirudh Ravichander and Team",
+    8: "Hiphop Tamizha"
   },
   icon: {
     1: "icon/jananayagan.jpg",
@@ -23,13 +27,10 @@ const availableMovies = {
     3: "https://www.masstamilan.dev/w/varisu-tamil-2023.webp",
     4: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbL8VaAb2GLq38_SAAYRy-dcir-hBjk4fomA&s",
     5: "https://www.masstamilan.dev/w/jeans-1998.webp",
-    6: "",
-    7: "",
-    8: "",
-    9: "",
-    10: "",
-    11: "",
-    12: "",
+    6: "https://www.masstamilan.dev/w/karuppu-tamil-2026.webp",
+    7: "https://www.masstamilan.dev/w/love-insurance-kompany-lik-tamil-2026.webp",
+    8: "https://www.masstamilan.dev/w/meesaya-murukku-2-tamil-2026.webp"
+
   },
   songlistpicture: {
     1: [
@@ -67,6 +68,30 @@ const availableMovies = {
       "https://www.masstamilan.dev/w/jeans-1998.webp",
       "https://www.masstamilan.dev/w/jeans-1998.webp",
     ],
+    6: [
+      "https://www.masstamilan.dev/w/karuppu-tamil-2026.webp",
+      "https://www.masstamilan.dev/w/karuppu-tamil-2026.webp ",
+      "https://www.masstamilan.dev/w/karuppu-tamil-2026.webp ",
+      "https://www.masstamilan.dev/w/karuppu-tamil-2026.webp ",
+      "https://www.masstamilan.dev/w/karuppu-tamil-2026.webp ",
+      "https://www.masstamilan.dev/w/karuppu-tamil-2026.webp ",
+      "https://www.masstamilan.dev/w/karuppu-tamil-2026.webp ",
+      "https://www.masstamilan.dev/w/karuppu-tamil-2026.webp ",
+      "https://www.masstamilan.dev/w/karuppu-tamil-2026.webp ",
+    ],
+    7: [
+      "https://www.masstamilan.dev/w/love-insurance-kompany-lik-tamil-2026.webp",
+      "https://www.masstamilan.dev/w/love-insurance-kompany-lik-tamil-2026.webp",
+      "https://www.masstamilan.dev/w/love-insurance-kompany-lik-tamil-2026.webp",
+      "https://www.masstamilan.dev/w/love-insurance-kompany-lik-tamil-2026.webp",
+      "https://www.masstamilan.dev/w/love-insurance-kompany-lik-tamil-2026.webp",
+      "https://www.masstamilan.dev/w/love-insurance-kompany-lik-tamil-2026.webp"
+    ],
+    8: [
+        "https://www.masstamilan.dev/w/meesaya-murukku-2-tamil-2026.webp",
+        "https://www.masstamilan.dev/w/meesaya-murukku-2-tamil-2026.webp",
+        "https://www.masstamilan.dev/w/meesaya-murukku-2-tamil-2026.webp"
+    ]
   },
   songsList: {
     1: [
@@ -95,7 +120,6 @@ const availableMovies = {
         "https://res.cloudinary.com/seshancloudy/video/upload/v1778677816/Matta_dysr8z.mp3",
         "https://res.cloudinary.com/seshancloudy/video/upload/v1778677799/Spark_fyxqn8.mp3",
         "https://res.cloudinary.com/seshancloudy/video/upload/v1778677857/Whistle_Podu_dykdzh.mp3"
-        // "GOAT/Whistle Podu.mp3",
       ],
       5: [
         "https://res.cloudinary.com/seshancloudy/video/upload/v1778678920/Anbe-Anbe_z5jtdv.mp3",
@@ -105,6 +129,30 @@ const availableMovies = {
         "https://res.cloudinary.com/seshancloudy/video/upload/v1778679083/Poovukkul_l4b3cj.mp3",
         "https://res.cloudinary.com/seshancloudy/video/upload/v1778679099/Varaya-Thozhi_vvdoij.mp3"
       ],
+      6: [
+          "https://res.cloudinary.com/seshancloudy/video/upload/v1780133371/Naanga_Naalu_Peru_mt1hys.mp3",
+          "https://res.cloudinary.com/seshancloudy/video/upload/v1780133391/God_Mode_Begins_vri2ei.mp3",
+          "https://res.cloudinary.com/seshancloudy/video/upload/v1780133432/Verappa_ftgnc1.mp3",
+          "https://res.cloudinary.com/seshancloudy/video/upload/v1780133277/Aathi_Raasathi_ha3nhs.mp3",
+          "https://res.cloudinary.com/seshancloudy/video/upload/v1780133493/Athu_Thalore_uvmeob.mp3",
+          "https://res.cloudinary.com/seshancloudy/video/upload/v1780133545/Karuppa_Kooda_Va_kknomo.mp3",
+          "https://res.cloudinary.com/seshancloudy/video/upload/v1780133574/Raathu_Raasan_roppod.mp3",
+          "https://res.cloudinary.com/seshancloudy/video/upload/v1780133611/Verappa_-_Extended_fq6fen.mp3",
+          "https://res.cloudinary.com/seshancloudy/video/upload/v1780133640/God_Mode_rqe5xs.mp3"
+      ],
+      7: [
+          "lik/Dheema.mp3",
+          "lik/Vibe Vaasey.mp3",
+          "https://res.cloudinary.com/seshancloudy/video/upload/v1780133783/Pattuma_tbcr1i.mp3",
+          "lik/Adaavadi.mp3",
+          "lik/Pookattum.mp3",
+          "lik/Enakenna Yaarum Illaye.mp3"
+      ],
+      8: [
+          "meesaya murukku 2/Pappali Pazhamey.mp3",
+          "meesaya murukku 2/Aura 10-10.mp3",
+          "meesaya murukku 2/Goindhamma.mp3"
+      ]
     },
   songKey: {
     1: 1,
@@ -112,6 +160,9 @@ const availableMovies = {
     3: 3,
     4: 4,
     5: 5,
+    6: 6,
+    7: 7,
+    8: 8,
   },
   songs: {
     1: [
@@ -145,6 +196,28 @@ const availableMovies = {
         "Kannodu Kaanberallam",
         "Poovukkul",
         "Varaya Thozhi"
+    ],
+    6: ["Naanga Naalu peru",
+        "God Mode Begins",
+        "Verappa",
+        "Aathi Raasathi",
+        "Athu Thalore",
+        "Karuppa Kooda Va",
+        "Raathu Raasan",
+        "Verappa-Extended",
+        "God Mode"
+    ],
+    7: ["Dheema",
+        "Vibe Vaasey",
+        "Pattuma",
+        "Adaavadi",
+        "Pookattum",
+        "Enakenna Yaarum Illaye"
+    ],
+    8: [
+        "Pappali Pazhamey",
+        "Aura 10/10",
+        "Goindhamma"
     ]
   },
 };
