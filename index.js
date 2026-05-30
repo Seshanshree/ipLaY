@@ -418,3 +418,49 @@ function playMusic(movieKey, songIndex) {
 
   currentSong.innerHTML = songName;
 }
+
+
+
+// ── DISCLAIMER MODAL FUNCTIONS ───────────────────────────────────────────────
+
+function showDisclaimer() {
+    const modal = document.getElementById("disclaimerModal");
+    if (modal) {
+        modal.style.display = "flex";
+        document.body.style.overflow = "hidden"; // Prevent background scrolling
+    }
+}
+
+function closeDisclaimer() {
+    const modal = document.getElementById("disclaimerModal");
+    if (modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = ""; // Restore scrolling
+    }
+}
+
+function acknowledgeDisclaimer() {
+    closeDisclaimer();
+    // Optional: Store in localStorage that user has seen disclaimer
+    localStorage.setItem("disclaimer_acknowledged", "true");
+}
+
+// Close modal when clicking outside the content
+window.onclick = function(event) {
+    const modal = document.getElementById("disclaimerModal");
+    if (event.target === modal) {
+        closeDisclaimer();
+    }
+}
+
+// Attach click event to logo when DOM is ready
+document.addEventListener("DOMContentLoaded", function() {
+    const logo = document.querySelector(".logo");
+    if (logo) {
+        logo.addEventListener("click", function(e) {
+            e.preventDefault();
+            showDisclaimer();
+        });
+        logo.style.cursor = "pointer";
+    }
+});
