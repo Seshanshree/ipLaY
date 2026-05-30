@@ -208,8 +208,8 @@ function displayPlaylistSongs(playlistId) {
               onerror="this.style.display='none'"
               alt="${songs[j]}" />
           <div class="music-info">
-            <h5 style="font-size:12px;font-weight:600;color:#ffffff;">${songs[j]}</h5>
-            <p style="font-size:10.8px;color:#b3b3b3;">${title}</p>
+            <h5 style="font-size:10.5px;font-weight:600;color:#ffffff;">${songs[j]}</h5>
+            <p style="font-size:8px;color:#b3b3b3;">${title}</p>
           </div>
           <button class="gobtn" onclick="event.stopPropagation(); playLibrarySong(${movieKey}, ${j})">▶</button>
         </div>`;
@@ -217,7 +217,7 @@ function displayPlaylistSongs(playlistId) {
   }
 
   playlistContainer.innerHTML = `
-    <button id="back-buttoninlib" onclick="displayPlaylist()">← Back</button>
+    <button id="back-buttoninlib" onclick="displayPlaylist()">Back</button>
     <div class="songs-list1">
       <h3>${title}</h3>
       ${songsHTML}
