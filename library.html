@@ -1,286 +1,132 @@
-// ─────────────────────────────────────────────────────────────────────────────
-// library.js  — loaded BEFORE controls.js
-//
-// controls.js already declares (with let/const):
-//   audio, playBtn, currentSong, currentMovieKey, currentSongIndex
-//
-// ⚠️  Do NOT re-declare any of those here — duplicate `let` in the same
-//     global scope throws SyntaxError and breaks the entire page.
-//
-// We only define:
-//   • availableMovies  (song data controls.js needs)
-//   • playlists        (Library grid metadata)
-//   • UI functions     (displayPlaylist, displayPlaylistSongs, playLibrarySong)
-// ─────────────────────────────────────────────────────────────────────────────
+<!DOCTYPE html>
+<html lang="en">
 
-// ── SONG DATA (controls.js reads this for prev/next/play) ────────────────────
-var availableMovies = {
-  songs: {
-    1: [
-      "Jimikki Ponnu",
-      "Ranjithame",
-      "Soul Of Varisu",
-      "Thalapathy Kacheri",
-      "Spark",
-    ],
-    2: [
-      "Naa Ready",
-      "Badass",
-      "Bloody Sweet",
-      "Oru Pere Varalaaru",
-      "Raavana Mavandaa",
-      "Thalapathy Kacheri",
-      "Celebration-Of-Varisu",
-      "Jimikki-Ponnu",
-      "Ranjithame",
-      "Soul-Of-Varisu",
-      "Thee-Thalapathy",
-      "Vaa-Thalaivaa",
-      "Matta",
-      "Spark",
-      "Whistle Podu",
-    ],
-    3: [
-      "Chella Magale",
-      "Oru Pere Varalaaru",
-      "Raavana Mavandaa",
-      "Thalapathy Kacheri",
-    ],
-    4: ["Chinna Chinna Kangal", "Matta", "Spark", "Whistle Podu"],
-    5: [
-      "Kallaliye Kallaliye",
-      "Maalai Mangum Neram",
-      "Pirai Thedum Neram",
-      "En Jeevan",
-      "Kanna Veesi Kanna Veesi",
-      "Varaya Thozhi",
-    ],
-  },
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Library - ipLaY</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="library.css" />
+        <!-- Standard favicon -->
+<link rel="icon" type="image/png" href="iplay_icon.png">
 
-  songsList: {
-    1: [
-      "varisu/Jimikki-Ponnu-MassTamilan.dev.mp3",
-      "varisu/Ranjithame-MassTamilan.dev (1).mp3",
-      "varisu/Soul-Of-Varisu-MassTamilan.dev.mp3",
-      "varisu/Thee-Thalapathy-MassTamilan.dev.mp3",
-      "varisu/Vaa-Thalaivaa-MassTamilan.dev.mp3",
-    ],
-    2: [
-      "leo/Naa-Ready-MassTamilan.dev.mp3",
-      "leo/Badass-MassTamilan.dev.mp3",
-      "leo/Bloody-Sweet-MassTamilan.dev.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678616/Oru-Pere-Varalaaru-MassTamilan.dev_yys7mt.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678616/Raavana-Mavandaa-MassTamilan.dev_t8o665.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678617/Thalapathy_Kacheri_ymxdbx.mp3",
-      "varisu/Celebration-Of-Varisu-MassTamilan.dev.mp3",
-      "varisu/Jimikki-Ponnu-MassTamilan.dev.mp3",
-      "varisu/Ranjithame-MassTamilan.dev (1).mp3",
-      "varisu/Soul-Of-Varisu-MassTamilan.dev.mp3",
-      "varisu/Thee-Thalapathy-MassTamilan.dev.mp3",
-      "varisu/Vaa-Thalaivaa-MassTamilan.dev.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1778677816/Matta_dysr8z.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1778677799/Spark_fyxqn8.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1778677857/Whistle_Podu_dykdzh.mp3",
-    ],
-    3: [
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678628/Chella-Magale-MassTamilan.dev_qgjxyf.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678616/Oru-Pere-Varalaaru-MassTamilan.dev_yys7mt.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678616/Raavana-Mavandaa-MassTamilan.dev_t8o665.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678617/Thalapathy_Kacheri_ymxdbx.mp3",
-    ],
-    4: [
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1778677796/Chinna_Chinna_Kangal_lhwhxb.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1778677816/Matta_dysr8z.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1778677799/Spark_fyxqn8.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1778677857/Whistle_Podu_dykdzh.mp3",
-    ],
-    5: [
-      "akkaplaylist/Kallaliye Kallaliye.mp3",
-      "akkaplaylist/Maalai-Mangum-Neram.mp3",
-      "akkaplaylist/Pirai-Thedum.mp3",
-      "akkaplaylist/En Jeevan(KoshalWorld.Com).mp3",
-      "akkaplaylist/Kanna-Veesi-Kanna-Veesi-MassTamilan.io.mp3",
-      "akkaplaylist/Varaya Thozhi.mp3",
-    ],
-  },
+<!-- Apple devices (iPhone/iPad) -->
+<link rel="apple-touch-icon" href="iplay_icon.png">
 
-  songlistpicture: {
-    1: Array(6).fill("https://www.masstamilan.dev/w/varisu-tamil-2023.webp"),
-    2: Array(15).fill("https://www.masstamilan.dev/w/leo-tamil-2023.webp"),
-    3: [
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQXIk7h9nS9DsamRn_UWsukg4Pf7IlncK5cQ&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9784HdLZ52d8Q75xLrLLFIZm6upP_-ZJ98A&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBqZHFpcQ6a4CqKn4OjWK0IQ9oMauquxlXQQ&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOx_Icl1S5PSzAuHwD1U-zoPcUTN3QorH8qQ&s",
-    ],
-    4: Array(4).fill(
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbL8VaAb2GLq38_SAAYRy-dcir-hBjk4fomA&s",
-    ),
-    5: [
-      "https://www.masstamilan.dev/w/maaman-tamil-2025.webp",
-      "https://www.masstamilan.dev/w/rowthiram-2011.webp",
-      "https://www.masstamilan.dev/w/mayakkam-enna-2011.webp",
-      "https://koshalworld.com/siteuploads/thumb/sft74/36719_4.webp",
-      "https://www.masstamilan.dev/w/kadhal-ondru-kanden-short-film-tamil-2020.webp",
-    ],
-  },
-};
+<!-- Android / PWA -->
+<link rel="manifest" href="manifest.json">
+</head>
 
-// ── PLAYLIST GRID METADATA ────────────────────────────────────────────────────
-var playlists = {
-  1: {
-    title: "Kadhal Veesum",
-    movieKey: 1,
-    imageUrl: availableMovies.songlistpicture[1][0],
-  },
-  2: {
-    title: "Thalapathy Hits",
-    movieKey: 2,
-    imageUrl: availableMovies.songlistpicture[2][0],
-  },
-  3: {
-    title: "Anirudh's Best",
-    movieKey: 3,
-    imageUrl: availableMovies.songlistpicture[3][0],
-  },
-  4: {
-    title: "Top Tamil Songs",
-    movieKey: 4,
-    imageUrl: availableMovies.songlistpicture[4][0],
-  },
-  5: {
-    title: "V Songs",
-    movieKey: 5,
-    imageUrl: availableMovies.songlistpicture[5][0],
-  },
-  6: {
-    title: "Romantic Tamil Songs",
-    movieKey: null,
-    imageUrl: availableMovies.songlistpicture[3][0],
-  },
-  7: { title: "Dance Hits", movieKey: null, imageUrl: "" },
-  8: { title: "Melody Mix", movieKey: null, imageUrl: "" },
-  9: { title: "Party Anthems", movieKey: null, imageUrl: "" },
-  10: { title: "Sad Tamil Songs", movieKey: null, imageUrl: "" },
-};
+<body>
 
-// ── DOM ───────────────────────────────────────────────────────────────────────
-var playlistContainer = document.getElementById("playlist-container");
+    <!-- HEADER -->
+    <header>
+        <a href="index.html" class="logo" style="cursor: pointer;">ipLaY</a>
 
-// ── RENDER PLAYLIST GRID ──────────────────────────────────────────────────────
-function displayPlaylist() {
-  playlistContainer.style.display = ""; // restore CSS grid
-  playlistContainer.innerHTML = "";
+        <nav>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="library.html">Library</a></li>
+        </nav>
+    </header>
 
-  for (var id in playlists) {
-    playlistContainer.innerHTML += `
-      <div class="playlist-item" onclick="displayPlaylistSongs(${id})">
-        <img src="${playlists[id].imageUrl || ""}" alt="${playlists[id].title}" onerror="this.style.display='none'" />
-        <div class="playlist-info">
-          <h5>${playlists[id].title}</h5>
+    <!-- MAIN -->
+    <main class="main">
+
+        <!-- TITLE -->
+        <div class="container">
+            <h3>
+                Welcome to <span class="logo">ipLaY</span> App
+            </h3>
+
+            <p>
+                Discover and enjoy your favorite music..
+            </p>
         </div>
-      </div>`;
-  }
-}
 
-displayPlaylist();
+        <div class="playlist-container" id="playlist-container">
+            <!-- Playlist items will be dynamically added here -->
+        </div>
 
-// ── RENDER SONGS INSIDE A PLAYLIST ───────────────────────────────────────────
-function displayPlaylistSongs(playlistId) {
-  var pl = playlists[playlistId];
-  var movieKey = pl.movieKey;
-  var title = pl.title;
-  var songs = movieKey ? availableMovies.songs[movieKey] : [];
-  var pictures = movieKey ? availableMovies.songlistpicture[movieKey] : [];
+        <!-- MUSIC LIST -->
+        <div class="music-list" id="music-list"></div>
 
-  // Switch container from grid → block so items stack vertically
-  playlistContainer.style.display = "block";
+    </main>
 
-  var songsHTML = "";
+    <!-- AUDIO PLAYER -->
+    <div id="audio-player" class="audio-player">
+        <div class="progress-container">
+            <span id="current-time">0:00</span>
+            <input type="range" id="progress" value="0" min="0" max="100" />
+            <span id="duration">0:00</span>
+        </div>
+        <div id="current-song" class="current-song">
+            No song playing
+        </div>
+        <div class="controls">
+        <button id="prev-btn" class="control-btn" onclick="songDec()">⏮</button>
+        <button id="play-btn" class="control-btn" onclick="songPlay()">▶</button>
+        <button id="next-btn" class="control-btn" onclick="songInc()">⏭</button>
+        </div>
+    </div>
+    <!-- DISCLAIMER MODAL -->
+<div id="disclaimerModal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h2>Educational Purpose Only</h2>
+            <button class="close-modal" onclick="closeDisclaimer()">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="disclaimer-title">
+                iPlay Music App — Non-Commercial Project
+            </div>
+            <div class="disclaimer-subtitle">
+                Created for learning & portfolio purposes only
+            </div>
 
-  if (!songs || songs.length === 0) {
-    songsHTML = `<p style="color:#b3b3b3;margin-top:20px;">No songs in this playlist yet.</p>`;
-  } else {
-    for (var j = 0; j < songs.length; j++) {
-      songsHTML += `
-        <div class="music-item" onclick="playLibrarySong(${movieKey}, ${j})">
-          <img src="${pictures[j] || ""}"
-              onerror="this.style.display='none'"
-              alt="${songs[j]}" />
-          <div class="music-info">
-            <h5 style="font-size:10.5px;font-weight:600;color:#ffffff;">${songs[j]}</h5>
-            <p style="font-size:8px;color:#b3b3b3;">${title}</p>
-          </div>
-          <button class="gobtn" onclick="event.stopPropagation(); playLibrarySong(${movieKey}, ${j})">▶</button>
-        </div>`;
-    }
-  }
+            <div class="disclaimer-section">
+                <h4> No Ownership Rights</h4>
+                <p>iPlay Music App does NOT own, host, or claim ANY rights to the music, songs, lyrics, album art, artist names, or any other media content accessible through this application.</p>
+            </div>
 
-  playlistContainer.innerHTML = `
-    <button id="back-buttoninlib" onclick="displayPlaylist()">Back</button>
-    <div class="songs-list1">
-      <h3>${title}</h3>
-      ${songsHTML}
-    </div>`;
-}
+            <div class="disclaimer-section">
+                <h4>No Music License</h4>
+                <p>This application holds NO official licenses from record labels, music publishers, artists, or any copyright holders. All audio content is the property of its respective owners.</p>
+            </div>
 
-// ── PLAY A SONG ───────────────────────────────────────────────────────────────
-// audio, playBtn, currentSong, currentMovieKey, currentSongIndex
-// are all declared in controls.js — do NOT redeclare them here.
-function playLibrarySong(movieKey, songIndex) {
-  // Update the shared state controls.js uses for prev/next
-  currentMovieKey = movieKey;
-  currentSongIndex = songIndex;
+            <div class="disclaimer-section">
+                <h4>Purely Educational</h4>
+                <p>This app is a <strong>demonstration project</strong> built to showcase:</p>
+                <ul>
+                    <li>HTML/CSS/JavaScript frontend development skills</li>
+                    <li>Audio player implementation & controls</li>
+                    <li>Local storage for playback persistence</li>
+                    <li>Dynamic playlist & library rendering</li>
+                    <li>Responsive UI/UX design concepts</li>
+                </ul>
+                <p style="margin-top: 10px;">It is NOT intended for commercial use or public distribution of copyrighted music.</p>
+            </div>
 
-  audio.src = availableMovies.songsList[movieKey][songIndex];
-  audio.play();
+            <div class="disclaimer-section">
+                <h4>Respect to Creators</h4>
+                <p>If you are a copyright owner and believe your work is being used in a way that violates your rights, please contact us. We will remove or restrict access to the content immediately upon receiving a valid takedown notice.</p>
+            </div>
 
-  currentSong.innerText = availableMovies.songs[movieKey][songIndex];
-  playBtn.innerHTML = "<p style='color:#000;'>||</p>";
-}
+            <div class="contact-info">
+                <p>For takedown requests or concerns:</p>
+                <a href="mailto:seshanshreem@gmail.com">seshanshreem@gmail.com</a>
+                <p style="margin-top: 10px; font-size: 10px;">Response within 48 hours</p>
+            </div>
+        </div>
+        <div class="disclaimer-footer">
+            <button class="btn-cancel" onclick="closeDisclaimer()">Close</button>
+            <button class="btn-acknowledge" onclick="acknowledgeDisclaimer()">I Understand </button>
+        </div>
+    </div>
+</div>
+    <!-- SCRIPT -->
+    <script src="library.js"></script>
+    <script src="controls.js"></script>
 
+</body>
 
-
-// ── DISCLAIMER MODAL FUNCTIONS ───────────────────────────────────────────────
-
-function showDisclaimer() {
-    const modal = document.getElementById("disclaimerModal");
-    if (modal) {
-        modal.style.display = "flex";
-        document.body.style.overflow = "hidden"; // Prevent background scrolling
-    }
-}
-
-function closeDisclaimer() {
-    const modal = document.getElementById("disclaimerModal");
-    if (modal) {
-        modal.style.display = "none";
-        document.body.style.overflow = ""; // Restore scrolling
-    }
-}
-
-function acknowledgeDisclaimer() {
-    closeDisclaimer();
-    // Optional: Store in localStorage that user has seen disclaimer
-    localStorage.setItem("disclaimer_acknowledged", "true");
-}
-
-// Close modal when clicking outside the content
-window.onclick = function(event) {
-    const modal = document.getElementById("disclaimerModal");
-    if (event.target === modal) {
-        closeDisclaimer();
-    }
-}
-
-// Attach click event to logo when DOM is ready
-document.addEventListener("DOMContentLoaded", function() {
-    const logo = document.querySelector(".logo");
-    if (logo) {
-        logo.addEventListener("click", function(e) {
-            e.preventDefault();
-            showDisclaimer();
-        });
-        logo.style.cursor = "pointer";
-    }
-});
+</html>
