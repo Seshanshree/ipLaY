@@ -141,12 +141,12 @@ const availableMovies = {
           "https://res.cloudinary.com/seshancloudy/video/upload/v1780133640/God_Mode_rqe5xs.mp3"
       ],
       7: [
-          "lik/Dheema.mp3",
-          "lik/Vibe Vaasey.mp3",
+          "https://res.cloudinary.com/seshancloudy/video/upload/v1780138574/Dheema_caqm24.mp3",
+          "https://res.cloudinary.com/seshancloudy/video/upload/v1780133959/Vibe_Vaasey_zstbrp.mp3",
           "https://res.cloudinary.com/seshancloudy/video/upload/v1780133783/Pattuma_tbcr1i.mp3",
-          "lik/Adaavadi.mp3",
-          "lik/Pookattum.mp3",
-          "lik/Enakenna Yaarum Illaye.mp3"
+          "https://res.cloudinary.com/seshancloudy/video/upload/v1780133886/Adaavadi_gn6ete.mp3",
+          "https://res.cloudinary.com/seshancloudy/video/upload/v1780138800/Pookattum_kjprdl.mp3",
+          "https://res.cloudinary.com/seshancloudy/video/upload/v1780138892/Enakenna_Yaarum_Illaye_zpbfof.mp3"
       ],
       8: [
           "meesaya murukku 2/Pappali Pazhamey.mp3",
