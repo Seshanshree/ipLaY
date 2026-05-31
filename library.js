@@ -17,13 +17,27 @@
 var availableMovies = {
   songs: {
     1: [
+      "Aasa Kooda",
+      "Pavazha Malli",
+      "Naanga Naalu Peru",
+      "Katchi Sera",
+      "Sithira Puthiri",
+      "Vizhi Veekura",
+      "Oorum Blood",
+      "Singari",
+      "Kannukulla",
+      "Yumabaibesa",
+      "Nallaru Po"
+
+    ],
+    2: [
       "Jimikki Ponnu",
       "Ranjithame",
       "Soul Of Varisu",
       "Thalapathy Kacheri",
       "Spark",
     ],
-    2: [
+    3: [
       "Naa Ready",
       "Badass",
       "Bloody Sweet",
@@ -40,14 +54,18 @@ var availableMovies = {
       "Spark",
       "Whistle Podu",
     ],
-    3: [
+    4: [
       "Chella Magale",
       "Oru Pere Varalaaru",
       "Raavana Mavandaa",
       "Thalapathy Kacheri",
     ],
-    4: ["Chinna Chinna Kangal", "Matta", "Spark", "Whistle Podu"],
     5: [
+        "Chinna Chinna Kangal", 
+        "Matta", 
+        "Spark", 
+        "Whistle Podu"],
+    6: [
       "Kallaliye Kallaliye",
       "Maalai Mangum Neram",
       "Pirai Thedum Neram",
@@ -59,13 +77,26 @@ var availableMovies = {
 
   songsList: {
     1: [
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780196688/Aasa_Kooda_g4gadv.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780196687/Pavazha_Malli_hkdbcp.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780133371/Naanga_Naalu_Peru_mt1hys.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780196691/Katchi_Sera_fgybzp.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780196693/Sithira-Puthiri-MassTamilan.dev_mtefop.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780196693/Vizhi_Veekura_o8lac0.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780153988/Oorum_Blood_kkxuwk.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780153991/Singari_jddjzo.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780153991/Kannukulla_li5i45.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780153985/Yumabaibesa_n5dwdj.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780153994/Nallaru_Po_alkjpp.mp3",
+    ],
+    2: [
       "varisu/Jimikki-Ponnu-MassTamilan.dev.mp3",
       "varisu/Ranjithame-MassTamilan.dev (1).mp3",
       "varisu/Soul-Of-Varisu-MassTamilan.dev.mp3",
       "varisu/Thee-Thalapathy-MassTamilan.dev.mp3",
       "varisu/Vaa-Thalaivaa-MassTamilan.dev.mp3",
     ],
-    2: [
+    3: [
       "leo/Naa-Ready-MassTamilan.dev.mp3",
       "leo/Badass-MassTamilan.dev.mp3",
       "leo/Bloody-Sweet-MassTamilan.dev.mp3",
@@ -82,19 +113,19 @@ var availableMovies = {
       "https://res.cloudinary.com/seshancloudy/video/upload/v1778677799/Spark_fyxqn8.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1778677857/Whistle_Podu_dykdzh.mp3",
     ],
-    3: [
+    4: [
       "https://res.cloudinary.com/seshancloudy/video/upload/v1778678628/Chella-Magale-MassTamilan.dev_qgjxyf.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1778678616/Oru-Pere-Varalaaru-MassTamilan.dev_yys7mt.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1778678616/Raavana-Mavandaa-MassTamilan.dev_t8o665.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1778678617/Thalapathy_Kacheri_ymxdbx.mp3",
     ],
-    4: [
+    5: [
       "https://res.cloudinary.com/seshancloudy/video/upload/v1778677796/Chinna_Chinna_Kangal_lhwhxb.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1778677816/Matta_dysr8z.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1778677799/Spark_fyxqn8.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1778677857/Whistle_Podu_dykdzh.mp3",
     ],
-    5: [
+    6: [
       "akkaplaylist/Kallaliye Kallaliye.mp3",
       "akkaplaylist/Maalai-Mangum-Neram.mp3",
       "akkaplaylist/Pirai-Thedum.mp3",
@@ -105,18 +136,31 @@ var availableMovies = {
   },
 
   songlistpicture: {
-    1: Array(6).fill("https://www.masstamilan.dev/w/varisu-tamil-2023.webp"),
-    2: Array(15).fill("https://www.masstamilan.dev/w/leo-tamil-2023.webp"),
-    3: [
+    1: [
+      "https://www.masstamilan.dev/w/aasa-kooda-indie-tamil-2024.webp",
+      "https://www.masstamilan.dev/w/pavazha-malli-indie-tamil-2026.webp",
+      "https://www.masstamilan.dev/w/karuppu-tamil-2026.webp",
+      "https://www.masstamilan.dev/w/katchi-sera-indie-tamil-2024.webp",
+      "https://www.masstamilan.dev/w/sithira-puthiri-indie-tamil-2025.webp",
+      "https://www.masstamilan.dev/w/vizhi-veekura-indie-tamil-2025.webp",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780153988/Oorum_Blood_kkxuwk.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780153991/Singari_jddjzo.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780153991/Kannukulla_li5i45.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780153985/Yumabaibesa_n5dwdj.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780153994/Nallaru_Po_alkjpp.mp3"
+    ],
+    2: Array(6).fill("https://www.masstamilan.dev/w/varisu-tamil-2023.webp"),
+    3: Array(15).fill("https://www.masstamilan.dev/w/leo-tamil-2023.webp"),
+    4: [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQXIk7h9nS9DsamRn_UWsukg4Pf7IlncK5cQ&s",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9784HdLZ52d8Q75xLrLLFIZm6upP_-ZJ98A&s",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBqZHFpcQ6a4CqKn4OjWK0IQ9oMauquxlXQQ&s",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOx_Icl1S5PSzAuHwD1U-zoPcUTN3QorH8qQ&s",
     ],
-    4: Array(4).fill(
+    5: Array(4).fill(
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbL8VaAb2GLq38_SAAYRy-dcir-hBjk4fomA&s",
     ),
-    5: [
+    6: [
       "https://www.masstamilan.dev/w/maaman-tamil-2025.webp",
       "https://www.masstamilan.dev/w/rowthiram-2011.webp",
       "https://www.masstamilan.dev/w/mayakkam-enna-2011.webp",
@@ -129,39 +173,44 @@ var availableMovies = {
 // ── PLAYLIST GRID METADATA ────────────────────────────────────────────────────
 var playlists = {
   1: {
-    title: "Kadhal Veesum",
+    title :'Sai Abhyankkar',
     movieKey: 1,
-    imageUrl: availableMovies.songlistpicture[1][0],
+    imageUrl: "https://www.masstamilan.dev/w/pavazha-malli-indie-tamil-2026.webp"
   },
   2: {
-    title: "Thalapathy Hits",
+    title: "Kadhal Veesum",
     movieKey: 2,
-    imageUrl: availableMovies.songlistpicture[2][0],
+    imageUrl: availableMovies.songlistpicture[1][0],
   },
   3: {
-    title: "Anirudh's Best",
+    title: "Thalapathy Hits",
     movieKey: 3,
-    imageUrl: availableMovies.songlistpicture[3][0],
+    imageUrl: availableMovies.songlistpicture[2][0],
   },
   4: {
-    title: "Top Tamil Songs",
+    title: "Anirudh's Best",
     movieKey: 4,
-    imageUrl: availableMovies.songlistpicture[4][0],
-  },
-  5: {
-    title: "V Songs",
-    movieKey: 5,
-    imageUrl: availableMovies.songlistpicture[5][0],
-  },
-  6: {
-    title: "Romantic Tamil Songs",
-    movieKey: null,
     imageUrl: availableMovies.songlistpicture[3][0],
   },
-  7: { title: "Dance Hits", movieKey: null, imageUrl: "" },
-  8: { title: "Melody Mix", movieKey: null, imageUrl: "" },
-  9: { title: "Party Anthems", movieKey: null, imageUrl: "" },
-  10: { title: "Sad Tamil Songs", movieKey: null, imageUrl: "" },
+  5: {
+    title: "Top Tamil Songs",
+    movieKey: 5,
+    imageUrl: availableMovies.songlistpicture[4][0],
+  },
+  6: {
+    title: "V Songs",
+    movieKey: 6,
+    imageUrl: availableMovies.songlistpicture[5][0],
+  },
+  7: {
+    title: "Romantic Tamil Songs",
+    movieKey: 7,
+    imageUrl: availableMovies.songlistpicture[3][0],
+  },
+  // 7: { title: "Dance Hits", movieKey: null, imageUrl: "" },
+  // 8: { title: "Melody Mix", movieKey: null, imageUrl: "" },
+  // 9: { title: "Party Anthems", movieKey: null, imageUrl: "" },
+  // 10: { title: "Sad Tamil Songs", movieKey: null, imageUrl: "" },
 };
 
 // ── DOM ───────────────────────────────────────────────────────────────────────
@@ -238,3 +287,49 @@ function playLibrarySong(movieKey, songIndex) {
   currentSong.innerText = availableMovies.songs[movieKey][songIndex];
   playBtn.innerHTML = "<p style='color:#000;'>||</p>";
 }
+
+
+
+// ── DISCLAIMER MODAL FUNCTIONS ───────────────────────────────────────────────
+
+function showDisclaimer() {
+    const modal = document.getElementById("disclaimerModal");
+    if (modal) {
+        modal.style.display = "flex";
+        document.body.style.overflow = "hidden"; // Prevent background scrolling
+    }
+}
+
+function closeDisclaimer() {
+    const modal = document.getElementById("disclaimerModal");
+    if (modal) {
+        modal.style.display = "none";
+        document.body.style.overflow = ""; // Restore scrolling
+    }
+}
+
+function acknowledgeDisclaimer() {
+    closeDisclaimer();
+    // Optional: Store in localStorage that user has seen disclaimer
+    localStorage.setItem("disclaimer_acknowledged", "true");
+}
+
+// Close modal when clicking outside the content
+window.onclick = function(event) {
+    const modal = document.getElementById("disclaimerModal");
+    if (event.target === modal) {
+        closeDisclaimer();
+    }
+}
+
+// Attach click event to logo when DOM is ready
+document.addEventListener("DOMContentLoaded", function() {
+    const logo = document.querySelector(".logo");
+    if (logo) {
+        logo.addEventListener("click", function(e) {
+            e.preventDefault();
+            showDisclaimer();
+        });
+        logo.style.cursor = "pointer";
+    }
+});
