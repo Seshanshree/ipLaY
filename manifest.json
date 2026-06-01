@@ -3,7 +3,7 @@
   "short_name": "ipLaY",
   "icons": [
     {
-      "src": "iplay_icon.png",
+      "src": "bg.png",
       "sizes": "1024x1024",
       "type": "image/png"
     }
