@@ -9,7 +9,7 @@
 
 .playlist-item {
     background: #1c1c1c;
-    border: 1px solid #282828;
+    border: 1px solid #09440a24;
     border-radius: 12px;
     cursor: pointer;
     transition: 0.2s;
@@ -17,6 +17,7 @@
     flex-direction: column;
     align-items: stretch;
     overflow: hidden;
+    background-color: rgba(0,0,0,0.1);
     
 }
 
@@ -42,9 +43,9 @@
 .playlist-info h5 {
     font-size: 9px;
     font-weight: 600;
-    color: #6b6969;
+    color: #969494;
     align-items: center;
-    background: #282828;
+    background: #2828284a;
     padding: 4px 5px;
     border-radius: 8px;
     margin-top: 5px;
