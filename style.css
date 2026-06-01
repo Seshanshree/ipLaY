@@ -9,7 +9,12 @@
  
 body {
     background-color: #121212;
-    color: #ffffff;
+    background-image: url(bg.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    bottom: 250px;
+    /* color: #ffffff; */
     font-family: 'Poppins', sans-serif;
 }
  
@@ -28,6 +33,10 @@ header {
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     z-index: 10000;
+    background-image: url(bg.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 .logo {
     content: 'ipLaY';
@@ -333,6 +342,10 @@ footer {
     justify-content: center;
     padding: 1px 1px 1px 1px;
     border-bottom: 10px solid #1db954 ;
+    background-image: url(bg.png);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 .controls {
     display: flex;
