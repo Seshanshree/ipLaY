@@ -13,6 +13,7 @@ const availableMovies = {
     9: "Dude",
     10: "Youth",
     11: "3",
+    12: "Kadaram Kondan"
   },
   artist: {
     1: "Anirudh Ravichander and Team",
@@ -24,8 +25,9 @@ const availableMovies = {
     7: "Anirudh Ravichander and Team",
     8: "Hiphop Tamizha and Team",
     9: "Sai Abhyankkar and Team",
-    10: "G. V. Prakash Kumar and Team",
+    10: "G.V.Prakash Kumar and Team",
     11: "Anirudh Ravichander and Team",
+    12: "Ghibran Vaibodha and Team"
   },
   icon: {
     1: "icon/jananayagan.jpg",
@@ -39,6 +41,7 @@ const availableMovies = {
     9: "https://www.masstamilan.dev/w/dude-tamil-2025.webp",
     10: "https://www.masstamilan.dev/w/youth-tamil-2026.webp",
     11: "https://www.masstamilan.dev/w/3-moonu-tamil-2012.webp",
+    12: "https://www.masstamilan.dev/w/kadaram-kondan-2019.webp"
   },
   songlistpicture: {
     1: [
@@ -127,6 +130,11 @@ const availableMovies = {
       "https://www.masstamilan.dev/w/3-moonu-tamil-2012.webp",
       "https://www.masstamilan.dev/w/3-moonu-tamil-2012.webp",
     ],
+    12: [
+       "https://www.masstamilan.dev/w/kadaram-kondan-2019.webp",
+       "https://www.masstamilan.dev/w/kadaram-kondan-2019.webp",
+       "https://www.masstamilan.dev/w/kadaram-kondan-2019.webp"
+    ]
   },
   songsList: {
     1: [
@@ -215,6 +223,11 @@ const availableMovies = {
       "https://res.cloudinary.com/seshancloudy/video/upload/v1780155750/Nee_Paartha_Vizhigal_The_Touch_of_Love_h4ws4w.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1780155550/Come_on_Girls_The_Celebration_of_Love_xlvwlg.mp3",
     ],
+    12: [
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780236035/Thaarame-Thaarame-MassTamilan.io_l3cjar.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780236035/Theesudar-Kuniyuma-MassTamilan.io_hbnqp0.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780235917/Kadaram-Kondan-MassTamilan.io_eznet7.mp3"
+    ]
   },
   songKey: {
     1: 1,
@@ -228,6 +241,7 @@ const availableMovies = {
     9: 9,
     10: 10,
     11: 11,
+    12: 12,
   },
   songs: {
     1: [
@@ -307,6 +321,11 @@ const availableMovies = {
       "Ne Paartha Vizhigal",
       "Come on Girls",
     ],
+    12: [
+        "Thaarame Thaarame",
+        "Theesudar Kuniyuma",
+        "Kadaram Kondan"
+    ]
   },
 };
 
