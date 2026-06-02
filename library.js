@@ -421,11 +421,16 @@ function acknowledgeDisclaimer() {
     localStorage.setItem("disclaimer_acknowledged", "true");
 }
 
-// Close modal when clicking outside the content
+// Close modals when clicking outside the content
 window.onclick = function(event) {
-    const modal = document.getElementById("disclaimerModal");
-    if (event.target === modal) {
+    const disclaimerModal = document.getElementById("disclaimerModal");
+    if (event.target === disclaimerModal) {
         closeDisclaimer();
+    }
+    
+    const timerModal = document.getElementById("timerModal");
+    if (event.target === timerModal) {
+        closeTimerModal();
     }
 }
 
