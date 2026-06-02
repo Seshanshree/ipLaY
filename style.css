@@ -754,3 +754,191 @@ input[type="range"]::-moz-range-thumb {
 .logo:active {
     animation: gentleShake 0.3s ease;
 }
+
+
+/* ── SLEEP TIMER MODAL STYLES ── */
+.timer-modal .timer-modal-content {
+    max-width: 450px;
+}
+
+.timer-subtitle {
+    text-align: center;
+    font-size: 12px;
+    color: #b3b3b3;
+    margin-bottom: 24px;
+    padding-bottom: 12px;
+    border-bottom: 1px dashed #2a2a2a;
+}
+
+.timer-presets {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 28px;
+}
+
+.timer-preset-btn {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 40px;
+    padding: 10px 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    color: #e0e0e0;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.timer-preset-btn:hover {
+    border-color: #1db954;
+    background: #252525;
+    color: #1db954;
+    transform: translateY(-2px);
+}
+
+.timer-preset-btn:active {
+    transform: translateY(0);
+}
+
+.custom-timer-section {
+    background: #121212;
+    border-radius: 16px;
+    padding: 16px;
+    margin-bottom: 20px;
+    border-left: 3px solid #1db954;
+}
+
+.custom-timer-section h4 {
+    color: #1db954;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.custom-timer-inputs {
+    display: flex;
+    gap: 12px;
+    align-items: flex-end;
+}
+
+.time-input-group {
+    flex: 1;
+}
+
+.time-input-group label {
+    display: block;
+    font-size: 11px;
+    color: #888;
+    margin-bottom: 5px;
+}
+
+.time-input-group input {
+    width: 100%;
+    padding: 10px 12px;
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #fff;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.time-input-group input:focus {
+    border-color: #1db954;
+}
+
+#apply-custom-timer {
+    padding: 10px 20px;
+    background: #1db954;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#apply-custom-timer:hover {
+    background: #1ed760;
+    transform: scale(1.02);
+}
+
+.timer-hint {
+    font-size: 10px;
+    color: #666;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.active-timer-info {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #2a2a2a;
+}
+
+.timer-active-card {
+    background: linear-gradient(135deg, #1db95415 0%, #00000000 100%);
+    border: 1px solid #1db954;
+    border-radius: 12px;
+    padding: 12px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.timer-active-card span {
+    font-size: 12px;
+    color: #b3b3b3;
+}
+
+.timer-active-card strong {
+    font-size: 16px;
+    color: #1db954;
+    font-weight: 700;
+    font-family: monospace;
+}
+
+#cancel-timer {
+    padding: 6px 14px;
+    font-size: 11px;
+    background: transparent;
+    border: 1px solid #444;
+    border-radius: 20px;
+    color: #aaa;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+#cancel-timer:hover {
+    border-color: #ff4444;
+    color: #ff4444;
+}
+
+.timer-nav-btn {
+    background: transparent;
+    border: 1.5px solid #1db954;
+    border-radius: 40px;
+    padding: 5px 14px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #1db954;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-right: 40px;
+}
+
+.timer-nav-btn:hover {
+    background: #1db954;
+    color: #000;
+    transform: scale(1.02);
+}
+
+.timer-nav-btn:active {
+    transform: scale(0.98);
+}
