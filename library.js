@@ -241,9 +241,51 @@ var availableMovies = {
       "https://www.masstamilan.dev/w/dude-tamil-2025.webp",
     ],
     2: [
+      "https://www.masstamilan.dev/w/kaatrin-mozhi-2018.webp",
+      "https://www.masstamilan.dev/w/mayakkam-enna-2011.webp",
+      "https://www.masstamilan.dev/w/youth-tamil-2002.webp",
+      "https://www.masstamilan.dev/w/uyire-1998.webp",
+      "https://www.masstamilan.dev/w/david-2013.webp",
+      "https://www.masstamilan.dev/w/raja-rani-2013.webp",
+      "https://www.masstamilan.dev/w/vaaranam-aayiram-2008.webp",
+      "https://www.masstamilan.dev/w/7-aum-arivu-7aam-arivu-2010.webp",
+      "https://www.masstamilan.dev/w/imaikkaa-nodigal-2018.webp",
+      "https://www.masstamilan.dev/w/psycho-2019.webp",
+      "https://www.masstamilan.dev/w/master-tamil-2021.webp",
+      "https://www.masstamilan.dev/w/aarathu-sinam-2016.webp",
+      "https://www.masstamilan.dev/w/love-today-tamil-2022.webp",
+      "https://www.masstamilan.dev/w/3-moonu-tamil-2012.webp",
+      "https://www.masstamilan.dev/w/geethaiyin-raadhai-tamil-2016.webp",
+      "https://www.masstamilan.dev/w/anegan.webp",
+      "https://www.masstamilan.dev/w/aakko-tamil-2015.webp",
+      "https://www.masstamilan.dev/w/oh-my-kadavule-additional-songs-and-bgm-original-background-score-2020.webp",
+      "https://www.masstamilan.dev/w/paiya-2012.webp",
+      "https://www.masstamilan.dev/w/yaradi-nee-mohini.webp",
+      "https://www.masstamilan.dev/w/oru-naal-koothu.webp"
 
     ],
     3: [
+      "https://www.masstamilan.dev/w/naan-avanillai-2007.webp",
+      "https://www.masstamilan.dev/w/mankatha.webp",
+      "https://www.masstamilan.dev/w/salim-2014.webp",
+      "https://www.masstamilan.dev/w/pokkiri-2007.webp",
+      "https://www.masstamilan.dev/w/villu-tamil-2009.webp",
+      "https://www.masstamilan.dev/w/kandasamy.webp",
+      "https://www.masstamilan.dev/w/baahubali1.webp",
+      "https://masstamilan.com.se/upload_file/3/12/1227/230x230/thumb_68e86320953ba.webp",
+      "https://a10.gaanacdn.com/gn_img/albums/lJvKa16KDV/JvKan66A3D/size_l.webp",
+      "https://www.masstamilan.dev/w/sura-2010.webp",
+      "https://www.masstamilan.dev/w/gulaebaghavali-2018.webp",
+      "https://www.masstamilan.dev/w/jilla.webp",
+      "https://www.masstamilan.dev/w/kalakalappu-2-2018.webp",
+      "https://a10.gaanacdn.com/gn_img/albums/01A3mrWNQX/1A3mv00zWN/size_l.webp",
+      "https://www.masstamilan.dev/w/aranmanai-4-tamil-2024.webp",
+      "https://www.masstamilan.dev/w/jailer-tamil-2023.webp",
+      "https://www.masstamilan.dev/w/kutty-2012.webp",
+      "https://www.masstamilan.dev/w/maasilamani-2009.webp",
+      "https://www.masstamilan.dev/w/pavazha-malli-indie-tamil-2026.webp",
+      "https://thf.bing.com/th/id/OIP.bGeVSpwJ4cADL7v_eGRrbwAAAA?w=311&h=169&c=7&r=0&o=7&cb=thfc1falcon&dpr=1.1&pid=1.7&rm=3",
+      "https://www.masstamilan.dev/w/karuppu-tamil-2026.webp"
 
     ],
     4: Array(6).fill("https://www.masstamilan.dev/w/varisu-tamil-2023.webp"),
@@ -277,12 +319,12 @@ var playlists = {
   2: {
     title : "Drugs",
     movieKey: 2,
-    imageUrl: "",
+    imageUrl: "https://www.masstamilan.dev/w/master-tamil-2021.webp",
   },
   3: {
     title : "Vibe Uhaa",
     movieKey: 3,
-    imageUrl: ""
+    imageUrl: "https://thf.bing.com/th/id/OIP.bGeVSpwJ4cADL7v_eGRrbwAAAA?w=311&h=169&c=7&r=0&o=7&cb=thfc1falcon&dpr=1.1&pid=1.7&rm=3"
   },
   4: {
     title: "Kadhal Veesum",
@@ -297,7 +339,7 @@ var playlists = {
   6: {
     title: "Anirudh's Best",
     movieKey: 6,
-    imageUrl: availableMovies.songlistpicture[3][0],
+    imageUrl: "https://www.masstamilan.dev/w/aakko-tamil-2015.webp",
   },
   7: {
     title: "Top Tamil Songs",
