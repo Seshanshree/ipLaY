@@ -356,10 +356,6 @@ var playlists = {
     movieKey: 9,
     imageUrl: availableMovies.songlistpicture[3][0],
   },
-  // 7: { title: "Dance Hits", movieKey: null, imageUrl: "" },
-  // 8: { title: "Melody Mix", movieKey: null, imageUrl: "" },
-  // 9: { title: "Party Anthems", movieKey: null, imageUrl: "" },
-  // 10: { title: "Sad Tamil Songs", movieKey: null, imageUrl: "" },
 };
 
 // ── DOM ───────────────────────────────────────────────────────────────────────
@@ -367,7 +363,7 @@ var playlistContainer = document.getElementById("playlist-container");
 
 // ── RENDER PLAYLIST GRID ──────────────────────────────────────────────────────
 function displayPlaylist() {
-  playlistContainer.style.display = ""; // restore CSS grid
+  playlistContainer.style.display = "";
   playlistContainer.innerHTML = "";
 
   for (var id in playlists) {
@@ -391,7 +387,6 @@ function displayPlaylistSongs(playlistId) {
   var songs = movieKey ? availableMovies.songs[movieKey] : [];
   var pictures = movieKey ? availableMovies.songlistpicture[movieKey] : [];
 
-  // Switch container from grid → block so items stack vertically
   playlistContainer.style.display = "block";
 
   var songsHTML = "";
@@ -423,10 +418,7 @@ function displayPlaylistSongs(playlistId) {
 }
 
 // ── PLAY A SONG ───────────────────────────────────────────────────────────────
-// audio, playBtn, currentSong, currentMovieKey, currentSongIndex
-// are all declared in controls.js — do NOT redeclare them here.
 function playLibrarySong(movieKey, songIndex) {
-  // Update the shared state controls.js uses for prev/next
   currentMovieKey = movieKey;
   currentSongIndex = songIndex;
 
@@ -437,15 +429,144 @@ function playLibrarySong(movieKey, songIndex) {
   playBtn.innerHTML = "<p style='color:#000;'>||</p>";
 }
 
+// ── SEARCH SONGS FUNCTION ─────────────────────────────────────────────────────
+function searchSongs() {
+  const searchInput = document.getElementById("search-input");
+  if (!searchInput) return;
+  
+  const query = searchInput.value.trim().toLowerCase();
+  
+  if (!query) {
+    displayPlaylist();
+    return;
+  }
+  
+  const results = [];
+  
+  for (let id in playlists) {
+    const pl = playlists[id];
+    const movieKey = pl.movieKey;
+    
+    // Skip if no valid movieKey or songs don't exist
+    if (!movieKey) continue;
+    if (!availableMovies.songs[movieKey]) continue;
+    if (!availableMovies.songs[movieKey].length) continue;
+    
+    const songs = availableMovies.songs[movieKey];
+    const pictures = availableMovies.songlistpicture?.[movieKey] || [];
+    
+    for (let j = 0; j < songs.length; j++) {
+      const songTitle = songs[j].toLowerCase();
+      const playlistTitle = pl.title.toLowerCase();
+      
+      if (songTitle.includes(query) || playlistTitle.includes(query)) {
+        results.push({
+          movieKey: movieKey,
+          songIndex: j,
+          title: songs[j],
+          playlistName: pl.title,
+          imageUrl: pictures[j] || pl.imageUrl || ""
+        });
+      }
+    }
+  }
+  
+  playlistContainer.style.display = "block";
+  
+  if (results.length === 0) {
+    playlistContainer.innerHTML = `
+      <button id="back-buttoninlib" onclick="displayPlaylist()">← Back</button>
+      <div class="search-empty-message">
+        <span>🔍</span>
+        <h4>No songs found</h4>
+        <p>Try a different title or playlist name</p>
+      </div>
+    `;
+    return;
+  }
+  
+  let resultsHTML = `
+    <button id="back-buttoninlib" onclick="displayPlaylist()">← Back to Library</button>
+    <div class="songs-list1">
+      <h3>Search Results (${results.length})</h3>
+  `;
+  
+  for (let r of results) {
+    // Escape special characters in title to prevent HTML issues
+    const safeTitle = r.title.replace(/[&<>]/g, function(m) {
+      if (m === '&') return '&amp;';
+      if (m === '<') return '&lt;';
+      if (m === '>') return '&gt;';
+      return m;
+    });
+    const safePlaylist = r.playlistName.replace(/[&<>]/g, function(m) {
+      if (m === '&') return '&amp;';
+      if (m === '<') return '&lt;';
+      if (m === '>') return '&gt;';
+      return m;
+    });
+    
+    resultsHTML += `
+      <div class="music-item" onclick="playLibrarySong(${r.movieKey}, ${r.songIndex})">
+        <img src="${r.imageUrl}" onerror="this.style.display='none'" alt="${safeTitle}" />
+        <div class="music-info">
+          <h5 style="font-size:10.5px;font-weight:600;color:#ffffff;">${safeTitle}</h5>
+          <p style="font-size:8px;color:#b3b3b3;">${safePlaylist}</p>
+        </div>
+        <button class="gobtn" onclick="event.stopPropagation(); playLibrarySong(${r.movieKey}, ${r.songIndex})">▶</button>
+      </div>`;
+  }
+  
+  resultsHTML += `</div>`;
+  playlistContainer.innerHTML = resultsHTML;
+}
 
+// ── TOGGLE SEARCH BAR ─────────────────────────────────────────────────────────
+function toggleSearchBar() {
+  const searchBar = document.querySelector(".search-bar");
+  
+  if (window.searchTimeout) {
+    clearTimeout(window.searchTimeout);
+  }
+  
+  if (searchBar) {
+    if (searchBar.style.display === "none" || searchBar.style.display === "") {
+      searchBar.style.display = "flex";
+      const searchInput = document.getElementById("search-input");
+      if (searchInput) {
+        searchInput.value = "";
+        searchInput.focus();
+        searchInput.removeEventListener("input", searchSongs);
+        searchInput.addEventListener("input", searchSongs);
+      }
+      
+      window.searchTimeout = setTimeout(() => {
+        searchBar.style.display = "none";
+        const searchInput2 = document.getElementById("search-input");
+        if (searchInput2) {
+          searchInput2.value = "";
+          searchInput2.removeEventListener("input", searchSongs);
+        }
+        displayPlaylist();
+      }, 8000);
+    } else {
+      searchBar.style.display = "none";
+      const searchInput = document.getElementById("search-input");
+      if (searchInput) {
+        searchInput.value = "";
+        searchInput.removeEventListener("input", searchSongs);
+      }
+      displayPlaylist();
+    }
+  }
+}
 
 // ── DISCLAIMER MODAL FUNCTIONS ───────────────────────────────────────────────
-
 function showDisclaimer() {
     const modal = document.getElementById("disclaimerModal");
     if (modal) {
         modal.style.display = "flex";
-        document.body.style.overflow = "hidden"; // Prevent background scrolling
+        document.body.style.overflow = "hidden";
     }
 }
 
@@ -453,17 +574,15 @@ function closeDisclaimer() {
     const modal = document.getElementById("disclaimerModal");
     if (modal) {
         modal.style.display = "none";
-        document.body.style.overflow = ""; // Restore scrolling
+        document.body.style.overflow = "";
     }
 }
 
 function acknowledgeDisclaimer() {
     closeDisclaimer();
-    // Optional: Store in localStorage that user has seen disclaimer
     localStorage.setItem("disclaimer_acknowledged", "true");
 }
 
-// Close modals when clicking outside the content
 window.onclick = function(event) {
     const disclaimerModal = document.getElementById("disclaimerModal");
     if (event.target === disclaimerModal) {
@@ -472,11 +591,10 @@ window.onclick = function(event) {
     
     const timerModal = document.getElementById("timerModal");
     if (event.target === timerModal) {
-        closeTimerModal();
+        if (typeof closeTimerModal === 'function') closeTimerModal();
     }
 }
 
-// Attach click event to logo when DOM is ready
 document.addEventListener("DOMContentLoaded", function() {
     const logo = document.querySelector(".logo");
     if (logo) {
@@ -487,3 +605,12 @@ document.addEventListener("DOMContentLoaded", function() {
         logo.style.cursor = "pointer";
     }
 });
+
+function clearSearch() {
+  const searchInput = document.getElementById("search-input");
+  if (searchInput) searchInput.value = "";
+  displayPlaylist();
+}
+
+
+
