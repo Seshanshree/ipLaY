@@ -303,7 +303,7 @@ function clearSleepTimer() {
   // Reset timer button text
   const timerBtn = document.getElementById("timer-btn");
   if (timerBtn) {
-    timerBtn.innerHTML = `⏱ Timer`;
+    timerBtn.innerHTML = `⏱ `;
   }
 
   // Hide floating indicator
@@ -468,4 +468,34 @@ if (document.readyState === "loading") {
   });
 } else {
   initTimerEventListeners();
+}
+
+
+// ── SEARCH BAR TOGGLE ─────────────────────────────────────
+let searchTimeout;
+
+function toggleSearchBar() {
+  const searchBar = document.querySelector(".search-bar");
+  
+  // Clear any existing timeout to reset the timer
+  if (searchTimeout) {
+    clearTimeout(searchTimeout);
+  }
+  
+  if (searchBar) {
+    if (searchBar.style.display === "none" || searchBar.style.display === "") {
+      // Show the search bar
+      searchBar.style.display = "flex";
+      const searchInput = document.getElementById("search-input");
+      if (searchInput) searchInput.focus();
+      
+      // Auto hide after 5 seconds
+      searchTimeout = setTimeout(() => {
+        searchBar.style.display = "none";
+      }, 5000);
+    } else {
+      // Hide the search bar
+      searchBar.style.display = "none";
+    }
+  }
 }
