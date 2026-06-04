@@ -548,7 +548,7 @@ function toggleSearchBar() {
           searchInput2.removeEventListener("input", searchSongs);
         }
         displayPlaylist();
-      }, 8000);
+      }, 20000);
     } else {
       searchBar.style.display = "none";
       const searchInput = document.getElementById("search-input");
