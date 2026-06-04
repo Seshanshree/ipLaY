@@ -470,32 +470,53 @@ if (document.readyState === "loading") {
   initTimerEventListeners();
 }
 
-
 // ── SEARCH BAR TOGGLE ─────────────────────────────────────
 let searchTimeout;
 
 function toggleSearchBar() {
   const searchBar = document.querySelector(".search-bar");
-  
+
   // Clear any existing timeout to reset the timer
   if (searchTimeout) {
     clearTimeout(searchTimeout);
   }
-  
+
   if (searchBar) {
+    const searchInput = document.getElementById("search-input");
+    const searchButton = document.querySelector(".search-btn");
+
     if (searchBar.style.display === "none" || searchBar.style.display === "") {
       // Show the search bar
       searchBar.style.display = "flex";
-      const searchInput = document.getElementById("search-input");
-      if (searchInput) searchInput.focus();
-      
-      // Auto hide after 5 seconds
+      if (searchInput) {
+        searchInput.focus();
+        if (typeof searchSongs === "function") {
+          searchInput.removeEventListener("input", searchSongs);
+          searchInput.addEventListener("input", searchSongs);
+        }
+      }
+
+      if (searchButton && typeof searchSongs === "function") {
+        searchButton.removeEventListener("click", searchSongs);
+        searchButton.addEventListener("click", function (event) {
+          event.preventDefault();
+          searchSongs();
+        });
+      }
+
+      // Auto hide after 8 seconds
       searchTimeout = setTimeout(() => {
         searchBar.style.display = "none";
-      }, 5000);
+        if (searchInput && typeof searchSongs === "function") {
+          searchInput.removeEventListener("input", searchSongs);
+        }
+      }, 8000);
     } else {
       // Hide the search bar
       searchBar.style.display = "none";
+      if (searchInput && typeof searchSongs === "function") {
+        searchInput.removeEventListener("input", searchSongs);
+      }
     }
   }
 }
