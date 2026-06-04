@@ -510,7 +510,7 @@ function toggleSearchBar() {
         if (searchInput && typeof searchSongs === "function") {
           searchInput.removeEventListener("input", searchSongs);
         }
-      }, 8000);
+      }, 20000);
     } else {
       // Hide the search bar
       searchBar.style.display = "none";
