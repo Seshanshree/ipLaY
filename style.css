@@ -253,6 +253,7 @@ nav li a:hover::after {
     cursor: pointer;
     transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.15s ease;
     position: relative;
+    border-radius: 50px 12px 12px 50px;
 }
 .music-info{
     flex:1;
@@ -295,7 +296,14 @@ nav li a:hover::after {
     height: 100%;
     object-fit: cover;
     flex-shrink: 0;
-    border-radius: 0;
+    border-radius: 50%;
+    animation:  30s infinite linear rotateAlbum;
+}
+@keyframes rotateAlbum {
+    0% { transform: rotate(0deg); }
+    40% { transform: rotate(40deg); }
+    60% { transform: rotate(-40deg); }
+    100% { transform: rotate(0deg); }
 }
  
 .music-item .music-info {
