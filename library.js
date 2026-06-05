@@ -406,6 +406,7 @@ function displayPlaylistSongs(playlistId) {
           </div>
           <button class="gobtn" onclick="event.stopPropagation(); playLibrarySong(${movieKey}, ${j})">▶</button>
         </div>`;
+        document.getElementById("audio-player").style.display = "block";
     }
   }
 
@@ -477,7 +478,6 @@ function searchSongs() {
     playlistContainer.innerHTML = `
       <button id="back-buttoninlib" onclick="displayPlaylist()">← Back</button>
       <div class="search-empty-message">
-        <span>🔍</span>
         <h4>No songs found</h4>
         <p>Try a different title or playlist name</p>
       </div>
