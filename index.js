@@ -415,6 +415,7 @@ function songsavailable(i) {
             </div>
             <button onclick="playMusic(${key}, ${j})" class="gobtn">▶</button>
         </div>
+
     `;
     musicList.innerHTML += content;
   }
@@ -434,7 +435,7 @@ function playMusic(movieKey, songIndex) {
   audio.play();
 
   playBtn.innerHTML = "<p style='font-size: 15px; color: #000;'>||</p>";
-
+  document.getElementById("audio-player").style.display = "block";
   currentSong.innerHTML = songName;
 }
 
@@ -488,3 +489,4 @@ document.addEventListener("DOMContentLoaded", function() {
         logo.style.cursor = "pointer";
     }
 });
+
