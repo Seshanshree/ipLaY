@@ -30,9 +30,11 @@ function songPlay() {
   if (audio.paused) {
     audio.play();
     playBtn.innerHTML = "<p style='color: #000;'>||</p>";
+    document.getElementById("audio-player").style.display = "block";
   } else {
     audio.pause();
     playBtn.innerHTML = "<p style='color: #000; '>▶</p>";
+    // document.getElementById("audio-player").style.display = "none";
   }
 }
 
@@ -48,6 +50,7 @@ function songInc() {
 
   audio.play();
   playBtn.innerHTML = "<p style=' color: #000;'>||</p>";
+  document.getElementById("audio-player").style.display = "block";
 }
 
 // Previous button
@@ -62,6 +65,7 @@ function songDec() {
 
   audio.play();
   playBtn.innerHTML = "<p style=' color: #000;'>||</p>";
+  document.getElementById("audio-player").style.display = "block";
 }
 
 // Auto next when song ends
@@ -136,6 +140,7 @@ window.addEventListener("load", () => {
     if (wasPlaying) {
       audio.play();
       playBtn.innerHTML = "<p style=' color: #000;'>||</p>";
+      document.getElementById("audio-player").style.display = "block";
     }
   }
 });
@@ -185,6 +190,7 @@ function startSleepTimer(minutes, isRestoring = false) {
       audio.pause();
       if (typeof playBtn !== "undefined" && playBtn) {
         playBtn.innerHTML = "<p style='font-size: 15px; color: #000;'>▶</p>";
+        // document.getElementById("audio-player").style.display = "none";
       }
 
       // Show notification if browser supports it
@@ -385,6 +391,7 @@ function checkExistingTimer() {
           if (typeof playBtn !== "undefined" && playBtn) {
             playBtn.innerHTML =
               "<p style='font-size: 15px; color: #000;'>▶</p>";
+            // document.getElementById("audio-player").style.display = "none";
           }
         }
         clearSleepTimer();
