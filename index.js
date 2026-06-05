@@ -476,7 +476,12 @@ window.onclick = function(event) {
     if (event.target === timerModal) {
         closeTimerModal();
     }
+    // 👇 PASTE location 3 RIGHT HERE, before the closing }
+    const aboutModal = document.getElementById("aboutModal");
+    if (event.target === aboutModal) closeAboutModal();
 }
+
+
 
 // Attach click event to logo when DOM is ready
 document.addEventListener("DOMContentLoaded", function() {
@@ -488,5 +493,19 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         logo.style.cursor = "pointer";
     }
+        // 👇 PASTE location 2 RIGHT HERE, before the closing });
+    const logoImg = document.getElementById("logoimg");
+    if (logoImg) { logoImg.addEventListener("click", openAboutModal); logoImg.style.cursor = "pointer"; }
 });
+
+
+// 1. Add at the very end of the file:
+function openAboutModal() {
+    document.getElementById("aboutModal").style.display = "flex";
+    document.body.style.overflow = "hidden";
+}
+function closeAboutModal() {
+    document.getElementById("aboutModal").style.display = "none";
+    document.body.style.overflow = "";
+}
 
