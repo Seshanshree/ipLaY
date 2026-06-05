@@ -1,19 +1,4 @@
-// ─────────────────────────────────────────────────────────────────────────────
-// library.js  — loaded BEFORE controls.js
-//
-// controls.js already declares (with let/const):
-//   audio, playBtn, currentSong, currentMovieKey, currentSongIndex
-//
-// ⚠️  Do NOT re-declare any of those here — duplicate `let` in the same
-//     global scope throws SyntaxError and breaks the entire page.
-//
-// We only define:
-//   • availableMovies  (song data controls.js needs)
-//   • playlists        (Library grid metadata)
-//   • UI functions     (displayPlaylist, displayPlaylistSongs, playLibrarySong)
-// ─────────────────────────────────────────────────────────────────────────────
 
-// ── SONG DATA (controls.js reads this for prev/next/play) ────────────────────
 var availableMovies = {
   songs: {
     1: [
@@ -50,7 +35,8 @@ var availableMovies = {
       "Marappadhilai Nenje",
       "Yedho Ondru Ennai",
       "Venmegam",
-      "Adiyae Azhagae"
+      "Adiyae Azhagae",
+      "Dheivathukke Maaruvesama"
     ],
     3: [
       "Macha Kanni",
@@ -73,7 +59,10 @@ var availableMovies = {
       "Chiku Chiku Boom Boom",
       "Pavazha Malli",
       "Aura 10/10",
-      "Karupa Kooda Va"
+      "Karupa Kooda Va",
+      "Kodambakkam Area",
+      "Ada Ennatha Solvenungo",
+      "Vaada Vaada"
     ],
     4: [
       "Jimikki Ponnu",
@@ -155,7 +144,8 @@ var availableMovies = {
         "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239803/Marappadhilai-Nenje-_Additional-Song_-MassTamilan.io_hoakqg.mp3",
         "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240255/Yedho-Ondru-Ennai_swojgg.mp3",
         "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240349/Venmegam-Pennaga_xc07ig.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240405/Adiyae-Azhagae_ucw7yg.mp3"
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240405/Adiyae-Azhagae_ucw7yg.mp3",
+        "https://res.cloudinary.com/seshancloudy/video/upload/v1780680105/Dheivathukke-Maaruvesama_n0sd9b.mp3"
     ],
     3: [
         "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780295858/Macha-Kanni_taiimn.mp3",
@@ -178,7 +168,10 @@ var availableMovies = {
         "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780299493/Chiku-Chiku-Boom_zceqxj.mp3",
         "https://res.cloudinary.com/seshancloudy/video/upload/v1780196687/Pavazha_Malli_hkdbcp.mp3",
         "meesaya murukku 2/Aura 10-10.mp3",
-        "https://res.cloudinary.com/seshancloudy/video/upload/v1780133545/Karuppa_Kooda_Va_kknomo.mp3"
+        "https://res.cloudinary.com/seshancloudy/video/upload/v1780133545/Karuppa_Kooda_Va_kknomo.mp3",
+        "https://res.cloudinary.com/seshancloudy/video/upload/v1780680108/Kodambakkam-Area_qfnir7.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780680105/Ada-Ennatha-Solvenungo_ijrvkd.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780680108/Vaada-Vaada_kqyrfx.mp3",
     ],  
     4: [
       "varisu/Jimikki-Ponnu-MassTamilan.dev.mp3",
@@ -261,7 +254,9 @@ var availableMovies = {
       "https://www.masstamilan.dev/w/oh-my-kadavule-additional-songs-and-bgm-original-background-score-2020.webp",
       "https://www.masstamilan.dev/w/paiya-2012.webp",
       "https://www.masstamilan.dev/w/yaradi-nee-mohini.webp",
-      "https://www.masstamilan.dev/w/oru-naal-koothu.webp"
+      "https://www.masstamilan.dev/w/oru-naal-koothu.webp",
+      "https://www.masstamilan.dev/w/sivakasi-2005.webp"
+      
 
     ],
     3: [
@@ -285,7 +280,11 @@ var availableMovies = {
       "https://www.masstamilan.dev/w/maasilamani-2009.webp",
       "https://www.masstamilan.dev/w/pavazha-malli-indie-tamil-2026.webp",
       "https://thf.bing.com/th/id/OIP.bGeVSpwJ4cADL7v_eGRrbwAAAA?w=311&h=169&c=7&r=0&o=7&cb=thfc1falcon&dpr=1.1&pid=1.7&rm=3",
-      "https://www.masstamilan.dev/w/karuppu-tamil-2026.webp"
+      "https://www.masstamilan.dev/w/karuppu-tamil-2026.webp",
+      "https://www.masstamilan.dev/w/sivakasi-2005.webp",
+      "https://www.masstamilan.dev/w/sivakasi-2005.webp",
+      "https://www.masstamilan.dev/w/sivakasi-2005.webp"
+      
 
     ],
     4: Array(6).fill("https://www.masstamilan.dev/w/varisu-tamil-2023.webp"),
@@ -329,12 +328,12 @@ var playlists = {
   4: {
     title: "Kadhal Veesum",
     movieKey: 4,
-    imageUrl: availableMovies.songlistpicture[1][0],
+    imageUrl: "https://www.masstamilan.dev/w/jilla.webp",
   },
   5: {
     title: "Thalapathy Hits",
     movieKey: 5,
-    imageUrl: availableMovies.songlistpicture[2][0],
+    imageUrl: "https://www.masstamilan.dev/w/pokkiri-2007.webp",
   },
   6: {
     title: "Anirudh's Best",
@@ -344,17 +343,17 @@ var playlists = {
   7: {
     title: "Top Tamil Songs",
     movieKey: 7,
-    imageUrl: availableMovies.songlistpicture[4][0],
+    imageUrl: "https://www.masstamilan.dev/w/oru-naal-koothu.webp",
   },
   8: {
     title: "V Songs",
     movieKey: 8,
-    imageUrl: availableMovies.songlistpicture[5][0],
+    imageUrl: "https://www.masstamilan.dev/w/maaman-tamil-2025.webp",
   },
   9: {
-    title: "Romantic Tamil Songs",
+    title: "Romantic Songs",
     movieKey: 9,
-    imageUrl: availableMovies.songlistpicture[3][0],
+    imageUrl: "",
   },
 };
 
