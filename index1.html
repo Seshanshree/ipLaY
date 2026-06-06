@@ -15,7 +15,7 @@
     <link rel="manifest" href="manifest.json" />
   </head>
 
-  <body>
+  <body id="index1body">
     <header>
       <a href="index.html" class="logo" style="cursor: pointer">ipLaY</a>
       <button id="timer-btn" class="timer-nav-btn">⏱</button>
@@ -41,6 +41,41 @@
         <h3>Welcome to <span class="logo">ipLaY</span> App</h3>
         <p>Discover and enjoy your favorite music..</p>
       </div>
+      <!-- <button onclick="showAllSongs()" id="songavailable">Songs Available</button><br>
+      <div style="display: none;" id="songsavailablelist"></div>  -->
+      <!-- Replace your existing button + div with this: -->
+      <button
+        onclick="songsavailable2()"
+        id="songavailable"
+        style="
+          background: #1db954;
+          color: #000;
+          border: none;
+          padding: 9px 22px;
+          border-radius: 40px;
+          font-weight: 700;
+          font-family: &quot;Poppins&quot;, sans-serif;
+          font-size: 13px;
+          cursor: pointer;
+          margin-bottom: 16px;
+          transition:
+            background 0.2s,
+            transform 0.15s;
+        "
+      >
+      Available Songs
+      </button>
+
+      <div
+        id="songsavailablelist"
+        style="
+          display: none;
+          flex-direction: column;
+          gap: 10px;
+          width: 100%;
+          margin-bottom: 180px;
+        "
+      ></div>
       <div class="music-list" id="music-list"></div>
     </div>
     <div style="display: none" control id="audio-player" class="audio-player">
@@ -229,55 +264,72 @@
       </div>
     </div>
     <!-- ABOUT / PROFILE MODAL -->
-<div id="aboutModal" class="modal">
-  <div class="modal-content about-modal-content">
-    <div class="modal-header">
-      <h2>About</h2>
-      <button class="close-modal" onclick="closeAboutModal()">&times;</button>
-    </div>
-    <div class="modal-body about-modal-body">
-      <div class="about-avatar-ring">
-        <img src="iconbg.jpeg" alt="Seshanshree" class="about-avatar-img">
+    <div id="aboutModal" class="modal">
+      <div class="modal-content about-modal-content">
+        <div class="modal-header">
+          <h2>About</h2>
+          <button class="close-modal" onclick="closeAboutModal()">
+            &times;
+          </button>
+        </div>
+        <div class="modal-body about-modal-body">
+          <div class="about-avatar-ring">
+            <img src="iconbg.jpeg" alt="Seshanshree" class="about-avatar-img" />
+          </div>
+          <h1 class="about-role">Creative Developer</h1>
+          <p class="about-name">Seshanshree M</p>
+          <p class="about-dept">Electronics &amp; Communication Engineering</p>
+          <p class="about-ceo">CEO &amp; Founder — <span>iMaXx</span></p>
+          <div class="about-divider"></div>
+          <div class="about-contacts">
+            <a class="about-contact-row" href="mailto:seshanshreem@gmail.com">
+              <span class="about-contact-icon">✉</span>
+              <div class="about-contact-text">
+                <span class="about-contact-label">Email</span>
+                <span class="about-contact-value">seshanshreem@gmail.com</span>
+              </div>
+            </a>
+            <a
+              class="about-contact-row"
+              href="https://www.linkedin.com/in/seshanshree-m-490051360"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="about-contact-icon">💼</span>
+              <div class="about-contact-text">
+                <span class="about-contact-label">LinkedIn</span>
+                <span class="about-contact-value">seshanshree-m-490051360</span>
+              </div>
+            </a>
+            <a
+              class="about-contact-row"
+              href="https://github.com/seshanshree"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="about-contact-icon">💻</span>
+              <div class="about-contact-text">
+                <span class="about-contact-label">GitHub</span>
+                <span class="about-contact-value">seshanshree</span>
+              </div>
+            </a>
+            <a
+              class="about-contact-row"
+              href="https://www.instagram.com/seshan_tamil_31?"
+              target="_blank"
+              rel="noopener"
+            >
+              <span class="about-contact-icon">📸</span>
+              <div class="about-contact-text">
+                <span class="about-contact-label">Instagram</span>
+                <span class="about-contact-value">seshan_tamil_31</span>
+              </div>
+            </a>
+          </div>
+          <p class="about-brand-tag">ipLaY · by <span>iMaXx</span></p>
+        </div>
       </div>
-      <h1 class="about-role">Content Developer</h1>
-      <p class="about-name">Seshanshree M</p>
-      <p class="about-dept">Electronics &amp; Communication Engineering</p>
-      <p class="about-ceo">CEO &amp; Founder — <span>iMaXx</span></p>
-      <div class="about-divider"></div>
-      <div class="about-contacts">
-        <a class="about-contact-row" href="mailto:seshanshreem@gmail.com">
-          <span class="about-contact-icon">✉</span>
-          <div class="about-contact-text">
-            <span class="about-contact-label">Email</span>
-            <span class="about-contact-value">seshanshreem@gmail.com</span>
-          </div>
-        </a>
-        <a class="about-contact-row" href="https://www.linkedin.com/in/seshanshree-m-490051360" target="_blank" rel="noopener">
-          <span class="about-contact-icon">💼</span>
-          <div class="about-contact-text">
-            <span class="about-contact-label">LinkedIn</span>
-            <span class="about-contact-value">seshanshree-m-490051360</span>
-          </div>
-        </a>
-        <a class="about-contact-row" href="https://github.com/seshanshree" target="_blank" rel="noopener">
-          <span class="about-contact-icon">💻</span>
-          <div class="about-contact-text">
-            <span class="about-contact-label">GitHub</span>
-            <span class="about-contact-value">seshanshree</span>
-          </div>
-        </a>
-        <a class="about-contact-row" href="https://www.instagram.com/seshan_tamil_31?" target="_blank" rel="noopener">
-          <span class="about-contact-icon">📸</span>
-          <div class="about-contact-text">
-            <span class="about-contact-label">Instagram</span>
-            <span class="about-contact-value">seshan_tamil_31</span>
-          </div>
-        </a>
-      </div>
-      <p class="about-brand-tag">ipLaY · by <span>iMaXx</span></p>
     </div>
-  </div>
-</div>
     <!-- <footer>
       <p style="font-size: 12px; color: #666; margin-top: 20px">
         &copy; 2026 ipLaY App | Developed by Seshan Shree
@@ -294,5 +346,6 @@
     </footer> -->
     <script src="index.js"></script>
     <script src="controls.js"></script>
+    <script src="library.js"></script>
   </body>
 </html>
