@@ -569,6 +569,7 @@ function closeAboutModal() {
 
 //------------------------------------
 function songsavailable2() {
+  document.getElementById("audio-player").style.display = "block";
   const container    = document.getElementById("songsavailablelist");
   const musicListDiv = document.getElementById("music-list");
   const btn          = document.getElementById("songavailable");
