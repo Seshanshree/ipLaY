@@ -584,7 +584,9 @@ function songsavailable2() {
 
   // Toggle on
   musicListDiv.style.display = "none";
-  container.style.display = "block";
+  container.style.display = "flex";
+  container.style.flexDirection = "column";
+
   btn.textContent = "Back";
 
   container.innerHTML = `
@@ -612,7 +614,7 @@ function songsavailable2() {
             <p style="font-size:8px;color:#b3b3b3;">${artist}</p>
           </div>
           <button onclick="event.stopPropagation(); playMusic(${movieKey}, ${j})" class="gobtn">▶</button>
-        </div><br>`;
+        </div>`;
     }
   }
 
