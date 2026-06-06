@@ -362,6 +362,7 @@ var playlistContainer = document.getElementById("playlist-container");
 
 // ── RENDER PLAYLIST GRID ──────────────────────────────────────────────────────
 function displayPlaylist() {
+  if (!playlistContainer) return;
   playlistContainer.style.display = "";
   playlistContainer.innerHTML = "";
 
@@ -376,10 +377,12 @@ function displayPlaylist() {
   }
 }
 
-displayPlaylist();
+if (playlistContainer) displayPlaylist();
+
 
 // ── RENDER SONGS INSIDE A PLAYLIST ───────────────────────────────────────────
 function displayPlaylistSongs(playlistId) {
+  if (!playlistContainer) return;
   var pl = playlists[playlistId];
   var movieKey = pl.movieKey;
   var title = pl.title;
