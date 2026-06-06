@@ -266,7 +266,7 @@
   #tamil-text {
     position: fixed;
     top: 36px;
-    left: 50%;
+    left: 30%;
     transform: translateX(-50%);
     font-size: 13px;
     color: #ffffff22;
@@ -446,14 +446,14 @@ heights.forEach((h, i) => {
 document.getElementById('skip').onclick = () => {
   sessionStorage.setItem('introSeen', 'true');
   document.getElementById('outro').style.animation = 'outroFade 0.4s ease forwards';
-  setTimeout(() => window.location.href = 'index1.html', 400);
+  setTimeout(() => window.location.href = 'index1.html', 200);
 };
 
 /* ─── Auto redirect after intro ends ─── */
 setTimeout(() => {
   sessionStorage.setItem('introSeen', 'true');
   window.location.href = 'index1.html';
-}, 8500);
+}, 6000);
 
 /* ─── Resize ─── */
 window.addEventListener('resize', () => {
