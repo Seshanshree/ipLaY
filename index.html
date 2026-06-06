@@ -350,6 +350,11 @@
 <div id="outro"></div>
 
 <script>
+/* ─── One-time intro check ─── */
+if (sessionStorage.getItem('introSeen')) {
+  window.location.href = 'index1.html';
+}
+
 /* ─── Cursor ─── */
 const cur = document.getElementById('cursor');
 document.addEventListener('mousemove', e => {
@@ -439,25 +444,22 @@ heights.forEach((h, i) => {
 
 /* ─── Skip ─── */
 document.getElementById('skip').onclick = () => {
+  sessionStorage.setItem('introSeen', 'true');
   document.getElementById('outro').style.animation = 'outroFade 0.4s ease forwards';
-  setTimeout(() => document.body.innerHTML = '', 500);
+  setTimeout(() => window.location.href = 'index1.html', 400);
 };
+
+/* ─── Auto redirect after intro ends ─── */
+setTimeout(() => {
+  sessionStorage.setItem('introSeen', 'true');
+  window.location.href = 'index1.html';
+}, 8500);
 
 /* ─── Resize ─── */
 window.addEventListener('resize', () => {
   bgC.width = pC.width = window.innerWidth;
   bgC.height = pC.height = window.innerHeight;
 });
-
-// Auto-redirect after intro (8.5s)
-setTimeout(() => {
-  window.location.href = 'index1.html'; // your main page
-}, 8500);
-
-// Skip button
-document.getElementById('skip').onclick = () => {
-  window.location.href = 'index1.html';
-};
 </script>
 </body>
 </html>
