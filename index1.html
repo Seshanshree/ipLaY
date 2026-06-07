@@ -27,6 +27,14 @@
         <li><a href="library.html">Library</a></li>
       </nav>
     </header>
+    <button
+        onclick="songsavailable2()"
+        id="songavailable"
+      >
+      All Songs
+      </button>
+
+      
     <div id="main" class="main">
       <img id="logoimg" src="iconbg.jpeg" alt="" srcset="" />
       <search class="search-bar" style="display: none">
@@ -44,28 +52,6 @@
       <!-- <button onclick="showAllSongs()" id="songavailable">Songs Available</button><br>
       <div style="display: none;" id="songsavailablelist"></div>  -->
       <!-- Replace your existing button + div with this: -->
-      <button
-        onclick="songsavailable2()"
-        id="songavailable"
-        style="
-          background: #1db954;
-          color: #000;
-          border: none;
-          padding: 9px 22px;
-          border-radius: 40px;
-          font-weight: 700;
-          font-family: &quot;Poppins&quot;, sans-serif;
-          font-size: 13px;
-          cursor: pointer;
-          margin-bottom: 16px;
-          transition:
-            background 0.2s,
-            transform 0.15s;
-        "
-      >
-      Available Songs
-      </button>
-
       <div
         id="songsavailablelist"
         style="
