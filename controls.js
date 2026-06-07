@@ -1,3 +1,85 @@
+// ── ALL SONGS FLAT QUEUE (used when playing from "Available Songs" view) ──────
+let allSongsQueue = [];      // [{src, name, img, artist, movieKey, songIndex, source}]
+let currentQueueIndex = -1;  // position in the flat queue
+let queueModeActive = false; // true when playing from the All Songs view
+
+function buildAllSongsQueue() {
+  allSongsQueue = [];
+
+  // Part 1: indexMovies
+  for (let movieKey in indexMovies.songs) {
+    const songs    = indexMovies.songs[movieKey];
+    const srcs     = indexMovies.songsList[movieKey];
+    const pictures = indexMovies.songlistpicture[movieKey];
+    const artist   = indexMovies.artist[movieKey];
+
+    for (let j = 0; j < songs.length; j++) {
+      if (!srcs || !srcs[j]) continue;
+      allSongsQueue.push({
+        src:      srcs[j],
+        name:     songs[j],
+        img:      pictures?.[j] || "",
+        artist:   artist || "ipLaY",
+        movieKey: parseInt(movieKey),
+        songIndex: j,
+        source:   "index"
+      });
+    }
+  }
+
+  // Part 2: availableMovies (library)
+  if (typeof availableMovies !== "undefined") {
+    for (let movieKey in availableMovies.songs) {
+      const songs    = availableMovies.songs[movieKey];
+      const srcs     = availableMovies.songsList[movieKey];
+      const pictures = availableMovies.songlistpicture[movieKey];
+
+      let subtitle = "Library";
+      if (typeof playlists !== "undefined") {
+        for (let id in playlists) {
+          if (String(playlists[id].movieKey) === String(movieKey)) {
+            subtitle = playlists[id].title;
+            break;
+          }
+        }
+      }
+
+      for (let j = 0; j < songs.length; j++) {
+        if (!srcs || !srcs[j]) continue;
+        allSongsQueue.push({
+          src:      srcs[j],
+          name:     songs[j],
+          img:      pictures?.[j] || "",
+          artist:   subtitle,
+          movieKey: parseInt(movieKey),
+          songIndex: j,
+          source:   "library"
+        });
+      }
+    }
+  }
+}
+
+function playFromQueue(index) {
+  if (index < 0) index = allSongsQueue.length - 1;
+  if (index >= allSongsQueue.length) index = 0;
+
+  currentQueueIndex = index;
+  const item = allSongsQueue[index];
+
+  audio.src = item.src;
+  audio.play().then(() => {
+    requestWakeLock();
+    startKeepAlive();
+  }).catch(() => {});
+
+  currentSong.innerText = item.name;
+  playBtn.innerHTML = "<p style='color: #000;'>||</p>";
+  document.getElementById("audio-player").style.display = "block";
+  updateMediaSession(item.movieKey, item.songIndex);
+}
+
+
 // ── AUDIO PLAYER ─────────────────────────────────────
 
 const audio = new Audio();
@@ -189,34 +271,38 @@ function songPlay() {
 // ── NEXT ─────────────────────────────────────────────────────────────────────
 
 function songInc() {
+  if (queueModeActive && allSongsQueue.length > 0) {
+    playFromQueue(currentQueueIndex + 1);
+    return;
+  }
   currentSongIndex++;
   if (currentSongIndex >= availableMovies.songs[currentMovieKey].length) {
     currentSongIndex = 0;
   }
   loadSong(currentMovieKey, currentSongIndex);
-  audio.play().then(() => {
-    requestWakeLock();
-    startKeepAlive();
-  }).catch(() => {});
+  audio.play().then(() => { requestWakeLock(); startKeepAlive(); }).catch(() => {});
   playBtn.innerHTML = "<p style='color: #000;'>||</p>";
   document.getElementById("audio-player").style.display = "block";
 }
 
+
 // ── PREVIOUS ─────────────────────────────────────────────────────────────────
 
 function songDec() {
+  if (queueModeActive && allSongsQueue.length > 0) {
+    playFromQueue(currentQueueIndex - 1);
+    return;
+  }
   currentSongIndex--;
   if (currentSongIndex < 0) {
     currentSongIndex = availableMovies.songs[currentMovieKey].length - 1;
   }
   loadSong(currentMovieKey, currentSongIndex);
-  audio.play().then(() => {
-    requestWakeLock();
-    startKeepAlive();
-  }).catch(() => {});
+  audio.play().then(() => { requestWakeLock(); startKeepAlive(); }).catch(() => {});
   playBtn.innerHTML = "<p style='color: #000;'>||</p>";
   document.getElementById("audio-player").style.display = "block";
 }
+
 
 // ── AUTO NEXT WHEN SONG ENDS ─────────────────────────────────────────────────
 
