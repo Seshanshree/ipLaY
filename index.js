@@ -568,6 +568,7 @@ function closeAboutModal() {
 
 
 //------------------------------------
+
 function songsavailable2() {
   document.getElementById("audio-player").style.display = "block";
   const container    = document.getElementById("songsavailablelist");
@@ -575,7 +576,7 @@ function songsavailable2() {
   const btn          = document.getElementById("songavailable");
 
   // Toggle off
-  if (container.style.display === "block") {
+  if (container.style.display === "flex") {
     container.style.display = "none";
     musicListDiv.style.display = "flex";
     btn.textContent = "All Songs";
@@ -586,27 +587,24 @@ function songsavailable2() {
   musicListDiv.style.display = "none";
   container.style.display = "flex";
   container.style.flexDirection = "column";
-
   btn.textContent = "Back";
 
-  container.innerHTML = `
-    <h5 class="noteh6" style="text-align:center;margin-bottom:12px;">
-      All Songs — Tap to <span class="logo">pLaY</span>
-    </h5>`;
+  // ✅ Build the ENTIRE HTML in one string, set innerHTML ONCE at the end
+  let html = `<h5 class="noteh6" style="text-align:center;margin-bottom:12px;">
+    All Songs — Tap to <span class="logo">pLaY</span>
+  </h5>`;
 
-  // ── Part 1: index.js movies (indexMovies) ─────────────────────────────────
-  // uses playMusic() which reads indexMovies internally
+  // ── Part 1: index.js movies (indexMovies) ──────────────────────────────────
   for (let movieKey in indexMovies.songs) {
     const songs    = indexMovies.songs[movieKey];
     const pictures = indexMovies.songlistpicture[movieKey];
-    const artist   = indexMovies.artist[movieKey];   // ✅ indexMovies HAS artist
+    const artist   = indexMovies.artist[movieKey];
     const srcs     = indexMovies.songsList[movieKey];
 
     for (let j = 0; j < songs.length; j++) {
-      if (!srcs || !srcs[j]) continue;              // skip blank src entries
+      if (!srcs || !srcs[j]) continue;
       const img = pictures && pictures[j] ? pictures[j] : "";
-
-      container.innerHTML += `
+      html += `
         <div class="music-item" onclick="playMusic(${movieKey}, ${j})">
           <img src="${img}" alt="${songs[j]}" onerror="this.style.display='none'">
           <div class="music-info">
@@ -618,15 +616,13 @@ function songsavailable2() {
     }
   }
 
-  // ── Part 2: library.js playlists (availableMovies) ───────────────────────
-  // uses playLibrarySong() which reads availableMovies internally
+  // ── Part 2: library.js playlists (availableMovies) ────────────────────────
   if (typeof availableMovies !== "undefined") {
     for (let movieKey in availableMovies.songs) {
       const songs    = availableMovies.songs[movieKey];
       const pictures = availableMovies.songlistpicture[movieKey];
       const srcs     = availableMovies.songsList[movieKey];
 
-      // availableMovies has no artist → use playlist title as subtitle
       let subtitle = "Library";
       if (typeof playlists !== "undefined") {
         for (let id in playlists) {
@@ -638,10 +634,9 @@ function songsavailable2() {
       }
 
       for (let j = 0; j < songs.length; j++) {
-        if (!srcs || !srcs[j]) continue;            // skip blank src entries
+        if (!srcs || !srcs[j]) continue;
         const img = pictures && pictures[j] ? pictures[j] : "";
-
-        container.innerHTML += `
+        html += `
           <div class="music-item" onclick="playLibrarySong(${movieKey}, ${j})">
             <img src="${img}" alt="${songs[j]}" onerror="this.style.display='none'">
             <div class="music-info">
@@ -653,8 +648,7 @@ function songsavailable2() {
       }
     }
   }
+
+  // ✅ ONE single DOM write — instant render
+  container.innerHTML = html;
 }
-
-
-
-
