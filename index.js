@@ -575,80 +575,48 @@ function songsavailable2() {
   const musicListDiv = document.getElementById("music-list");
   const btn          = document.getElementById("songavailable");
 
-  // Toggle off
   if (container.style.display === "flex") {
     container.style.display = "none";
     musicListDiv.style.display = "flex";
     btn.textContent = "All Songs";
+    queueModeActive = false; // ← exit queue mode when closing
     return;
   }
 
-  // Toggle on
   musicListDiv.style.display = "none";
   container.style.display = "flex";
   container.style.flexDirection = "column";
   btn.textContent = "Back";
 
-  // ✅ Build the ENTIRE HTML in one string, set innerHTML ONCE at the end
+  // Build the flat queue once
+  buildAllSongsQueue();
+  queueModeActive = true; // ← activate queue mode
+
   let html = `<h5 class="noteh6" style="text-align:center;margin-bottom:12px;">
     All Songs — Tap to <span class="logo">pLaY</span>
   </h5>`;
 
-  // ── Part 1: index.js movies (indexMovies) ──────────────────────────────────
-  for (let movieKey in indexMovies.songs) {
-    const songs    = indexMovies.songs[movieKey];
-    const pictures = indexMovies.songlistpicture[movieKey];
-    const artist   = indexMovies.artist[movieKey];
-    const srcs     = indexMovies.songsList[movieKey];
+  // Use queue index for onclick so next/prev works correctly
+  allSongsQueue.forEach((item, i) => {
+    html += `
+      <div class="music-item" onclick="playQueueSong(${i})">
+        <img src="${item.img}" alt="${item.name}" onerror="this.style.display='none'">
+        <div class="music-info">
+          <h5 style="font-size:10.5px;">${item.name}</h5>
+          <p style="font-size:8px;color:#b3b3b3;">${item.artist}</p>
+        </div>
+        <button onclick="event.stopPropagation(); playQueueSong(${i})" class="gobtn">▶</button>
+      </div>`;
+  });
 
-    for (let j = 0; j < songs.length; j++) {
-      if (!srcs || !srcs[j]) continue;
-      const img = pictures && pictures[j] ? pictures[j] : "";
-      html += `
-        <div class="music-item" onclick="playMusic(${movieKey}, ${j})">
-          <img src="${img}" alt="${songs[j]}" onerror="this.style.display='none'">
-          <div class="music-info">
-            <h5 style="font-size:10.5px;">${songs[j]}</h5>
-            <p style="font-size:8px;color:#b3b3b3;">${artist}</p>
-          </div>
-          <button onclick="event.stopPropagation(); playMusic(${movieKey}, ${j})" class="gobtn">▶</button>
-        </div>`;
-    }
-  }
-
-  // ── Part 2: library.js playlists (availableMovies) ────────────────────────
-  if (typeof availableMovies !== "undefined") {
-    for (let movieKey in availableMovies.songs) {
-      const songs    = availableMovies.songs[movieKey];
-      const pictures = availableMovies.songlistpicture[movieKey];
-      const srcs     = availableMovies.songsList[movieKey];
-
-      let subtitle = "Library";
-      if (typeof playlists !== "undefined") {
-        for (let id in playlists) {
-          if (String(playlists[id].movieKey) === String(movieKey)) {
-            subtitle = playlists[id].title;
-            break;
-          }
-        }
-      }
-
-      for (let j = 0; j < songs.length; j++) {
-        if (!srcs || !srcs[j]) continue;
-        const img = pictures && pictures[j] ? pictures[j] : "";
-        html += `
-          <div class="music-item" onclick="playLibrarySong(${movieKey}, ${j})">
-            <img src="${img}" alt="${songs[j]}" onerror="this.style.display='none'">
-            <div class="music-info">
-              <h5 style="font-size:10.5px;">${songs[j]}</h5>
-              <p style="font-size:8px;color:#b3b3b3;">${subtitle}</p>
-            </div>
-            <button onclick="event.stopPropagation(); playLibrarySong(${movieKey}, ${j})" class="gobtn">▶</button>
-          </div>`;
-      }
-    }
-  }
-
-  // ✅ ONE single DOM write — instant render
   container.innerHTML = html;
 }
+
+// Global function called from the All Songs list
+function playQueueSong(index) {
+  queueModeActive = true;
+  playFromQueue(index);
+}
+
+
+
