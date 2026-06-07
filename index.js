@@ -649,7 +649,7 @@ function songsavailable2() {
               <p style="font-size:8px;color:#b3b3b3;">${subtitle}</p>
             </div>
             <button onclick="event.stopPropagation(); playLibrarySong(${movieKey}, ${j})" class="gobtn">▶</button>
-          </div><br>`;
+          </div>;
       }
     }
   }
