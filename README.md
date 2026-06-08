@@ -25,7 +25,7 @@
 
 ##  **Features at a Glance**
 
-| <div align="center">🚀</div> | <div align="center">🎬</div> | <div align="center">📱</div> | <div align="center">🧘</div> |
+| <div align="center"></div> | <div align="center"></div> | <div align="center"></div> | <div align="center"></div> |
 |:---:|:---:|:---:|:---:|
 | **Instant Play** | **Curated Movies** | **Responsive** | **Minimal Interface** |
 | Tap & play immediately | Hand-picked soundtracks | Works on all devices | No ads, no pop-ups |
@@ -36,7 +36,7 @@
 
 <div align="center">
   
-| 🎬 **Movie** | 🎵 **Music Director** | ⚡ **Action** |
+|  **Movie** |  **Music Director** |  **Action** |
 |:---|:---|:---|
 | **Leo** | *Anirudh Ravichander* | [![Play](https://img.shields.io/badge/▶️_Play-1DB954?style=flat-square)](https://iplay-app.vercel.app) |
 | **Varisu** | *Thaman S* | [![Play](https://img.shields.io/badge/▶️_Play-1DB954?style=flat-square)](https://iplay-app.vercel.app) |
