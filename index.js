@@ -16,6 +16,9 @@ var indexMovies = {
     12: "3",
     13: "Kadaram Kondan",
     14: "Sivakasi",
+    15: "Joe",
+    16: "Kadhalar Dhinam",
+    17: "Amaran",
   },
   artist: {
     1: "Harrish Jayaraj and Team",
@@ -32,6 +35,9 @@ var indexMovies = {
     12: "Anirudh Ravichander and Team",
     13: "Ghibran Vaibodha and Team",
     14: "Srikanth Deva and Team",
+    15: "Siddhu Kumar and Team",
+    16: "A.R.Rahman and Team",
+    17: "G.V.Prakash Kumar and Team",
   },
   icon: {
     1: "https://www.masstamilan.dev/w/minnale-tamil-2001.webp",
@@ -48,114 +54,29 @@ var indexMovies = {
     12: "https://www.masstamilan.dev/w/3-moonu-tamil-2012.webp",
     13: "https://www.masstamilan.dev/w/kadaram-kondan-2019.webp",
     14: "https://www.masstamilan.dev/w/sivakasi-2005.webp",
+    15: "https://tse3.mm.bing.net/th/id/OIP.Xfp1AouFTlvBQRrZxsUQ6gHaIK?pid=Api&h=220&P=0",
+    16: "https://tse2.mm.bing.net/th/id/OIP.49FFXpmDwilAdqJmoJgDYgHaKr?pid=Api&h=220&P=0",
+    17: "https://tse2.mm.bing.net/th/id/OIP.ejIzPJLnWOyeaH5yPYD3ygHaJQ?pid=Api&h=220&P=0",
+
   },
   songlistpicture: {
-    1: [
-      "https://www.masstamilan.dev/w/minnale-tamil-2001.webp",
-      "https://www.masstamilan.dev/w/minnale-tamil-2001.webp",
-      "https://www.masstamilan.dev/w/minnale-tamil-2001.webp",
-      "https://www.masstamilan.dev/w/minnale-tamil-2001.webp",
-      "https://www.masstamilan.dev/w/minnale-tamil-2001.webp"
-    ],
-    2: [
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQXIk7h9nS9DsamRn_UWsukg4Pf7IlncK5cQ&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9784HdLZ52d8Q75xLrLLFIZm6upP_-ZJ98A&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBqZHFpcQ6a4CqKn4OjWK0IQ9oMauquxlXQQ&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOx_Icl1S5PSzAuHwD1U-zoPcUTN3QorH8qQ&s",
-    ],
-    3: [
-      "https://www.masstamilan.dev/w/leo-tamil-2023.webp",
-      "https://www.masstamilan.dev/w/leo-tamil-2023.webp",
-      "https://www.masstamilan.dev/w/leo-tamil-2023.webp",
-      "https://www.masstamilan.dev/w/leo-tamil-2023.webp",
-      "https://www.masstamilan.dev/w/leo-tamil-2023.webp",
-    ],
-    4: [
-      "https://www.masstamilan.dev/w/varisu-tamil-2023.webp",
-      "https://www.masstamilan.dev/w/varisu-tamil-2023.webp",
-      "https://www.masstamilan.dev/w/varisu-tamil-2023.webp",
-      "https://www.masstamilan.dev/w/varisu-tamil-2023.webp",
-      "https://www.masstamilan.dev/w/varisu-tamil-2023.webp",
-      "https://www.masstamilan.dev/w/varisu-tamil-2023.webp",
-    ],
-    5: [
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbL8VaAb2GLq38_SAAYRy-dcir-hBjk4fomA&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbL8VaAb2GLq38_SAAYRy-dcir-hBjk4fomA&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbL8VaAb2GLq38_SAAYRy-dcir-hBjk4fomA&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbL8VaAb2GLq38_SAAYRy-dcir-hBjk4fomA&s",
-    ],
-    6: [
-      "https://www.masstamilan.dev/w/jeans-1998.webp",
-      "https://www.masstamilan.dev/w/jeans-1998.webp",
-      "https://www.masstamilan.dev/w/jeans-1998.webp",
-      "https://www.masstamilan.dev/w/jeans-1998.webp",
-      "https://www.masstamilan.dev/w/jeans-1998.webp",
-      "https://www.masstamilan.dev/w/jeans-1998.webp",
-    ],
-    7: [
-      "https://www.masstamilan.dev/w/karuppu-tamil-2026.webp",
-      "https://www.masstamilan.dev/w/karuppu-tamil-2026.webp ",
-      "https://www.masstamilan.dev/w/karuppu-tamil-2026.webp ",
-      "https://www.masstamilan.dev/w/karuppu-tamil-2026.webp ",
-      "https://www.masstamilan.dev/w/karuppu-tamil-2026.webp ",
-      "https://www.masstamilan.dev/w/karuppu-tamil-2026.webp ",
-      "https://www.masstamilan.dev/w/karuppu-tamil-2026.webp ",
-      "https://www.masstamilan.dev/w/karuppu-tamil-2026.webp ",
-      "https://www.masstamilan.dev/w/karuppu-tamil-2026.webp ",
-    ],
-    8: [
-      "https://www.masstamilan.dev/w/love-insurance-kompany-lik-tamil-2026.webp",
-      "https://www.masstamilan.dev/w/love-insurance-kompany-lik-tamil-2026.webp",
-      "https://www.masstamilan.dev/w/love-insurance-kompany-lik-tamil-2026.webp",
-      "https://www.masstamilan.dev/w/love-insurance-kompany-lik-tamil-2026.webp",
-      "https://www.masstamilan.dev/w/love-insurance-kompany-lik-tamil-2026.webp",
-      "https://www.masstamilan.dev/w/love-insurance-kompany-lik-tamil-2026.webp",
-    ],
-    9: [
-      "https://www.masstamilan.dev/w/meesaya-murukku-2-tamil-2026.webp",
-      "https://www.masstamilan.dev/w/meesaya-murukku-2-tamil-2026.webp",
-      "https://www.masstamilan.dev/w/meesaya-murukku-2-tamil-2026.webp",
-    ],
-    10: [
-      "https://www.masstamilan.dev/w/dude-tamil-2025.webp",
-      "https://www.masstamilan.dev/w/dude-tamil-2025.webp",
-      "https://www.masstamilan.dev/w/dude-tamil-2025.webp",
-      "https://www.masstamilan.dev/w/dude-tamil-2025.webp",
-      "https://www.masstamilan.dev/w/dude-tamil-2025.webp",
-      "https://www.masstamilan.dev/w/dude-tamil-2025.webp",
-    ],
-    11: [
-      "https://www.masstamilan.dev/w/youth-tamil-2026.webp",
-      "https://www.masstamilan.dev/w/youth-tamil-2026.webp",
-      "https://www.masstamilan.dev/w/youth-tamil-2026.webp",
-      "https://www.masstamilan.dev/w/youth-tamil-2026.webp",
-      "https://www.masstamilan.dev/w/youth-tamil-2026.webp",
-      "https://www.masstamilan.dev/w/youth-tamil-2026.webp",
-      "https://www.masstamilan.dev/w/youth-tamil-2026.webp",
-      "https://www.masstamilan.dev/w/youth-tamil-2026.webp",
-    ],
-    12: [
-      "https://www.masstamilan.dev/w/3-moonu-tamil-2012.webp",
-      "https://www.masstamilan.dev/w/3-moonu-tamil-2012.webp",
-      "https://www.masstamilan.dev/w/3-moonu-tamil-2012.webp",
-      "https://www.masstamilan.dev/w/3-moonu-tamil-2012.webp",
-      "https://www.masstamilan.dev/w/3-moonu-tamil-2012.webp",
-      "https://www.masstamilan.dev/w/3-moonu-tamil-2012.webp",
-      "https://www.masstamilan.dev/w/3-moonu-tamil-2012.webp",
-    ],
-    13: [
-       "https://www.masstamilan.dev/w/kadaram-kondan-2019.webp",
-       "https://www.masstamilan.dev/w/kadaram-kondan-2019.webp",
-       "https://www.masstamilan.dev/w/kadaram-kondan-2019.webp"
-    ],
-    14: [
-      "https://www.masstamilan.dev/w/sivakasi-2005.webp",
-      "https://www.masstamilan.dev/w/sivakasi-2005.webp",
-      "https://www.masstamilan.dev/w/sivakasi-2005.webp",
-      "https://www.masstamilan.dev/w/sivakasi-2005.webp",
-      "https://www.masstamilan.dev/w/sivakasi-2005.webp",
-      "https://www.masstamilan.dev/w/sivakasi-2005.webp"
-    ]
+    1: Array(5).fill("https://www.masstamilan.dev/w/minnale-tamil-2001.webp"),
+    2: Array(4).fill("icon/jananayagan.jpg"), 
+    3: Array(5).fill("https://www.masstamilan.dev/w/leo-tamil-2023.webp"),
+    4: Array(6).fill("https://www.masstamilan.dev/w/varisu-tamil-2023.webp"),
+    5: Array(4).fill("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbL8VaAb2GLq38_SAAYRy-dcir-hBjk4fomA&s"),
+    6: Array(6).fill("https://www.masstamilan.dev/w/jeans-1998.webp"),
+    7: Array(9).fill("https://www.masstamilan.dev/w/karuppu-tamil-2026.webp"),
+    8: Array(6).fill("https://www.masstamilan.dev/w/love-insurance-kompany-lik-tamil-2026.webp"),
+    9: Array(3).fill("https://www.masstamilan.dev/w/meesaya-murukku-2-tamil-2026.webp"),
+    10: Array(6).fill("https://www.masstamilan.dev/w/dude-tamil-2025.webp"),
+    11: Array(8).fill("https://www.masstamilan.dev/w/youth-tamil-2026.webp"), 
+    12: Array(7).fill("https://www.masstamilan.dev/w/3-moonu-tamil-2012.webp"),
+    13: Array(3).fill("https://www.masstamilan.dev/w/kadaram-kondan-2019.webp"), 
+    14: Array(6).fill("https://www.masstamilan.dev/w/sivakasi-2005.webp"),
+    15: Array(6).fill("https://tse3.mm.bing.net/th/id/OIP.Xfp1AouFTlvBQRrZxsUQ6gHaIK?pid=Api&h=220&P=0"),
+    16: Array(6).fill("https://tse2.mm.bing.net/th/id/OIP.49FFXpmDwilAdqJmoJgDYgHaKr?pid=Api&h=220&P=0"),
+    17: Array(8).fill("https://tse2.mm.bing.net/th/id/OIP.ejIzPJLnWOyeaH5yPYD3ygHaJQ?pid=Api&h=220&P=0"),
   },
   songsList: {
     1: [
@@ -265,6 +186,32 @@ var indexMovies = {
       "https://res.cloudinary.com/seshancloudy/video/upload/v1780680105/Dheivathukke-Maaruvesama_n0sd9b.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1780680108/Idhu-Enna-Idhu-Enna_rij16n.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1780680108/Vaada-Vaada_kqyrfx.mp3"
+    ],
+    15: [
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100247/06_-_urugi-urugi_eigpd6.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100246/05_-_ore-kanaa_krkzkg.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100243/02_-_dimmu-dippu_qx5g3e.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100242/03_-_joe-teaser-theme_b6kgyq.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100243/04_-_kovai-kulira_pwq83x.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100245/01_-_culturals-song_la7tj5.mp3"
+    ],
+    16: [
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100409/02_-_enna-vilai_fem8ti.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100404/01_-_dhandiya_shh5fz.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100435/06_-_roja-roja_njmcmc.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100407/03_-_kaathalenum_mfqaj2.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100405/04_-_nenichapadi_jyix1r.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100413/05_-_oh-maria-oh-maria_pq0esp.mp3"
+    ],
+    17: [
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100361/02_-_hey-minnale_fnngpt.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100368/08_-_vennilavu-saaral_prushz.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100365/06_-_uyirey_e5hcxj.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100367/07_-_vaane-vaane_hppnzp.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100360/01_-_amara_vbwmpv.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100364/03_-_kanave_izkpne.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100356/05_-_sai-pallavis-intro_smto2g.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100361/04_-_por-veeran-azadi_knad1n.mp3"
     ]
   },
   songKey: {
@@ -282,6 +229,9 @@ var indexMovies = {
     12: 12,
     13: 13,
     14: 14,
+    15: 15,
+    16: 16,
+    17: 17,
   },
   songs: {
     1: [
@@ -312,7 +262,12 @@ var indexMovies = {
       "Thee-Thalapathy",
       "Vaa-Thalaivaa",
     ],
-    5: ["Chinna Chinna Kangal", "Matta", "Spark", "Whistle Podu"],
+    5: [
+      "Chinna Chinna Kangal", 
+      "Matta", 
+      "Spark", 
+      "Whistle Podu"
+    ],
     6: [
       "Anbe Anbe",
       "Columbus Columbu",
@@ -380,6 +335,32 @@ var indexMovies = {
       "Dheivathukke Maaruvesama",
       "Idhu Enna Idhu Enna",
       "Vaada Vaada"
+    ],
+    15: [
+      "Urugi Urugi",
+      "Ore Kannaa",
+      "Dimmu Dippu",
+      "Joe Teaser Theme",
+      "Kovai Kulira",
+      "Culturals Song"
+    ],
+    16: [
+      "Enna Vilai",
+      "Dhandiya",
+      "Roja Roja",
+      "Kaathalenum",
+      "Nenichapadi",
+      "Oh Maria Oh Maria"
+    ],
+    17: [
+      "Hey Minnale",
+      "Vennilavu Saaral",
+      "Uyirey",
+      "Vaane Vaane",
+      "Amara",
+      "Kanave",
+      "Sai Pallavis Intro",
+      "Por Veeran(Azadi)"
     ]
   },
 };
