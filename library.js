@@ -356,7 +356,7 @@ var availableMovies = {
     4: [
       "https://www.masstamilan.dev/w/minnale-tamil-2001.webp",
       "https://www.masstamilan.dev/w/varisu-tamil-2023.webp",
-      "https://www.masstamilan.dev/w/varisu-tamil-2023.webpthame",
+      "https://www.masstamilan.dev/w/varisu-tamil-2023.webp",
       "icon/jananayagan.jpg",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbL8VaAb2GLq38_SAAYRy-dcir-hBjk4fomA&s",
       "https://www.masstamilan.dev/w/minnale-tamil-2001.webp",
