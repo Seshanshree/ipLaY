@@ -38,7 +38,6 @@ var availableMovies = {
       "Adiyae Azhagae",
       "Dheivathukke Maaruvesama",
       "Po Indru Neeyaga",
-      "Iraivanai Thandha Iraiviye",
     ],
     3: [
       "Macha Kanni",
@@ -112,6 +111,7 @@ var availableMovies = {
       "Uyirey",
       "Vaane Vaane",
       "Sai Pallavis Intro",
+      "Iraivanai Thandha Iraiviye",
     ],
     5: [
       "Naa Ready",
@@ -189,7 +189,6 @@ var availableMovies = {
         "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240405/Adiyae-Azhagae_ucw7yg.mp3",
         "https://res.cloudinary.com/seshancloudy/video/upload/v1780680105/Dheivathukke-Maaruvesama_n0sd9b.mp3",
         "https://res.cloudinary.com/seshancloudy/video/upload/v1782024527/Po_Indru_Neeyaga_wfftvp.mp3",
-        "https://res.cloudinary.com/seshancloudy/video/upload/v1782028911/Iraivanai-Thandha-Iraiviye-MassTamilan.com_jyvvfy.mp3",
     ],
     3: [
         "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780295858/Macha-Kanni_taiimn.mp3",
@@ -262,6 +261,7 @@ var availableMovies = {
       "https://res.cloudinary.com/seshancloudy/video/upload/v1781100365/06_-_uyirey_e5hcxj.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1781100367/07_-_vaane-vaane_hppnzp.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1781100356/05_-_sai-pallavis-intro_smto2g.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1782028911/Iraivanai-Thandha-Iraiviye-MassTamilan.com_jyvvfy.mp3",
     ],
     5: [
       "leo/Naa-Ready-MassTamilan.dev.mp3",
@@ -340,7 +340,6 @@ var availableMovies = {
       "https://www.masstamilan.dev/w/oru-naal-koothu.webp",
       "https://www.masstamilan.dev/w/sivakasi-2005.webp",
       "https://www.masstamilan.dev/w/velaiyilla-pattathari-vip-tamil-2014.webp",      
-      "https://www.masstamilan.dev/w/velaiilla-pattadhari-2-vip-2017.webp",
     ],
     3: [
       "https://www.masstamilan.dev/w/naan-avanillai-2007.webp",
@@ -414,6 +413,7 @@ var availableMovies = {
       "https://tse2.mm.bing.net/th/id/OIP.ejIzPJLnWOyeaH5yPYD3ygHaJQ?pid=Api&h=220&P=0",
       "https://tse2.mm.bing.net/th/id/OIP.ejIzPJLnWOyeaH5yPYD3ygHaJQ?pid=Api&h=220&P=0",
       "https://tse2.mm.bing.net/th/id/OIP.ejIzPJLnWOyeaH5yPYD3ygHaJQ?pid=Api&h=220&P=0",
+      "https://www.masstamilan.dev/w/velaiilla-pattadhari-2-vip-2017.webp",
     ],
     5: Array(15).fill("https://www.masstamilan.dev/w/leo-tamil-2023.webp"),
     6: [
@@ -448,7 +448,7 @@ var playlists = {
     imageUrl: "https://www.masstamilan.dev/w/master-tamil-2021.webp",
   },
   3: {
-    title : "Vibe Uhaa",
+    title : "Vibe Aaa",
     movieKey: 3,
     imageUrl: "https://thf.bing.com/th/id/OIP.bGeVSpwJ4cADL7v_eGRrbwAAAA?w=311&h=169&c=7&r=0&o=7&cb=thfc1falcon&dpr=1.1&pid=1.7&rm=3"
   },
