@@ -1,6 +1,5 @@
 
 var availableMovies = {
-  
   songs: {
     1: [
       "Aasa Kooda",
@@ -37,7 +36,9 @@ var availableMovies = {
       "Yedho Ondru Ennai",
       "Venmegam",
       "Adiyae Azhagae",
-      "Dheivathukke Maaruvesama"
+      "Dheivathukke Maaruvesama",
+      "Po Indru Neeyaga",
+      "Iraivanai Thandha Iraiviye",
     ],
     3: [
       "Macha Kanni",
@@ -63,7 +64,14 @@ var availableMovies = {
       "Karupa Kooda Va",
       "Kodambakkam Area",
       "Ada Ennatha Solvenungo",
-      "Vaada Vaada"
+      "Vaada Vaada",
+      "Udhungada Sangu",
+      "Velaiyilla Pattathari (Title Song)",
+      "What A Karavad",
+      "Dooram Nillu",
+      "Nada Da Raja",
+      "The Empress Arrives",
+      "Ucchathula",
     ],
     4: [
       "Vaseegara",
@@ -179,7 +187,9 @@ var availableMovies = {
         "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240255/Yedho-Ondru-Ennai_swojgg.mp3",
         "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240349/Venmegam-Pennaga_xc07ig.mp3",
         "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240405/Adiyae-Azhagae_ucw7yg.mp3",
-        "https://res.cloudinary.com/seshancloudy/video/upload/v1780680105/Dheivathukke-Maaruvesama_n0sd9b.mp3"
+        "https://res.cloudinary.com/seshancloudy/video/upload/v1780680105/Dheivathukke-Maaruvesama_n0sd9b.mp3",
+        "https://res.cloudinary.com/seshancloudy/video/upload/v1782024527/Po_Indru_Neeyaga_wfftvp.mp3",
+        "https://res.cloudinary.com/seshancloudy/video/upload/v1782028911/Iraivanai-Thandha-Iraiviye-MassTamilan.com_jyvvfy.mp3",
     ],
     3: [
         "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780295858/Macha-Kanni_taiimn.mp3",
@@ -206,6 +216,13 @@ var availableMovies = {
         "https://res.cloudinary.com/seshancloudy/video/upload/v1780680108/Kodambakkam-Area_qfnir7.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1780680105/Ada-Ennatha-Solvenungo_ijrvkd.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1780680108/Vaada-Vaada_kqyrfx.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1782025168/Udhungada_Sangu_w0vkx8.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1782024961/Velaiyilla_Pattathari_Title_Song_hyrfk9.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1782025186/What_A_Karavad_txrlon.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1782028907/Dooram-Nillu-MassTamilan.com_z9avim.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1782028917/Nada-Da-Raja-MassTamilan.com_mskvcd.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1782028916/The-Empress-Arrives-MassTamilan.com_rbdmg6.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1782028920/Ucchathula-MassTamilan.com_c4ky79.mp3",
     ],  
     4: [
       "https://res.cloudinary.com/seshancloudy/video/upload/v1780739144/Vaseegara_qdunim.mp3",
@@ -321,9 +338,9 @@ var availableMovies = {
       "https://www.masstamilan.dev/w/paiya-2012.webp",
       "https://www.masstamilan.dev/w/yaradi-nee-mohini.webp",
       "https://www.masstamilan.dev/w/oru-naal-koothu.webp",
-      "https://www.masstamilan.dev/w/sivakasi-2005.webp"
-      
-
+      "https://www.masstamilan.dev/w/sivakasi-2005.webp",
+      "https://www.masstamilan.dev/w/velaiyilla-pattathari-vip-tamil-2014.webp",      
+      "https://www.masstamilan.dev/w/velaiilla-pattadhari-2-vip-2017.webp",
     ],
     3: [
       "https://www.masstamilan.dev/w/naan-avanillai-2007.webp",
@@ -349,9 +366,14 @@ var availableMovies = {
       "https://www.masstamilan.dev/w/karuppu-tamil-2026.webp",
       "https://www.masstamilan.dev/w/sivakasi-2005.webp",
       "https://www.masstamilan.dev/w/sivakasi-2005.webp",
-      "https://www.masstamilan.dev/w/sivakasi-2005.webp"
-      
-
+      "https://www.masstamilan.dev/w/sivakasi-2005.webp",
+      "https://www.masstamilan.dev/w/velaiyilla-pattathari-vip-tamil-2014.webp",
+      "https://www.masstamilan.dev/w/velaiyilla-pattathari-vip-tamil-2014.webp",
+      "https://www.masstamilan.dev/w/velaiyilla-pattathari-vip-tamil-2014.webp",
+      "https://www.masstamilan.dev/w/velaiilla-pattadhari-2-vip-2017.webp",
+      "https://www.masstamilan.dev/w/velaiilla-pattadhari-2-vip-2017.webp",
+      "https://www.masstamilan.dev/w/velaiilla-pattadhari-2-vip-2017.webp",
+      "https://www.masstamilan.dev/w/velaiilla-pattadhari-2-vip-2017.webp"
     ],
     4: [
       "https://www.masstamilan.dev/w/minnale-tamil-2001.webp",
@@ -451,7 +473,7 @@ var playlists = {
     imageUrl: "https://www.masstamilan.dev/w/oru-naal-koothu.webp",
   },
   8: {
-    title: "V Songs",
+    title: "Songs",
     movieKey: 8,
     imageUrl: "https://www.masstamilan.dev/w/maaman-tamil-2025.webp",
   },
