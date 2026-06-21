@@ -1,7 +1,6 @@
 const musicList = document.getElementById("music-list");
 
 var indexMovies = {
-  
   title: {
     1: "Minnale",
     2: "Jananayagan",
@@ -20,6 +19,8 @@ var indexMovies = {
     15: "Joe",
     16: "Kadhalar Dhinam",
     17: "Amaran",
+    18: "Velaiyilla Pattathari (VIP)",
+    19: "Velaiyilla Pattathari 2 (VIP 2)",
   },
   artist: {
     1: "Harrish Jayaraj and Team",
@@ -39,6 +40,8 @@ var indexMovies = {
     15: "Siddhu Kumar and Team",
     16: "A.R.Rahman and Team",
     17: "G.V.Prakash Kumar and Team",
+    18: "Anirudh Ravichander and Team",
+    19: "Sean Roldan and Team",
   },
   icon: {
     1: "https://www.masstamilan.dev/w/minnale-tamil-2001.webp",
@@ -58,7 +61,9 @@ var indexMovies = {
     15: "https://tse3.mm.bing.net/th/id/OIP.Xfp1AouFTlvBQRrZxsUQ6gHaIK?pid=Api&h=220&P=0",
     16: "https://tse2.mm.bing.net/th/id/OIP.49FFXpmDwilAdqJmoJgDYgHaKr?pid=Api&h=220&P=0",
     17: "https://tse2.mm.bing.net/th/id/OIP.ejIzPJLnWOyeaH5yPYD3ygHaJQ?pid=Api&h=220&P=0",
-
+    18: "https://www.masstamilan.dev/w/velaiyilla-pattathari-vip-tamil-2014.webp",
+    19: "https://www.masstamilan.dev/w/velaiilla-pattadhari-2-vip-2017.webp",
+    
   },
   songlistpicture: {
     1: Array(5).fill("https://www.masstamilan.dev/w/minnale-tamil-2001.webp"),
@@ -78,6 +83,8 @@ var indexMovies = {
     15: Array(6).fill("https://tse3.mm.bing.net/th/id/OIP.Xfp1AouFTlvBQRrZxsUQ6gHaIK?pid=Api&h=220&P=0"),
     16: Array(6).fill("https://tse2.mm.bing.net/th/id/OIP.49FFXpmDwilAdqJmoJgDYgHaKr?pid=Api&h=220&P=0"),
     17: Array(8).fill("https://tse2.mm.bing.net/th/id/OIP.ejIzPJLnWOyeaH5yPYD3ygHaJQ?pid=Api&h=220&P=0"),
+    18: Array(5).fill("https://www.masstamilan.dev/w/velaiyilla-pattathari-vip-tamil-2014.webp"),
+    19: Array(5).fill("https://www.masstamilan.dev/w/velaiilla-pattadhari-2-vip-2017.webp"),
   },
   songsList: {
     1: [
@@ -213,6 +220,20 @@ var indexMovies = {
       "https://res.cloudinary.com/seshancloudy/video/upload/v1781100364/03_-_kanave_izkpne.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1781100356/05_-_sai-pallavis-intro_smto2g.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1781100361/04_-_por-veeran-azadi_knad1n.mp3"
+    ],
+    18: [
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1782024281/Amma_Amma_zoaq95.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1782024527/Po_Indru_Neeyaga_wfftvp.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1782025168/Udhungada_Sangu_w0vkx8.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1782024961/Velaiyilla_Pattathari_Title_Song_hyrfk9.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1782025186/What_A_Karavad_txrlon.mp3",
+    ],
+    19: [
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1782028907/Dooram-Nillu-MassTamilan.com_z9avim.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1782028911/Iraivanai-Thandha-Iraiviye-MassTamilan.com_jyvvfy.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1782028917/Nada-Da-Raja-MassTamilan.com_mskvcd.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1782028916/The-Empress-Arrives-MassTamilan.com_rbdmg6.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1782028920/Ucchathula-MassTamilan.com_c4ky79.mp3",
     ]
   },
   songKey: {
@@ -233,6 +254,8 @@ var indexMovies = {
     15: 15,
     16: 16,
     17: 17,
+    18: 18,
+    19: 19,
   },
   songs: {
     1: [
@@ -362,6 +385,20 @@ var indexMovies = {
       "Kanave",
       "Sai Pallavis Intro",
       "Por Veeran(Azadi)"
+    ],
+    18: [
+      "Amma Amma",
+      "Po Indru Neeyaga",
+      "Udhungada Sangu",
+      "Velaiyilla Pattathari (Title Song)",
+      "What A Karavad",
+    ],
+    19: [
+      "Dooram Nillu",
+      "Iraivanai Thandha Iraiviye",
+      "Nada Da Raja",
+      "The Empress Arrives",
+      "Ucchathula",
     ]
   },
 };
