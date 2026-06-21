@@ -1,528 +1,701 @@
-const musicList = document.getElementById("music-list");
 
-var indexMovies = {
-  title: {
-    1: "Minnale",
-    2: "Jananayagan",
-    3: "Leo",
-    4: "Varisu",
-    5: "The Greatest of All Time",
-    6: "Jeans",
-    7: "Karuppu",
-    8: "Love Insurance Kompany Lik",
-    9: "Meesaya Murukku 2",
-    10: "Dude",
-    11: "Youth",
-    12: "3",
-    13: "Kadaram Kondan",
-    14: "Sivakasi",
-    15: "Joe",
-    16: "Kadhalar Dhinam",
-    17: "Amaran",
-    18: "Velaiyilla Pattathari (VIP)",
-    19: "Velaiyilla Pattathari 2 (VIP 2)",
-  },
-  artist: {
-    1: "Harrish Jayaraj and Team",
-    2: "Anirudh Ravichander and Team",
-    3: "Anirudh Ravichander and Team",
-    4: "Thaman S and Team",
-    5: "Yuvan Shankar Raja and Team",
-    6: "A.R.Rahman and Team",
-    7: "Sai Abhyankkar and Team",
-    8: "Anirudh Ravichander and Team",
-    9: "Hiphop Tamizha and Team",
-    10: "Sai Abhyankkar and Team",
-    11: "G.V.Prakash Kumar and Team",
-    12: "Anirudh Ravichander and Team",
-    13: "Ghibran Vaibodha and Team",
-    14: "Srikanth Deva and Team",
-    15: "Siddhu Kumar and Team",
-    16: "A.R.Rahman and Team",
-    17: "G.V.Prakash Kumar and Team",
-    18: "Anirudh Ravichander and Team",
-    19: "Sean Roldan and Team",
-  },
-  icon: {
-    1: "https://www.masstamilan.dev/w/minnale-tamil-2001.webp",
-    2: "icon/jananayagan.jpg",
-    3: "https://www.masstamilan.dev/w/leo-tamil-2023.webp",
-    4: "https://www.masstamilan.dev/w/varisu-tamil-2023.webp",
-    5: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbL8VaAb2GLq38_SAAYRy-dcir-hBjk4fomA&s",
-    6: "https://www.masstamilan.dev/w/jeans-1998.webp",
-    7: "https://www.masstamilan.dev/w/karuppu-tamil-2026.webp",
-    8: "https://www.masstamilan.dev/w/love-insurance-kompany-lik-tamil-2026.webp",
-    9: "https://www.masstamilan.dev/w/meesaya-murukku-2-tamil-2026.webp",
-    10: "https://www.masstamilan.dev/w/dude-tamil-2025.webp",
-    11: "https://www.masstamilan.dev/w/youth-tamil-2026.webp",
-    12: "https://www.masstamilan.dev/w/3-moonu-tamil-2012.webp",
-    13: "https://www.masstamilan.dev/w/kadaram-kondan-2019.webp",
-    14: "https://www.masstamilan.dev/w/sivakasi-2005.webp",
-    15: "https://tse3.mm.bing.net/th/id/OIP.Xfp1AouFTlvBQRrZxsUQ6gHaIK?pid=Api&h=220&P=0",
-    16: "https://tse2.mm.bing.net/th/id/OIP.49FFXpmDwilAdqJmoJgDYgHaKr?pid=Api&h=220&P=0",
-    17: "https://tse2.mm.bing.net/th/id/OIP.ejIzPJLnWOyeaH5yPYD3ygHaJQ?pid=Api&h=220&P=0",
-    18: "https://www.masstamilan.dev/w/velaiyilla-pattathari-vip-tamil-2014.webp",
-    19: "https://www.masstamilan.dev/w/velaiilla-pattadhari-2-vip-2017.webp",
-    
-  },
-  songlistpicture: {
-    1: Array(5).fill("https://www.masstamilan.dev/w/minnale-tamil-2001.webp"),
-    2: Array(4).fill("icon/jananayagan.jpg"), 
-    3: Array(5).fill("https://www.masstamilan.dev/w/leo-tamil-2023.webp"),
-    4: Array(6).fill("https://www.masstamilan.dev/w/varisu-tamil-2023.webp"),
-    5: Array(4).fill("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbL8VaAb2GLq38_SAAYRy-dcir-hBjk4fomA&s"),
-    6: Array(6).fill("https://www.masstamilan.dev/w/jeans-1998.webp"),
-    7: Array(9).fill("https://www.masstamilan.dev/w/karuppu-tamil-2026.webp"),
-    8: Array(6).fill("https://www.masstamilan.dev/w/love-insurance-kompany-lik-tamil-2026.webp"),
-    9: Array(3).fill("https://www.masstamilan.dev/w/meesaya-murukku-2-tamil-2026.webp"),
-    10: Array(6).fill("https://www.masstamilan.dev/w/dude-tamil-2025.webp"),
-    11: Array(8).fill("https://www.masstamilan.dev/w/youth-tamil-2026.webp"), 
-    12: Array(7).fill("https://www.masstamilan.dev/w/3-moonu-tamil-2012.webp"),
-    13: Array(3).fill("https://www.masstamilan.dev/w/kadaram-kondan-2019.webp"), 
-    14: Array(6).fill("https://www.masstamilan.dev/w/sivakasi-2005.webp"),
-    15: Array(6).fill("https://tse3.mm.bing.net/th/id/OIP.Xfp1AouFTlvBQRrZxsUQ6gHaIK?pid=Api&h=220&P=0"),
-    16: Array(6).fill("https://tse2.mm.bing.net/th/id/OIP.49FFXpmDwilAdqJmoJgDYgHaKr?pid=Api&h=220&P=0"),
-    17: Array(8).fill("https://tse2.mm.bing.net/th/id/OIP.ejIzPJLnWOyeaH5yPYD3ygHaJQ?pid=Api&h=220&P=0"),
-    18: Array(5).fill("https://www.masstamilan.dev/w/velaiyilla-pattathari-vip-tamil-2014.webp"),
-    19: Array(5).fill("https://www.masstamilan.dev/w/velaiilla-pattadhari-2-vip-2017.webp"),
-  },
-  songsList: {
-    1: [
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780739144/Vaseegara_qdunim.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780739145/Azhagiya_Theeye_dyqlwd.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780739134/Venmathiye_o5rec5.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780739144/Oh_Mama_Mama_cpw4i5.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780739134/Verenna_Verenna_Ivan_Yaro_gxlbff.mp3",
-
-    ],
-    2: [
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678628/Chella-Magale-MassTamilan.dev_qgjxyf.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678616/Oru-Pere-Varalaaru-MassTamilan.dev_yys7mt.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678616/Raavana-Mavandaa-MassTamilan.dev_t8o665.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678617/Thalapathy_Kacheri_ymxdbx.mp3",
-    ],
-    3: [
-      "leo/Naa-Ready-MassTamilan.dev.mp3",
-      "leo/Badass-MassTamilan.dev.mp3",
-      "leo/Bloody-Sweet-MassTamilan.dev.mp3",
-      "leo/Lokiverse-2.0-MassTamilan.dev.mp3",
-      "leo/Glimpse-of-Harold-Das-MassTamilan.dev.mp3",
-    ],
-    4: [
-      "varisu/Celebration-Of-Varisu-MassTamilan.dev.mp3",
-      "varisu/Jimikki-Ponnu-MassTamilan.dev.mp3",
-      "varisu/Ranjithame-MassTamilan.dev (1).mp3",
-      "varisu/Soul-Of-Varisu-MassTamilan.dev.mp3",
-      "varisu/Thee-Thalapathy-MassTamilan.dev.mp3",
-      "varisu/Vaa-Thalaivaa-MassTamilan.dev.mp3",
-    ],
-    5: [
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1778677796/Chinna_Chinna_Kangal_lhwhxb.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1778677816/Matta_dysr8z.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1778677799/Spark_fyxqn8.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1778677857/Whistle_Podu_dykdzh.mp3",
-    ],
-    6: [
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678920/Anbe-Anbe_z5jtdv.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1778679063/Columbus-Columbu_cflsmy.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678940/Ennake-Ennaka_e1tqne.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678979/Kannodu-Kaanberallam_wctkai.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1778679083/Poovukkul_l4b3cj.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1778679099/Varaya-Thozhi_vvdoij.mp3",
-    ],
-    7: [
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780133371/Naanga_Naalu_Peru_mt1hys.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780133391/God_Mode_Begins_vri2ei.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780133432/Verappa_ftgnc1.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780133277/Aathi_Raasathi_ha3nhs.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780133493/Athu_Thalore_uvmeob.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780133545/Karuppa_Kooda_Va_kknomo.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780133574/Raathu_Raasan_roppod.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780133611/Verappa_-_Extended_fq6fen.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780133640/God_Mode_rqe5xs.mp3",
-    ],
-    8: [
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780138574/Dheema_caqm24.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780133959/Vibe_Vaasey_zstbrp.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780133783/Pattuma_tbcr1i.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780133886/Adaavadi_gn6ete.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780138800/Pookattum_kjprdl.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780138892/Enakenna_Yaarum_Illaye_zpbfof.mp3",
-    ],
-    9: [
-      "meesaya murukku 2/Pappali Pazhamey.mp3",
-      "meesaya murukku 2/Aura 10-10.mp3",
-      "meesaya murukku 2/Goindhamma.mp3",
-    ],
-    10: [
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780153988/Oorum_Blood_kkxuwk.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780153991/Singari_jddjzo.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780153991/Kannukulla_li5i45.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780153985/Yumabaibesa_n5dwdj.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780153994/Nallaru_Po_alkjpp.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780153981/Blud_Is_On_His_Way_etgs16.mp3",
-    ],
-    11: [
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780154936/Mutta_Kalakki_w1ql1z.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780154932/Aasa_Pulla_htecgn.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780154936/Paranthene_Penne_dsl4fv.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780154933/Loveah_Sollitalea_zpoksp.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780154932/Alapuzha_Sandhayila_keo87b.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780154935/Thanga_Magan_uc2zls.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780154935/Ponmaaney_upoewt.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780154934/Poga_Poga_r9yj79.mp3",
-    ],
-    12: [
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780155606/Idhazhin_Oram_The_Innocence_of_Love_za3yt4.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780155631/Kannazhaga_The_Kiss_of_Love_qgffcm.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780155755/Po_Nee_Po_The_Pain_of_Love_lx71ny.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780155752/Po_Nee_Po_Remix_-_The_Scream_of_Love_xlintm.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780155755/Why_This_Kolaveri_Di_The_Soup_of_Love_xlgi0r.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780155750/Nee_Paartha_Vizhigal_The_Touch_of_Love_h4ws4w.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780155550/Come_on_Girls_The_Celebration_of_Love_xlvwlg.mp3",
-    ],
-    13: [
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780236035/Thaarame-Thaarame-MassTamilan.io_l3cjar.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780236035/Theesudar-Kuniyuma-MassTamilan.io_hbnqp0.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780235917/Kadaram-Kondan-MassTamilan.io_eznet7.mp3",
-        ""
-    ],
-    14:[
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780680108/Kodambakkam-Area_qfnir7.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780680107/Deepavali-Deepavali_rqd4oz.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780680105/Ada-Ennatha-Solvenungo_ijrvkd.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780680105/Dheivathukke-Maaruvesama_n0sd9b.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780680108/Idhu-Enna-Idhu-Enna_rij16n.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780680108/Vaada-Vaada_kqyrfx.mp3"
-    ],
-    15: [
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100247/06_-_urugi-urugi_eigpd6.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100246/05_-_ore-kanaa_krkzkg.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100243/02_-_dimmu-dippu_qx5g3e.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100242/03_-_joe-teaser-theme_b6kgyq.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100243/04_-_kovai-kulira_pwq83x.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100245/01_-_culturals-song_la7tj5.mp3"
-    ],
-    16: [
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100409/02_-_enna-vilai_fem8ti.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100404/01_-_dhandiya_shh5fz.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100435/06_-_roja-roja_njmcmc.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100407/03_-_kaathalenum_mfqaj2.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100405/04_-_nenichapadi_jyix1r.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100413/05_-_oh-maria-oh-maria_pq0esp.mp3"
-    ],
-    17: [
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100361/02_-_hey-minnale_fnngpt.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100368/08_-_vennilavu-saaral_prushz.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100365/06_-_uyirey_e5hcxj.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100367/07_-_vaane-vaane_hppnzp.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100360/01_-_amara_vbwmpv.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100364/03_-_kanave_izkpne.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100356/05_-_sai-pallavis-intro_smto2g.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100361/04_-_por-veeran-azadi_knad1n.mp3"
-    ],
-    18: [
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1782024281/Amma_Amma_zoaq95.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1782024527/Po_Indru_Neeyaga_wfftvp.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1782025168/Udhungada_Sangu_w0vkx8.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1782024961/Velaiyilla_Pattathari_Title_Song_hyrfk9.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1782025186/What_A_Karavad_txrlon.mp3",
-    ],
-    19: [
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1782028907/Dooram-Nillu-MassTamilan.com_z9avim.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1782028911/Iraivanai-Thandha-Iraiviye-MassTamilan.com_jyvvfy.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1782028917/Nada-Da-Raja-MassTamilan.com_mskvcd.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1782028916/The-Empress-Arrives-MassTamilan.com_rbdmg6.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1782028920/Ucchathula-MassTamilan.com_c4ky79.mp3",
-    ]
-  },
-  songKey: {
-    1: 1,
-    2: 2,
-    3: 3,
-    4: 4,
-    5: 5,
-    6: 6,
-    7: 7,
-    8: 8,
-    9: 9,
-    10: 10,
-    11: 11,
-    12: 12,
-    13: 13,
-    14: 14,
-    15: 15,
-    16: 16,
-    17: 17,
-    18: 18,
-    19: 19,
-  },
+var availableMovies = {
   songs: {
     1: [
-      "Vaseegara",
-      "Azhagiya Theeye",
-      "Venmathiye",
-      "Oh Mama Mama",
-      "Verenna Verenna (Ivan Yaro)",
+      "Aasa Kooda",
+      "Pavazha Malli",
+      "Naanga Naalu Peru",
+      "Katchi Sera",
+      "Sithira Puthiri",
+      "Vizhi Veekura",
+      "Oorum Blood",
+      "Singari",
+      "Kannukulla",
+      "Yumabaibesa",
+      "Nallaru Po"
     ],
     2: [
-      "Chella Magale",
+      "Po Urave",
+      "Pirai Thedum",
+      "Sakkra Nilave",
+      "Poongateile",
+      "Kanave Kanave",
+      "Imaye Imaye",
+      "Ava Enna",
+      "Yamma Yamma",
+      "Kadhal Oru Aagayam",
+      "Unna Nenachu",
+      "Pona Pogattum",
+      "Thanimaiye",
+      "Enai Vittu",
+      "Po Nee Po",
+      "Ennai Kollethey",
+      "Thodu Vaanam",
+      "Enakenna Yaarum Illaye",
+      "Marappadhilai Nenje",
+      "Yedho Ondru Ennai",
+      "Venmegam",
+      "Adiyae Azhagae",
+      "Dheivathukke Maaruvesama",
+      "Po Indru Neeyaga",
+    ],
+    3: [
+      "Macha Kanni",
+      "Machi Open the Bottle",
+      "Mascara",
+      "Yen Chellaperu Apple",
+      "Daddy Mummy",
+      "En Peeru Meenakumari",
+      "Manogari",
+      "Pia Pia",
+      "Thanjavoor Jilla Kaari",
+      "Dailamo Dailamo",
+      "Heartukulla",
+      "Jungunamani",
+      "Oru Kuchi Oru Kulfi",
+      "Vaadi Vaadi Naatu Katta",
+      "Achacho",
+      "Kaavaalaa",
+      "Kannu Rendum",
+      "Chiku Chiku Boom Boom",
+      "Pavazha Malli",
+      "Aura 10/10",
+      "Karupa Kooda Va",
+      "Kodambakkam Area",
+      "Ada Ennatha Solvenungo",
+      "Vaada Vaada",
+      "Udhungada Sangu",
+      "Velaiyilla Pattathari (Title Song)",
+      "What A Karavad",
+      "Dooram Nillu",
+      "Nada Da Raja",
+      "The Empress Arrives",
+      "Ucchathula",
+    ],
+    4: [
+      "Vaseegara",
+      "Jimikki Ponnu",
+      "Ranjithame",
+      "Thalapathy Kacheri",
+      "Spark",
+      "Venmathiye",
+      "Verenna Verenna (Ivan Yaro)",
+      "Anbe Anbe",
+      "Ennake Ennaka",
+      "Kannodu Kaanberallam",
+      "Poovukkul",
+      "Dheema",
+      "Pattuma",
+      "Pappali Pazhamey",
+      "Aura 10/10",
+      "Goindhamma",
+      "Oorum Blood",
+      "Singari",
+      "Kannukulla",
+      "Nallaru Po",
+      "Mutta Kalakki",
+      "Aasa Pulla",
+      "Paranthene Penne",
+      "Idhazhin Oram",
+      "Kannazhaga",
+      "Ne Paartha Vizhigal",
+      "Thaarame Thaarame",
+      "Urugi Urugi",
+      "Enna Vilai",
+      "Dhandiya",
+      "Roja Roja",
+      "Kaathalenum",
+      "Nenichapadi",
+      "Hey Minnale",
+      "Vennilavu Saaral",
+      "Uyirey",
+      "Vaane Vaane",
+      "Sai Pallavis Intro",
+      "Iraivanai Thandha Iraiviye",
+    ],
+    5: [
+      "Naa Ready",
+      "Badass",
+      "Bloody Sweet",
       "Oru Pere Varalaaru",
       "Raavana Mavandaa",
       "Thalapathy Kacheri",
-    ],
-    3: [
-      "Naa-Ready",
-      "Badass",
-      "Bloody-Sweet",
-      "Lokiverse-2.0",
-      "Glimpse-of-Harold-Das",
-    ],
-    4: [
       "Celebration-Of-Varisu",
       "Jimikki-Ponnu",
       "Ranjithame",
       "Soul-Of-Varisu",
       "Thee-Thalapathy",
       "Vaa-Thalaivaa",
-    ],
-    5: [
-      "Chinna Chinna Kangal", 
-      "Matta", 
-      "Spark", 
-      "Whistle Podu"
+      "Matta",
+      "Spark",
+      "Whistle Podu",
     ],
     6: [
-      "Anbe Anbe",
-      "Columbus Columbu",
-      "Ennake Ennaka",
-      "Kannodu Kaanberallam",
-      "Poovukkul",
-      "Varaya Thozhi",
+      "Chella Magale",
+      "Oru Pere Varalaaru",
+      "Raavana Mavandaa",
+      "Thalapathy Kacheri",
     ],
     7: [
-      "Naanga Naalu peru",
-      "God Mode Begins",
-      "Verappa",
-      "Aathi Raasathi",
-      "Athu Thalore",
-      "Karuppa Kooda Va",
-      "Raathu Raasan",
-      "Verappa-Extended",
-      "God Mode",
+        "Chinna Chinna Kangal", 
+        "Matta", 
+        "Spark", 
+        "Whistle Podu"],
+    8: [
+      "Kallaliye Kallaliye",
+      "Maalai Mangum Neram",
+      "Pirai Thedum Neram",
+      "En Jeevan",
+      "Kanna Veesi Kanna Veesi",
+      "Varaya Thozhi",
+    ],
+  },
+
+  songsList: {
+    1: [
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780196688/Aasa_Kooda_g4gadv.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780196687/Pavazha_Malli_hkdbcp.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780133371/Naanga_Naalu_Peru_mt1hys.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780196691/Katchi_Sera_fgybzp.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780196693/Sithira-Puthiri-MassTamilan.dev_mtefop.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780196693/Vizhi_Veekura_o8lac0.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780153988/Oorum_Blood_kkxuwk.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780153991/Singari_jddjzo.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780153991/Kannukulla_li5i45.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780153985/Yumabaibesa_n5dwdj.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780153994/Nallaru_Po_alkjpp.mp3",
+    ],
+    2: [
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239268/Po-Urave-MassTamilan.com_dvo20u.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239325/Pirai-Thedum_vaooai.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239378/Sakkarai_Nilave_iwhqkr.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239530/Poongkaatrilae_ppcgu5.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239549/Kanave-Kanave-MassTamilan.com_djvu27.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239508/Imaye-Imaye_rcvfti.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239547/Ava-Enna-Enna-MassTamilan.com_bpmone.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240113/Yamma-Yamma_nrw1bo.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239980/Kadhal-Oru-Aagayam-MassTamilan.com_wt5msw.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240094/Unna-Nenachu-MassTamilan.io_kviavs.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240001/Pona-Pogattum-MassTamilan.io_zic8ip.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240107/Thanimaye-Thanimaye-MassTamilan.io_xyccaz.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240112/Ennai-Vittu-MassTamilan.dev_tiwtiy.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240125/Po_Nee_Po_Remix_-_The_Scream_of_Love_palppu.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240197/Ennai-Kollathey-MassTamilan.fm_x1l827.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240204/Thodu-Vaanam_btcktc.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239816/Enakenna_Yaarum_Illaye_eai0kr.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239803/Marappadhilai-Nenje-_Additional-Song_-MassTamilan.io_hoakqg.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240255/Yedho-Ondru-Ennai_swojgg.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240349/Venmegam-Pennaga_xc07ig.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240405/Adiyae-Azhagae_ucw7yg.mp3",
+        "https://res.cloudinary.com/seshancloudy/video/upload/v1780680105/Dheivathukke-Maaruvesama_n0sd9b.mp3",
+        "https://res.cloudinary.com/seshancloudy/video/upload/v1782024527/Po_Indru_Neeyaga_wfftvp.mp3",
+    ],
+    3: [
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780295858/Macha-Kanni_taiimn.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780296020/Machi-Open-The-Bottle_fmqngh.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780296066/Mascara-Pottu_gvff7i.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780296049/En-Chella-Peru-Apple_zbcvng.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780296035/Daddy_Mummy_ntzlr7.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780296075/En-Peru-Meenakumari-MassTamilan.io_gedqbc.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780297890/Manogari_wf70zp.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780298725/Piya_Piya_-_Vijay_Antony_Chorus_cs0w6g.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780298934/Thanjavoor-Jillakkari_ruxdet.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780299422/Dailamo-Dailamo_s1l83z.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780298176/Heartukulla-Pachakuthiye-MassTamilan.com_oihbnb.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780299315/Jingunamani_z4n2gf.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780299010/Oru-Kuchi-Oru-Kulfi-MassTamilan.com_uxsafb.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780298843/Vadi-Vadi-Nattukkattai_hxy79m.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780299000/Achacho_sgoczw.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780299184/Kaavaalaa-MassTamilan.dev_x2njtl.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780299501/Kannu-Rendum_aaltkq.mp3",
+        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780299493/Chiku-Chiku-Boom_zceqxj.mp3",
+        "https://res.cloudinary.com/seshancloudy/video/upload/v1780196687/Pavazha_Malli_hkdbcp.mp3",
+        "meesaya murukku 2/Aura 10-10.mp3",
+        "https://res.cloudinary.com/seshancloudy/video/upload/v1780133545/Karuppa_Kooda_Va_kknomo.mp3",
+        "https://res.cloudinary.com/seshancloudy/video/upload/v1780680108/Kodambakkam-Area_qfnir7.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780680105/Ada-Ennatha-Solvenungo_ijrvkd.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780680108/Vaada-Vaada_kqyrfx.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1782025168/Udhungada_Sangu_w0vkx8.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1782024961/Velaiyilla_Pattathari_Title_Song_hyrfk9.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1782025186/What_A_Karavad_txrlon.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1782028907/Dooram-Nillu-MassTamilan.com_z9avim.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1782028917/Nada-Da-Raja-MassTamilan.com_mskvcd.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1782028916/The-Empress-Arrives-MassTamilan.com_rbdmg6.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1782028920/Ucchathula-MassTamilan.com_c4ky79.mp3",
+    ],  
+    4: [
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780739144/Vaseegara_qdunim.mp3",
+      "varisu/Jimikki-Ponnu-MassTamilan.dev.mp3",
+      "varisu/Ranjithame-MassTamilan.dev (1).mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678617/Thalapathy_Kacheri_ymxdbx.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1778677799/Spark_fyxqn8.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780739134/Venmathiye_o5rec5.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780739134/Verenna_Verenna_Ivan_Yaro_gxlbff.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678920/Anbe-Anbe_z5jtdv.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678940/Ennake-Ennaka_e1tqne.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678979/Kannodu-Kaanberallam_wctkai.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1778679083/Poovukkul_l4b3cj.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780138574/Dheema_caqm24.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780133783/Pattuma_tbcr1i.mp3",
+      "meesaya murukku 2/Pappali Pazhamey.mp3",
+      "meesaya murukku 2/Aura 10-10.mp3",
+      "meesaya murukku 2/Goindhamma.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780153988/Oorum_Blood_kkxuwk.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780153991/Singari_jddjzo.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780153991/Kannukulla_li5i45.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780153994/Nallaru_Po_alkjpp.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780154936/Mutta_Kalakki_w1ql1z.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780154932/Aasa_Pulla_htecgn.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780154936/Paranthene_Penne_dsl4fv.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780155606/Idhazhin_Oram_The_Innocence_of_Love_za3yt4.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780155631/Kannazhaga_The_Kiss_of_Love_qgffcm.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780155750/Nee_Paartha_Vizhigal_The_Touch_of_Love_h4ws4w.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780236035/Thaarame-Thaarame-MassTamilan.io_l3cjar.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100247/06_-_urugi-urugi_eigpd6.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100409/02_-_enna-vilai_fem8ti.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100404/01_-_dhandiya_shh5fz.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100435/06_-_roja-roja_njmcmc.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100407/03_-_kaathalenum_mfqaj2.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100405/04_-_nenichapadi_jyix1r.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100361/02_-_hey-minnale_fnngpt.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100365/06_-_uyirey_e5hcxj.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100367/07_-_vaane-vaane_hppnzp.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100356/05_-_sai-pallavis-intro_smto2g.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1782028911/Iraivanai-Thandha-Iraiviye-MassTamilan.com_jyvvfy.mp3",
+    ],
+    5: [
+      "leo/Naa-Ready-MassTamilan.dev.mp3",
+      "leo/Badass-MassTamilan.dev.mp3",
+      "leo/Bloody-Sweet-MassTamilan.dev.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678616/Oru-Pere-Varalaaru-MassTamilan.dev_yys7mt.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678616/Raavana-Mavandaa-MassTamilan.dev_t8o665.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678617/Thalapathy_Kacheri_ymxdbx.mp3",
+      "varisu/Celebration-Of-Varisu-MassTamilan.dev.mp3",
+      "varisu/Jimikki-Ponnu-MassTamilan.dev.mp3",
+      "varisu/Ranjithame-MassTamilan.dev (1).mp3",
+      "varisu/Soul-Of-Varisu-MassTamilan.dev.mp3",
+      "varisu/Thee-Thalapathy-MassTamilan.dev.mp3",
+      "varisu/Vaa-Thalaivaa-MassTamilan.dev.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1778677816/Matta_dysr8z.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1778677799/Spark_fyxqn8.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1778677857/Whistle_Podu_dykdzh.mp3",
+    ],
+    6: [
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678628/Chella-Magale-MassTamilan.dev_qgjxyf.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678616/Oru-Pere-Varalaaru-MassTamilan.dev_yys7mt.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678616/Raavana-Mavandaa-MassTamilan.dev_t8o665.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1778678617/Thalapathy_Kacheri_ymxdbx.mp3",
+    ],
+    7: [
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1778677796/Chinna_Chinna_Kangal_lhwhxb.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1778677816/Matta_dysr8z.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1778677799/Spark_fyxqn8.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1778677857/Whistle_Podu_dykdzh.mp3",
     ],
     8: [
-      "Dheema",
-      "Vibe Vaasey",
-      "Pattuma",
-      "Adaavadi",
-      "Pookattum",
-      "Enakenna Yaarum Illaye",
+      "akkaplaylist/Kallaliye Kallaliye.mp3",
+      "akkaplaylist/Maalai-Mangum-Neram.mp3",
+      "akkaplaylist/Pirai-Thedum.mp3",
+      "akkaplaylist/En Jeevan(KoshalWorld.Com).mp3",
+      "akkaplaylist/Kanna-Veesi-Kanna-Veesi-MassTamilan.io.mp3",
+      "akkaplaylist/Varaya Thozhi.mp3",
     ],
-    9: ["Pappali Pazhamey", "Aura 10/10", "Goindhamma"],
-    10: [
-      "Oorum Blood",
-      "Singari",
-      "Kannukulla",
-      "Yumabaibesa",
-      "Nallaru Po",
-      "Blud is on his Way",
+  },
+
+  songlistpicture: {
+    1: [
+      "https://www.masstamilan.dev/w/aasa-kooda-indie-tamil-2024.webp",
+      "https://www.masstamilan.dev/w/pavazha-malli-indie-tamil-2026.webp",
+      "https://www.masstamilan.dev/w/karuppu-tamil-2026.webp",
+      "https://www.masstamilan.dev/w/katchi-sera-indie-tamil-2024.webp",
+      "https://www.masstamilan.dev/w/sithira-puthiri-indie-tamil-2025.webp",
+      "https://www.masstamilan.dev/w/vizhi-veekura-indie-tamil-2025.webp",
+      "https://www.masstamilan.dev/w/dude-tamil-2025.webp",
+      "https://www.masstamilan.dev/w/dude-tamil-2025.webp",
+      "https://www.masstamilan.dev/w/dude-tamil-2025.webp",
+      "https://www.masstamilan.dev/w/dude-tamil-2025.webp",
+      "https://www.masstamilan.dev/w/dude-tamil-2025.webp",
     ],
-    11: [
-      "Mutta Kalakki",
-      "Aasa Pulla",
-      "Paranthene Penne",
-      "Loveah Sollitalea",
-      "Alapuzha Sandhayila",
-      "Thanga Magan",
-      "Ponmaaney",
-      "Poga Poga",
+    2: [
+      "https://www.masstamilan.dev/w/kaatrin-mozhi-2018.webp",
+      "https://www.masstamilan.dev/w/mayakkam-enna-2011.webp",
+      "https://www.masstamilan.dev/w/youth-tamil-2002.webp",
+      "https://www.masstamilan.dev/w/uyire-1998.webp",
+      "https://www.masstamilan.dev/w/david-2013.webp",
+      "https://www.masstamilan.dev/w/raja-rani-2013.webp",
+      "https://www.masstamilan.dev/w/vaaranam-aayiram-2008.webp",
+      "https://www.masstamilan.dev/w/7-aum-arivu-7aam-arivu-2010.webp",
+      "https://www.masstamilan.dev/w/imaikkaa-nodigal-2018.webp",
+      "https://www.masstamilan.dev/w/psycho-2019.webp",
+      "https://www.masstamilan.dev/w/master-tamil-2021.webp",
+      "https://www.masstamilan.dev/w/aarathu-sinam-2016.webp",
+      "https://www.masstamilan.dev/w/love-today-tamil-2022.webp",
+      "https://www.masstamilan.dev/w/3-moonu-tamil-2012.webp",
+      "https://www.masstamilan.dev/w/geethaiyin-raadhai-tamil-2016.webp",
+      "https://www.masstamilan.dev/w/anegan.webp",
+      "https://www.masstamilan.dev/w/aakko-tamil-2015.webp",
+      "https://www.masstamilan.dev/w/oh-my-kadavule-additional-songs-and-bgm-original-background-score-2020.webp",
+      "https://www.masstamilan.dev/w/paiya-2012.webp",
+      "https://www.masstamilan.dev/w/yaradi-nee-mohini.webp",
+      "https://www.masstamilan.dev/w/oru-naal-koothu.webp",
+      "https://www.masstamilan.dev/w/sivakasi-2005.webp",
+      "https://www.masstamilan.dev/w/velaiyilla-pattathari-vip-tamil-2014.webp",      
     ],
-    12: [
-      "Idhazhin Oram",
-      "Kannazhaga",
-      "Po Nee Po",
-      "Po Nee PO (Remix)",
-      "Why this Kolaveri Di",
-      "Ne Paartha Vizhigal",
-      "Come on Girls",
+    3: [
+      "https://www.masstamilan.dev/w/naan-avanillai-2007.webp",
+      "https://www.masstamilan.dev/w/mankatha.webp",
+      "https://www.masstamilan.dev/w/salim-2014.webp",
+      "https://www.masstamilan.dev/w/pokkiri-2007.webp",
+      "https://www.masstamilan.dev/w/villu-tamil-2009.webp",
+      "https://www.masstamilan.dev/w/kandasamy.webp",
+      "https://www.masstamilan.dev/w/baahubali1.webp",
+      "https://masstamilan.com.se/upload_file/3/12/1227/230x230/thumb_68e86320953ba.webp",
+      "https://a10.gaanacdn.com/gn_img/albums/lJvKa16KDV/JvKan66A3D/size_l.webp",
+      "https://www.masstamilan.dev/w/sura-2010.webp",
+      "https://www.masstamilan.dev/w/gulaebaghavali-2018.webp",
+      "https://www.masstamilan.dev/w/jilla.webp",
+      "https://www.masstamilan.dev/w/kalakalappu-2-2018.webp",
+      "https://a10.gaanacdn.com/gn_img/albums/01A3mrWNQX/1A3mv00zWN/size_l.webp",
+      "https://www.masstamilan.dev/w/aranmanai-4-tamil-2024.webp",
+      "https://www.masstamilan.dev/w/jailer-tamil-2023.webp",
+      "https://www.masstamilan.dev/w/kutty-2012.webp",
+      "https://www.masstamilan.dev/w/maasilamani-2009.webp",
+      "https://www.masstamilan.dev/w/pavazha-malli-indie-tamil-2026.webp",
+      "https://thf.bing.com/th/id/OIP.bGeVSpwJ4cADL7v_eGRrbwAAAA?w=311&h=169&c=7&r=0&o=7&cb=thfc1falcon&dpr=1.1&pid=1.7&rm=3",
+      "https://www.masstamilan.dev/w/karuppu-tamil-2026.webp",
+      "https://www.masstamilan.dev/w/sivakasi-2005.webp",
+      "https://www.masstamilan.dev/w/sivakasi-2005.webp",
+      "https://www.masstamilan.dev/w/sivakasi-2005.webp",
+      "https://www.masstamilan.dev/w/velaiyilla-pattathari-vip-tamil-2014.webp",
+      "https://www.masstamilan.dev/w/velaiyilla-pattathari-vip-tamil-2014.webp",
+      "https://www.masstamilan.dev/w/velaiyilla-pattathari-vip-tamil-2014.webp",
+      "https://www.masstamilan.dev/w/velaiilla-pattadhari-2-vip-2017.webp",
+      "https://www.masstamilan.dev/w/velaiilla-pattadhari-2-vip-2017.webp",
+      "https://www.masstamilan.dev/w/velaiilla-pattadhari-2-vip-2017.webp",
+      "https://www.masstamilan.dev/w/velaiilla-pattadhari-2-vip-2017.webp"
     ],
-    13: [
-        "Thaarame Thaarame",
-        "Theesudar Kuniyuma",
-        "Kadaram Kondan",  
+    4: [
+      "https://www.masstamilan.dev/w/minnale-tamil-2001.webp",
+      "https://www.masstamilan.dev/w/varisu-tamil-2023.webp",
+      "https://www.masstamilan.dev/w/varisu-tamil-2023.webp",
+      "icon/jananayagan.jpg",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbL8VaAb2GLq38_SAAYRy-dcir-hBjk4fomA&s",
+      "https://www.masstamilan.dev/w/minnale-tamil-2001.webp",
+      "https://www.masstamilan.dev/w/minnale-tamil-2001.webp",
+      "https://www.masstamilan.dev/w/jeans-1998.webp",
+      "https://www.masstamilan.dev/w/jeans-1998.webp",
+      "https://www.masstamilan.dev/w/jeans-1998.webp",
+      "https://www.masstamilan.dev/w/jeans-1998.webp",
+      "https://www.masstamilan.dev/w/love-insurance-kompany-lik-tamil-2026.webp",
+      "https://www.masstamilan.dev/w/love-insurance-kompany-lik-tamil-2026.webp",
+      "https://www.masstamilan.dev/w/meesaya-murukku-2-tamil-2026.webp",
+      "https://www.masstamilan.dev/w/meesaya-murukku-2-tamil-2026.webp",
+      "https://www.masstamilan.dev/w/meesaya-murukku-2-tamil-2026.webp",
+      "https://www.masstamilan.dev/w/dude-tamil-2025.webp",
+      "https://www.masstamilan.dev/w/dude-tamil-2025.webp",
+      "https://www.masstamilan.dev/w/dude-tamil-2025.webp",
+      "https://www.masstamilan.dev/w/dude-tamil-2025.webp",
+      "https://www.masstamilan.dev/w/youth-tamil-2026.webp",
+      "https://www.masstamilan.dev/w/youth-tamil-2026.webp",
+      "https://www.masstamilan.dev/w/youth-tamil-2026.webp",
+      "https://www.masstamilan.dev/w/3-moonu-tamil-2012.webp",
+      "https://www.masstamilan.dev/w/3-moonu-tamil-2012.webp",
+      "https://www.masstamilan.dev/w/3-moonu-tamil-2012.webp",
+      "https://www.masstamilan.dev/w/kadaram-kondan-2019.webp",
+      "https://tse3.mm.bing.net/th/id/OIP.Xfp1AouFTlvBQRrZxsUQ6gHaIK?pid=Api&h=220&P=0",
+      "https://tse2.mm.bing.net/th/id/OIP.49FFXpmDwilAdqJmoJgDYgHaKr?pid=Api&h=220&P=0",
+      "https://tse2.mm.bing.net/th/id/OIP.49FFXpmDwilAdqJmoJgDYgHaKr?pid=Api&h=220&P=0",
+      "https://tse2.mm.bing.net/th/id/OIP.49FFXpmDwilAdqJmoJgDYgHaKr?pid=Api&h=220&P=0",
+      "https://tse2.mm.bing.net/th/id/OIP.49FFXpmDwilAdqJmoJgDYgHaKr?pid=Api&h=220&P=0",
+      "https://tse2.mm.bing.net/th/id/OIP.49FFXpmDwilAdqJmoJgDYgHaKr?pid=Api&h=220&P=0",
+      "https://tse2.mm.bing.net/th/id/OIP.ejIzPJLnWOyeaH5yPYD3ygHaJQ?pid=Api&h=220&P=0",
+      "https://tse2.mm.bing.net/th/id/OIP.ejIzPJLnWOyeaH5yPYD3ygHaJQ?pid=Api&h=220&P=0",
+      "https://tse2.mm.bing.net/th/id/OIP.ejIzPJLnWOyeaH5yPYD3ygHaJQ?pid=Api&h=220&P=0",
+      "https://tse2.mm.bing.net/th/id/OIP.ejIzPJLnWOyeaH5yPYD3ygHaJQ?pid=Api&h=220&P=0",
+      "https://tse2.mm.bing.net/th/id/OIP.ejIzPJLnWOyeaH5yPYD3ygHaJQ?pid=Api&h=220&P=0",
+      "https://www.masstamilan.dev/w/velaiilla-pattadhari-2-vip-2017.webp",
     ],
-    14: [
-      "Kodambakkam Area",
-      "Deepavali Deepavali",
-      "Ada Ennatha Solvenungo",
-      "Dheivathukke Maaruvesama",
-      "Idhu Enna Idhu Enna",
-      "Vaada Vaada"
+    5: Array(15).fill("https://www.masstamilan.dev/w/leo-tamil-2023.webp"),
+    6: [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQXIk7h9nS9DsamRn_UWsukg4Pf7IlncK5cQ&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9784HdLZ52d8Q75xLrLLFIZm6upP_-ZJ98A&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBqZHFpcQ6a4CqKn4OjWK0IQ9oMauquxlXQQ&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOx_Icl1S5PSzAuHwD1U-zoPcUTN3QorH8qQ&s",
     ],
-    15: [
-      "Urugi Urugi",
-      "Ore Kannaa",
-      "Dimmu Dippu",
-      "Joe Teaser Theme",
-      "Kovai Kulira",
-      "Culturals Song"
+    7: Array(5).fill(
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbL8VaAb2GLq38_SAAYRy-dcir-hBjk4fomA&s",
+    ),
+    8: [
+      "https://www.masstamilan.dev/w/maaman-tamil-2025.webp",
+      "https://www.masstamilan.dev/w/rowthiram-2011.webp",
+      "https://www.masstamilan.dev/w/mayakkam-enna-2011.webp",
+      "https://koshalworld.com/siteuploads/thumb/sft74/36719_4.webp",
+      "https://www.masstamilan.dev/w/kadhal-ondru-kanden-short-film-tamil-2020.webp",
     ],
-    16: [
-      "Enna Vilai",
-      "Dhandiya",
-      "Roja Roja",
-      "Kaathalenum",
-      "Nenichapadi",
-      "Oh Maria Oh Maria"
-    ],
-    17: [
-      "Hey Minnale",
-      "Vennilavu Saaral",
-      "Uyirey",
-      "Vaane Vaane",
-      "Amara",
-      "Kanave",
-      "Sai Pallavis Intro",
-      "Por Veeran(Azadi)"
-    ],
-    18: [
-      "Amma Amma",
-      "Po Indru Neeyaga",
-      "Udhungada Sangu",
-      "Velaiyilla Pattathari (Title Song)",
-      "What A Karavad",
-    ],
-    19: [
-      "Dooram Nillu",
-      "Iraivanai Thandha Iraiviye",
-      "Nada Da Raja",
-      "The Empress Arrives",
-      "Ucchathula",
-    ]
   },
 };
 
-// ── Render all movie cards ──────────────────────────────────────────────────
-function displayMovies() {
-  musicList.innerHTML =
-    '<h5 class="noteh6" style="text-align: center ;">Availabe Movies List<br>Tap the movies to <span class="logo">pLaY</span> the Songs</h5>';
+// ── PLAYLIST GRID METADATA ────────────────────────────────────────────────────
+var playlists = {
+  1: {
+    title :'Sai Abhyankkar',
+    movieKey: 1,
+    imageUrl: "https://www.masstamilan.dev/w/pavazha-malli-indie-tamil-2026.webp"
+  },
+  2: {
+    title : "Drugs",
+    movieKey: 2,
+    imageUrl: "https://www.masstamilan.dev/w/master-tamil-2021.webp",
+  },
+  3: {
+    title : "Vibe Aaa",
+    movieKey: 3,
+    imageUrl: "https://thf.bing.com/th/id/OIP.bGeVSpwJ4cADL7v_eGRrbwAAAA?w=311&h=169&c=7&r=0&o=7&cb=thfc1falcon&dpr=1.1&pid=1.7&rm=3"
+  },
+  4: {
+    title: "Kadhal Veesum",
+    movieKey: 4,
+    imageUrl: "https://www.masstamilan.dev/w/jilla.webp",
+  },
+  5: {
+    title: "Thalapathy Hits",
+    movieKey: 5,
+    imageUrl: "https://www.masstamilan.dev/w/pokkiri-2007.webp",
+  },
+  6: {
+    title: "Anirudh's Best",
+    movieKey: 6,
+    imageUrl: "https://www.masstamilan.dev/w/aakko-tamil-2015.webp",
+  },
+  7: {
+    title: "Top Tamil Songs",
+    movieKey: 7,
+    imageUrl: "https://www.masstamilan.dev/w/oru-naal-koothu.webp",
+  },
+  8: {
+    title: "Songs",
+    movieKey: 8,
+    imageUrl: "https://www.masstamilan.dev/w/maaman-tamil-2025.webp",
+  },
+  9: {
+    title: "Romantic Songs",
+    movieKey: 9,
+    imageUrl: "",
+  },
+};
 
-  for (let i = 1; i <= Object.keys(indexMovies.title).length; i++) {
-    musicList.innerHTML += `
-      <div class="music-item" onclick="songsavailable(${i})">
-          <img src="${indexMovies.icon[i]}" alt="${indexMovies.title[i]}">
-          <div class="music-info">
-              <h5 style="font-size: 10.5px;">${indexMovies.title[i]}</h5>
-              <p style="font-size: 8px; color: #b3b3b3;">
-                ${indexMovies.artist[i]}
-              </p>
-          </div>
-          <button onclick="songsavailable(${i})" class="gobtn">▶</button><br>
-      </div>
-    `;
-  }
-}
+// ── DOM ───────────────────────────────────────────────────────────────────────
+var playlistContainer = document.getElementById("playlist-container");
 
-// 👇 ADD THIS
-displayMovies();
+// ── RENDER PLAYLIST GRID ──────────────────────────────────────────────────────
+function displayPlaylist() {
+  if (!playlistContainer) return;
+  playlistContainer.style.display = "";
+  playlistContainer.innerHTML = "";
 
-// ── Search bar ─────────────────────────────────────────────────────────────
-const searchInput = document.querySelector(".search-bar input");
-const searchBtn = document.querySelector(".search-btn");
-
-function doSearch() {
-  const query = searchInput.value.trim().toLowerCase();
-  const items = document.querySelectorAll(".music-item");
-
-  let found = 0;
-  items.forEach((item) => {
-    const title = item
-      .querySelector(".music-info h5")
-      .textContent.toLowerCase();
-    const artist = item
-      .querySelector(".music-info p")
-      .textContent.toLowerCase();
-    const match = title.includes(query) || artist.includes(query);
-    item.style.display = match ? "flex" : "none";
-    if (match) found++;
-  });
-
-  let noResult = document.getElementById("no-result");
-  if (!noResult) {
-    noResult = document.createElement("div");
-    noResult.id = "no-result";
-    noResult.style.cssText =
-      "text-align:center;padding:50px 20px;color:#b3b3b3;width:100%;";
-    noResult.innerHTML = `<div style="font-size:48px;margin-bottom:16px;">🔍</div>
-            <h3 style="color:#fff;margin-bottom:8px;">No songs found</h3>
-            <p>Try a different title or artist name.</p>`;
-    musicList.appendChild(noResult);
-  }
-  noResult.style.display = found === 0 && query !== "" ? "block" : "none";
-}
-
-searchBtn.addEventListener("click", doSearch);
-searchInput.addEventListener("input", doSearch);
-searchInput.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") doSearch();
-});
-
-function songsavailable(i) {
-  const key = indexMovies.songKey[i];
-  const title = indexMovies.title[i];
-  const artist = indexMovies.artist[i];
-  const icon = indexMovies.icon[i];
-  const list = indexMovies.songs[key];
-  musicList.innerHTML = "";
-  musicList.innerHTML += `
-<button id="back-btn" onclick="displayMovies()">Back</button>
-`;
-
-  for (let j = 0; j < indexMovies.songs[key].length; j++) {
-    const content = `
-        <div class="music-item" onclick="playMusic(${key}, ${j})">
-            <img src="${indexMovies.songlistpicture[key][j]}" alt="${indexMovies.title[i]}">
-            <div class="music-info">
-                <h5 style="font-size: 10.5px;">${indexMovies.songs[key][j]}</h5>
-                <p style="font-size: 8px; color: #b3b3b3; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-top: 3px;">${indexMovies.artist[key]}</p>
-            </div>
-            <button onclick="playMusic(${key}, ${j})" class="gobtn">▶</button>
+  for (var id in playlists) {
+    playlistContainer.innerHTML += `
+      <div class="playlist-item" onclick="displayPlaylistSongs(${id})">
+        <img src="${playlists[id].imageUrl || ""}" alt="${playlists[id].title}" onerror="this.style.display='none'" />
+        <div class="playlist-info">
+          <h5>${playlists[id].title}</h5>
         </div>
-
-    `;
-    
-    musicList.innerHTML += content;
+      </div>`;
   }
 }
 
-function playMusic(movieKey, songIndex) {
+if (playlistContainer) displayPlaylist();
+
+
+// ── RENDER SONGS INSIDE A PLAYLIST ───────────────────────────────────────────
+function displayPlaylistSongs(playlistId) {
+  if (!playlistContainer) return;
+  var pl = playlists[playlistId];
+  var movieKey = pl.movieKey;
+  var title = pl.title;
+  var songs = movieKey ? availableMovies.songs[movieKey] : [];
+  var pictures = movieKey ? availableMovies.songlistpicture[movieKey] : [];
+
+  playlistContainer.style.display = "block";
+
+  var songsHTML = "";
+
+  if (!songs || songs.length === 0) {
+    songsHTML = `<p style="color:#b3b3b3;margin-top:20px;">No songs in this playlist yet.</p>`;
+  } else {
+    for (var j = 0; j < songs.length; j++) {
+      songsHTML += `
+        <div class="music-item" onclick="playLibrarySong(${movieKey}, ${j})">
+          <img src="${pictures[j] || ""}"
+              onerror="this.style.display='none'"
+              alt="${songs[j]}" />
+          <div class="music-info">
+            <h5 style="font-size:10.5px;font-weight:600;color:#ffffff;">${songs[j]}</h5>
+            <p style="font-size:8px;color:#b3b3b3;">${title}</p>
+          </div>
+          <button class="gobtn" onclick="event.stopPropagation(); playLibrarySong(${movieKey}, ${j})">▶</button>
+        </div>`;
+        document.getElementById("audio-player").style.display = "block";
+    }
+  }
+
+  playlistContainer.innerHTML = `
+    <button id="back-buttoninlib" onclick="displayPlaylist()">Back</button>
+    <div class="songs-list1">
+      <h3>${title}</h3>
+      ${songsHTML}
+    </div>`;
+}
+
+// ── PLAY A SONG ───────────────────────────────────────────────────────────────
+function playLibrarySong(movieKey, songIndex) {
   currentMovieKey = movieKey;
   currentSongIndex = songIndex;
 
-  const songPath = indexMovies.songsList[movieKey][songIndex];
-
-  const songName = indexMovies.songs[movieKey][songIndex];
-  console.log(songPath);
-
-  audio.src = songPath;
-
+  audio.src = availableMovies.songsList[movieKey][songIndex];
   audio.play();
 
-  playBtn.innerHTML = "<p style='font-size: 15px; color: #000;'>||</p>";
-  document.getElementById("audio-player").style.display = "block";
-  currentSong.innerHTML = songName;
+  currentSong.innerText = availableMovies.songs[movieKey][songIndex];
+  playBtn.innerHTML = "<p style='color:#000;'>||</p>";
 }
 
+// ── SEARCH SONGS FUNCTION ─────────────────────────────────────────────────────
+function searchSongs() {
+  const searchInput = document.getElementById("search-input");
+  if (!searchInput) return;
+  
+  const query = searchInput.value.trim().toLowerCase();
+  
+  if (!query) {
+    displayPlaylist();
+    return;
+  }
+  
+  const results = [];
+  
+  for (let id in playlists) {
+    const pl = playlists[id];
+    const movieKey = pl.movieKey;
+    
+    // Skip if no valid movieKey or songs don't exist
+    if (!movieKey) continue;
+    if (!availableMovies.songs[movieKey]) continue;
+    if (!availableMovies.songs[movieKey].length) continue;
+    
+    const songs = availableMovies.songs[movieKey];
+    const pictures = availableMovies.songlistpicture?.[movieKey] || [];
+    
+    for (let j = 0; j < songs.length; j++) {
+      const songTitle = songs[j].toLowerCase();
+      const playlistTitle = pl.title.toLowerCase();
+      
+      if (songTitle.includes(query) || playlistTitle.includes(query)) {
+        results.push({
+          movieKey: movieKey,
+          songIndex: j,
+          title: songs[j],
+          playlistName: pl.title,
+          imageUrl: pictures[j] || pl.imageUrl || ""
+        });
+      }
+    }
+  }
+  
+  playlistContainer.style.display = "block";
+  
+  if (results.length === 0) {
+    playlistContainer.innerHTML = `
+      <button id="back-buttoninlib" onclick="displayPlaylist()">← Back</button>
+      <div class="search-empty-message">
+        <h4>No songs found</h4>
+        <p>Try a different title or playlist name</p>
+      </div>
+    `;
+    return;
+  }
+  
+  let resultsHTML = `
+    <button id="back-buttoninlib" onclick="displayPlaylist()">← Back to Library</button>
+    <div class="songs-list1">
+      <h3>Search Results (${results.length})</h3>
+  `;
+  
+  for (let r of results) {
+    // Escape special characters in title to prevent HTML issues
+    const safeTitle = r.title.replace(/[&<>]/g, function(m) {
+      if (m === '&') return '&amp;';
+      if (m === '<') return '&lt;';
+      if (m === '>') return '&gt;';
+      return m;
+    });
+    const safePlaylist = r.playlistName.replace(/[&<>]/g, function(m) {
+      if (m === '&') return '&amp;';
+      if (m === '<') return '&lt;';
+      if (m === '>') return '&gt;';
+      return m;
+    });
+    
+    resultsHTML += `
+      <div class="music-item" onclick="playLibrarySong(${r.movieKey}, ${r.songIndex})">
+        <img src="${r.imageUrl}" onerror="this.style.display='none'" alt="${safeTitle}" />
+        <div class="music-info">
+          <h5 style="font-size:10.5px;font-weight:600;color:#ffffff;">${safeTitle}</h5>
+          <p style="font-size:8px;color:#b3b3b3;">${safePlaylist}</p>
+        </div>
+        <button class="gobtn" onclick="event.stopPropagation(); playLibrarySong(${r.movieKey}, ${r.songIndex})">▶</button>
+      </div>`;
+  }
+  
+  resultsHTML += `</div>`;
+  playlistContainer.innerHTML = resultsHTML;
+}
 
+// ── TOGGLE SEARCH BAR ─────────────────────────────────────────────────────────
+function toggleSearchBar() {
+  const searchBar = document.querySelector(".search-bar");
+  
+  if (window.searchTimeout) {
+    clearTimeout(window.searchTimeout);
+  }
+  
+  if (searchBar) {
+    if (searchBar.style.display === "none" || searchBar.style.display === "") {
+      searchBar.style.display = "flex";
+      const searchInput = document.getElementById("search-input");
+      if (searchInput) {
+        searchInput.value = "";
+        searchInput.focus();
+        searchInput.removeEventListener("input", searchSongs);
+        searchInput.addEventListener("input", searchSongs);
+      }
+      
+      window.searchTimeout = setTimeout(() => {
+        searchBar.style.display = "none";
+        const searchInput2 = document.getElementById("search-input");
+        if (searchInput2) {
+          searchInput2.value = "";
+          searchInput2.removeEventListener("input", searchSongs);
+        }
+        displayPlaylist();
+      }, 20000);
+    } else {
+      searchBar.style.display = "none";
+      const searchInput = document.getElementById("search-input");
+      if (searchInput) {
+        searchInput.value = "";
+        searchInput.removeEventListener("input", searchSongs);
+      }
+      displayPlaylist();
+    }
+  }
+}
 
 // ── DISCLAIMER MODAL FUNCTIONS ───────────────────────────────────────────────
-
 function showDisclaimer() {
     const modal = document.getElementById("disclaimerModal");
     if (modal) {
         modal.style.display = "flex";
-        document.body.style.overflow = "hidden"; // Prevent background scrolling
+        document.body.style.overflow = "hidden";
     }
 }
 
@@ -530,17 +703,15 @@ function closeDisclaimer() {
     const modal = document.getElementById("disclaimerModal");
     if (modal) {
         modal.style.display = "none";
-        document.body.style.overflow = ""; // Restore scrolling
+        document.body.style.overflow = "";
     }
 }
 
 function acknowledgeDisclaimer() {
     closeDisclaimer();
-    // Optional: Store in localStorage that user has seen disclaimer
     localStorage.setItem("disclaimer_acknowledged", "true");
 }
 
-// Close modals when clicking outside the content
 window.onclick = function(event) {
     const disclaimerModal = document.getElementById("disclaimerModal");
     if (event.target === disclaimerModal) {
@@ -549,16 +720,10 @@ window.onclick = function(event) {
     
     const timerModal = document.getElementById("timerModal");
     if (event.target === timerModal) {
-        closeTimerModal();
+        if (typeof closeTimerModal === 'function') closeTimerModal();
     }
-    // 👇 PASTE location 3 RIGHT HERE, before the closing }
-    const aboutModal = document.getElementById("aboutModal");
-    if (event.target === aboutModal) closeAboutModal();
 }
 
-
-
-// Attach click event to logo when DOM is ready
 document.addEventListener("DOMContentLoaded", function() {
     const logo = document.querySelector(".logo");
     if (logo) {
@@ -568,73 +733,12 @@ document.addEventListener("DOMContentLoaded", function() {
         });
         logo.style.cursor = "pointer";
     }
-        // 👇 PASTE location 2 RIGHT HERE, before the closing });
-    const logoImg = document.getElementById("logoimg");
-    if (logoImg) { logoImg.addEventListener("click", openAboutModal); logoImg.style.cursor = "pointer"; }
 });
 
-
-// 1. Add at the very end of the file:
-function openAboutModal() {
-    document.getElementById("aboutModal").style.display = "flex";
-    document.body.style.overflow = "hidden";
-}
-function closeAboutModal() {
-    document.getElementById("aboutModal").style.display = "none";
-    document.body.style.overflow = "";
-}
-
-
-
-//------------------------------------
-
-function songsavailable2() {
-  document.getElementById("audio-player").style.display = "block";
-  const container    = document.getElementById("songsavailablelist");
-  const musicListDiv = document.getElementById("music-list");
-  const btn          = document.getElementById("songavailable");
-
-  if (container.style.display === "flex") {
-    container.style.display = "none";
-    musicListDiv.style.display = "flex";
-    btn.textContent = "All Songs";
-    queueModeActive = false; // ← exit queue mode when closing
-    return;
-  }
-
-  musicListDiv.style.display = "none";
-  container.style.display = "flex";
-  container.style.flexDirection = "column";
-  btn.textContent = "Back";
-
-  // Build the flat queue once
-  buildAllSongsQueue();
-  queueModeActive = true; // ← activate queue mode
-
-  let html = `<h5 class="noteh6" style="text-align:center;margin-bottom:12px;">
-    All Songs — Tap to <span class="logo">pLaY</span>
-  </h5>`;
-
-  // Use queue index for onclick so next/prev works correctly
-  allSongsQueue.forEach((item, i) => {
-    html += `
-      <div class="music-item" onclick="playQueueSong(${i})">
-        <img src="${item.img}" alt="${item.name}" onerror="this.style.display='none'">
-        <div class="music-info">
-          <h5 style="font-size:10.5px;">${item.name}</h5>
-          <p style="font-size:8px;color:#b3b3b3;">${item.artist}</p>
-        </div>
-        <button onclick="event.stopPropagation(); playQueueSong(${i})" class="gobtn">▶</button>
-      </div>`;
-  });
-
-  container.innerHTML = html;
-}
-
-// Global function called from the All Songs list
-function playQueueSong(index) {
-  queueModeActive = true;
-  playFromQueue(index);
+function clearSearch() {
+  const searchInput = document.getElementById("search-input");
+  if (searchInput) searchInput.value = "";
+  displayPlaylist();
 }
 
 
