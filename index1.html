@@ -5,36 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ipLaY App</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="library.css" />
     <!-- Standard favicon -->
     <link rel="icon" type="image/png" href="iconicon.jpeg" />
 
     <!-- Apple devices (iPhone/iPad) -->
     <link rel="apple-touch-icon" href="iconicon.jpeg" />
 
-    <!-- Android / PWA -->
-    <link rel="manifest" href="manifest.json" />
+    <!-- PWA manifest intentionally omitted here because dev tunnels block the auth redirect used by manifest.json; keep the app as a normal static web page. -->
   </head>
 
   <body id="index1body">
     <header>
-      <a href="index.html" class="logo" style="cursor: pointer">ipLaY</a>
+      <a href="index1.html" class="logo" style="cursor: pointer">ipLaY</a>
       <button id="timer-btn" class="timer-nav-btn">⏱</button>
       <nav>
-        <li><a href="index.html">Home</a></li>
+        <li><a href="index1.html?view=home">Home</a></li>
+        <li><a href="index1.html?view=movies">Movies</a></li>
         <li>
           <a href="javascript:void(0)" onclick="toggleSearchBar()">Search</a>
         </li>
-        <li><a href="library.html">Library</a></li>
+        <li><a href="index1.html?view=library">Library</a></li>
       </nav>
     </header>
-    <button
-        onclick="songsavailable2()"
-        id="songavailable"
-      >
-      All Songs
-      </button>
-
-      
     <div id="main" class="main">
       <img id="logoimg" src="iconbg.jpeg" alt="" srcset="" />
       <search class="search-bar" style="display: none">
@@ -44,25 +37,21 @@
           placeholder="Search for songs..."
         />
         <button class="search-btn">Search</button>
+        <button
+          class="search-clear-btn"
+          type="button"
+          onclick="clearHomeSearch()"
+          aria-label="Clear search"
+        >
+          Clear
+        </button>
       </search>
       <div class="container">
         <h3>Welcome to <span class="logo">ipLaY</span> App</h3>
         <p>Discover and enjoy your favorite music..</p>
       </div>
-      <!-- <button onclick="showAllSongs()" id="songavailable">Songs Available</button><br>
-      <div style="display: none;" id="songsavailablelist"></div>  -->
-      <!-- Replace your existing button + div with this: -->
-      <div
-        id="songsavailablelist"
-        style="
-          display: none;
-          flex-direction: column;
-          gap: 10px;
-          width: 100%;
-          margin-bottom: 180px;
-        "
-      ></div>
       <div class="music-list" id="music-list"></div>
+      <div id="library-view" class="playlist-container" hidden></div>
     </div>
     <div style="display: none" control id="audio-player" class="audio-player">
       <div class="progress-container">
@@ -78,6 +67,9 @@
         <span id="duration">0:00</span>
       </div>
       <div id="current-song" class="current-song">No song playing</div>
+      <div class="player-visualizer" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </div>
       <div class="controls">
         <button id="prev-btn" class="control-btn" onclick="songDec()">
           ⏮
