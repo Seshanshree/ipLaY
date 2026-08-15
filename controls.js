@@ -76,6 +76,9 @@ function playFromQueue(index) {
   currentSong.innerText = item.name;
   playBtn.innerHTML = "<p style='color: #000;'>||</p>";
   document.getElementById("audio-player").style.display = "block";
+  document.querySelectorAll("[data-queue-index]").forEach((songItem) => {
+    songItem.classList.toggle("is-current-song", Number(songItem.dataset.queueIndex) === currentQueueIndex);
+  });
   updateMediaSession(item.movieKey, item.songIndex);
 }
 
@@ -84,9 +87,55 @@ function playFromQueue(index) {
 
 const audio = new Audio();
 audio.preload = "auto";
+audio.setAttribute("playsinline", "");
+audio.setAttribute("webkit-playsinline", "");
+
+// Keep the operating system's media controls in sync, including while the app
+// is in the background or the screen is locked.
+audio.addEventListener("play", () => {
+  if ("mediaSession" in navigator) navigator.mediaSession.playbackState = "playing";
+  document.getElementById("audio-player")?.classList.add("is-playing");
+  requestWakeLock();
+  startKeepAlive();
+});
+
+audio.addEventListener("pause", () => {
+  if ("mediaSession" in navigator) navigator.mediaSession.playbackState = "paused";
+  document.getElementById("audio-player")?.classList.remove("is-playing");
+  stopKeepAlive();
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+  const page = window.location.pathname.split("/").pop() || "index1.html";
+  const isMovies = new URLSearchParams(window.location.search).get("view") === "movies";
+
+  document.querySelectorAll("nav a").forEach((link) => {
+    const isMoviesLink = link.href.includes("view=movies");
+    const isCurrent = (isMovies && isMoviesLink) || (!isMovies && !isMoviesLink && link.getAttribute("href") === page);
+    if (isCurrent) link.setAttribute("aria-current", "page");
+  });
+});
+
+document.addEventListener("keydown", (event) => {
+  const target = event.target;
+  if (target instanceof HTMLInputElement || target instanceof HTMLTextAreaElement || target?.isContentEditable) return;
+  if (target instanceof HTMLElement && target.closest("button, a")) return;
+
+  if (event.code === "Space") {
+    event.preventDefault();
+    songPlay();
+  } else if (event.code === "ArrowRight") {
+    event.preventDefault();
+    songInc();
+  } else if (event.code === "ArrowLeft") {
+    event.preventDefault();
+    songDec();
+  }
+});
 
 let currentMovieKey = 1;
 let currentSongIndex = 0;
+let activeSongSource = "library";
 
 const playBtn = document.getElementById("play-btn");
 const currentSong = document.getElementById("current-song");
@@ -239,11 +288,19 @@ audio.addEventListener("timeupdate", () => {
 
 // ── LOAD SONG ────────────────────────────────────────────────────────────────
 
+function getActiveSongCollection() {
+  if (activeSongSource === "movies" && typeof indexMovies !== "undefined") {
+    return indexMovies;
+  }
+  return availableMovies;
+}
+
 function loadSong(movieKey, songIndex) {
+  const songCollection = getActiveSongCollection();
   currentMovieKey = movieKey;
   currentSongIndex = songIndex;
-  audio.src = availableMovies.songsList[movieKey][songIndex];
-  currentSong.innerText = availableMovies.songs[movieKey][songIndex];
+  audio.src = songCollection.songsList[movieKey][songIndex];
+  currentSong.innerText = songCollection.songs[movieKey][songIndex];
   updateMediaSession(movieKey, songIndex);
 }
 
@@ -276,7 +333,8 @@ function songInc() {
     return;
   }
   currentSongIndex++;
-  if (currentSongIndex >= availableMovies.songs[currentMovieKey].length) {
+  const songCollection = getActiveSongCollection();
+  if (currentSongIndex >= songCollection.songs[currentMovieKey].length) {
     currentSongIndex = 0;
   }
   loadSong(currentMovieKey, currentSongIndex);
@@ -294,8 +352,9 @@ function songDec() {
     return;
   }
   currentSongIndex--;
+  const songCollection = getActiveSongCollection();
   if (currentSongIndex < 0) {
-    currentSongIndex = availableMovies.songs[currentMovieKey].length - 1;
+    currentSongIndex = songCollection.songs[currentMovieKey].length - 1;
   }
   loadSong(currentMovieKey, currentSongIndex);
   audio.play().then(() => { requestWakeLock(); startKeepAlive(); }).catch(() => {});
