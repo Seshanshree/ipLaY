@@ -1,4 +1,23 @@
 const musicList = document.getElementById("music-list");
+const movieFavoritesKey = "iplay_favorite_movies";
+
+function getMovieFavorites() {
+  try {
+    return JSON.parse(localStorage.getItem(movieFavoritesKey) || "[]");
+  } catch {
+    return [];
+  }
+}
+
+function toggleMovieFavorite(movieId, event) {
+  event.stopPropagation();
+  const favorites = getMovieFavorites();
+  const index = favorites.indexOf(movieId);
+  if (index === -1) favorites.push(movieId);
+  else favorites.splice(index, 1);
+  localStorage.setItem(movieFavoritesKey, JSON.stringify(favorites));
+  displayMovies();
+}
 
 var indexMovies = {
   title: {
@@ -63,28 +82,43 @@ var indexMovies = {
     17: "https://tse2.mm.bing.net/th/id/OIP.ejIzPJLnWOyeaH5yPYD3ygHaJQ?pid=Api&h=220&P=0",
     18: "https://www.masstamilan.dev/w/velaiyilla-pattathari-vip-tamil-2014.webp",
     19: "https://www.masstamilan.dev/w/velaiilla-pattadhari-2-vip-2017.webp",
-    
   },
   songlistpicture: {
     1: Array(5).fill("https://www.masstamilan.dev/w/minnale-tamil-2001.webp"),
-    2: Array(4).fill("icon/jananayagan.jpg"), 
+    2: Array(4).fill("icon/jananayagan.jpg"),
     3: Array(5).fill("https://www.masstamilan.dev/w/leo-tamil-2023.webp"),
     4: Array(6).fill("https://www.masstamilan.dev/w/varisu-tamil-2023.webp"),
-    5: Array(4).fill("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbL8VaAb2GLq38_SAAYRy-dcir-hBjk4fomA&s"),
+    5: Array(4).fill(
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbL8VaAb2GLq38_SAAYRy-dcir-hBjk4fomA&s",
+    ),
     6: Array(6).fill("https://www.masstamilan.dev/w/jeans-1998.webp"),
     7: Array(9).fill("https://www.masstamilan.dev/w/karuppu-tamil-2026.webp"),
-    8: Array(6).fill("https://www.masstamilan.dev/w/love-insurance-kompany-lik-tamil-2026.webp"),
-    9: Array(3).fill("https://www.masstamilan.dev/w/meesaya-murukku-2-tamil-2026.webp"),
+    8: Array(6).fill(
+      "https://www.masstamilan.dev/w/love-insurance-kompany-lik-tamil-2026.webp",
+    ),
+    9: Array(3).fill(
+      "https://www.masstamilan.dev/w/meesaya-murukku-2-tamil-2026.webp",
+    ),
     10: Array(6).fill("https://www.masstamilan.dev/w/dude-tamil-2025.webp"),
-    11: Array(8).fill("https://www.masstamilan.dev/w/youth-tamil-2026.webp"), 
+    11: Array(8).fill("https://www.masstamilan.dev/w/youth-tamil-2026.webp"),
     12: Array(7).fill("https://www.masstamilan.dev/w/3-moonu-tamil-2012.webp"),
-    13: Array(3).fill("https://www.masstamilan.dev/w/kadaram-kondan-2019.webp"), 
+    13: Array(3).fill("https://www.masstamilan.dev/w/kadaram-kondan-2019.webp"),
     14: Array(6).fill("https://www.masstamilan.dev/w/sivakasi-2005.webp"),
-    15: Array(6).fill("https://tse3.mm.bing.net/th/id/OIP.Xfp1AouFTlvBQRrZxsUQ6gHaIK?pid=Api&h=220&P=0"),
-    16: Array(6).fill("https://tse2.mm.bing.net/th/id/OIP.49FFXpmDwilAdqJmoJgDYgHaKr?pid=Api&h=220&P=0"),
-    17: Array(8).fill("https://tse2.mm.bing.net/th/id/OIP.ejIzPJLnWOyeaH5yPYD3ygHaJQ?pid=Api&h=220&P=0"),
-    18: Array(5).fill("https://www.masstamilan.dev/w/velaiyilla-pattathari-vip-tamil-2014.webp"),
-    19: Array(5).fill("https://www.masstamilan.dev/w/velaiilla-pattadhari-2-vip-2017.webp"),
+    15: Array(6).fill(
+      "https://tse3.mm.bing.net/th/id/OIP.Xfp1AouFTlvBQRrZxsUQ6gHaIK?pid=Api&h=220&P=0",
+    ),
+    16: Array(6).fill(
+      "https://tse2.mm.bing.net/th/id/OIP.49FFXpmDwilAdqJmoJgDYgHaKr?pid=Api&h=220&P=0",
+    ),
+    17: Array(8).fill(
+      "https://tse2.mm.bing.net/th/id/OIP.ejIzPJLnWOyeaH5yPYD3ygHaJQ?pid=Api&h=220&P=0",
+    ),
+    18: Array(5).fill(
+      "https://www.masstamilan.dev/w/velaiyilla-pattathari-vip-tamil-2014.webp",
+    ),
+    19: Array(5).fill(
+      "https://www.masstamilan.dev/w/velaiilla-pattadhari-2-vip-2017.webp",
+    ),
   },
   songsList: {
     1: [
@@ -93,7 +127,6 @@ var indexMovies = {
       "https://res.cloudinary.com/seshancloudy/video/upload/v1780739134/Venmathiye_o5rec5.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1780739144/Oh_Mama_Mama_cpw4i5.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1780739134/Verenna_Verenna_Ivan_Yaro_gxlbff.mp3",
-
     ],
     2: [
       "https://res.cloudinary.com/seshancloudy/video/upload/v1778678628/Chella-Magale-MassTamilan.dev_qgjxyf.mp3",
@@ -182,18 +215,18 @@ var indexMovies = {
       "https://res.cloudinary.com/seshancloudy/video/upload/v1780155550/Come_on_Girls_The_Celebration_of_Love_xlvwlg.mp3",
     ],
     13: [
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780236035/Thaarame-Thaarame-MassTamilan.io_l3cjar.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780236035/Theesudar-Kuniyuma-MassTamilan.io_hbnqp0.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780235917/Kadaram-Kondan-MassTamilan.io_eznet7.mp3",
-        ""
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780236035/Thaarame-Thaarame-MassTamilan.io_l3cjar.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780236035/Theesudar-Kuniyuma-MassTamilan.io_hbnqp0.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780235917/Kadaram-Kondan-MassTamilan.io_eznet7.mp3",
+      "",
     ],
-    14:[
+    14: [
       "https://res.cloudinary.com/seshancloudy/video/upload/v1780680108/Kodambakkam-Area_qfnir7.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1780680107/Deepavali-Deepavali_rqd4oz.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1780680105/Ada-Ennatha-Solvenungo_ijrvkd.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1780680105/Dheivathukke-Maaruvesama_n0sd9b.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1780680108/Idhu-Enna-Idhu-Enna_rij16n.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1780680108/Vaada-Vaada_kqyrfx.mp3"
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780680108/Vaada-Vaada_kqyrfx.mp3",
     ],
     15: [
       "https://res.cloudinary.com/seshancloudy/video/upload/v1781100247/06_-_urugi-urugi_eigpd6.mp3",
@@ -201,7 +234,7 @@ var indexMovies = {
       "https://res.cloudinary.com/seshancloudy/video/upload/v1781100243/02_-_dimmu-dippu_qx5g3e.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1781100242/03_-_joe-teaser-theme_b6kgyq.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1781100243/04_-_kovai-kulira_pwq83x.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100245/01_-_culturals-song_la7tj5.mp3"
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100245/01_-_culturals-song_la7tj5.mp3",
     ],
     16: [
       "https://res.cloudinary.com/seshancloudy/video/upload/v1781100409/02_-_enna-vilai_fem8ti.mp3",
@@ -209,7 +242,7 @@ var indexMovies = {
       "https://res.cloudinary.com/seshancloudy/video/upload/v1781100435/06_-_roja-roja_njmcmc.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1781100407/03_-_kaathalenum_mfqaj2.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1781100405/04_-_nenichapadi_jyix1r.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100413/05_-_oh-maria-oh-maria_pq0esp.mp3"
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100413/05_-_oh-maria-oh-maria_pq0esp.mp3",
     ],
     17: [
       "https://res.cloudinary.com/seshancloudy/video/upload/v1781100361/02_-_hey-minnale_fnngpt.mp3",
@@ -219,7 +252,7 @@ var indexMovies = {
       "https://res.cloudinary.com/seshancloudy/video/upload/v1781100360/01_-_amara_vbwmpv.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1781100364/03_-_kanave_izkpne.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1781100356/05_-_sai-pallavis-intro_smto2g.mp3",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100361/04_-_por-veeran-azadi_knad1n.mp3"
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1781100361/04_-_por-veeran-azadi_knad1n.mp3",
     ],
     18: [
       "https://res.cloudinary.com/seshancloudy/video/upload/v1782024281/Amma_Amma_zoaq95.mp3",
@@ -234,7 +267,7 @@ var indexMovies = {
       "https://res.cloudinary.com/seshancloudy/video/upload/v1782028917/Nada-Da-Raja-MassTamilan.com_mskvcd.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1782028916/The-Empress-Arrives-MassTamilan.com_rbdmg6.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1782028920/Ucchathula-MassTamilan.com_c4ky79.mp3",
-    ]
+    ],
   },
   songKey: {
     1: 1,
@@ -286,12 +319,7 @@ var indexMovies = {
       "Thee-Thalapathy",
       "Vaa-Thalaivaa",
     ],
-    5: [
-      "Chinna Chinna Kangal", 
-      "Matta", 
-      "Spark", 
-      "Whistle Podu"
-    ],
+    5: ["Chinna Chinna Kangal", "Matta", "Spark", "Whistle Podu"],
     6: [
       "Anbe Anbe",
       "Columbus Columbu",
@@ -347,18 +375,14 @@ var indexMovies = {
       "Ne Paartha Vizhigal",
       "Come on Girls",
     ],
-    13: [
-        "Thaarame Thaarame",
-        "Theesudar Kuniyuma",
-        "Kadaram Kondan",  
-    ],
+    13: ["Thaarame Thaarame", "Theesudar Kuniyuma", "Kadaram Kondan"],
     14: [
       "Kodambakkam Area",
       "Deepavali Deepavali",
       "Ada Ennatha Solvenungo",
       "Dheivathukke Maaruvesama",
       "Idhu Enna Idhu Enna",
-      "Vaada Vaada"
+      "Vaada Vaada",
     ],
     15: [
       "Urugi Urugi",
@@ -366,7 +390,7 @@ var indexMovies = {
       "Dimmu Dippu",
       "Joe Teaser Theme",
       "Kovai Kulira",
-      "Culturals Song"
+      "Culturals Song",
     ],
     16: [
       "Enna Vilai",
@@ -374,7 +398,7 @@ var indexMovies = {
       "Roja Roja",
       "Kaathalenum",
       "Nenichapadi",
-      "Oh Maria Oh Maria"
+      "Oh Maria Oh Maria",
     ],
     17: [
       "Hey Minnale",
@@ -384,7 +408,7 @@ var indexMovies = {
       "Amara",
       "Kanave",
       "Sai Pallavis Intro",
-      "Por Veeran(Azadi)"
+      "Por Veeran(Azadi)",
     ],
     18: [
       "Amma Amma",
@@ -399,7 +423,7 @@ var indexMovies = {
       "Nada Da Raja",
       "The Empress Arrives",
       "Ucchathula",
-    ]
+    ],
   },
 };
 
@@ -408,9 +432,18 @@ function displayMovies() {
   musicList.innerHTML =
     '<h5 class="noteh6" style="text-align: center ;">Availabe Movies List<br>Tap the movies to <span class="logo">pLaY</span> the Songs</h5>';
 
+  const movieCount = Object.keys(indexMovies.title).length;
+  const favorites = getMovieFavorites();
+  musicList.innerHTML += `
+    <div class="movie-toolbar">
+      <span>${movieCount} movie soundtracks</span>
+      <button onclick="playRandomMovie()">Surprise Me</button>
+    </div>`;
+
   for (let i = 1; i <= Object.keys(indexMovies.title).length; i++) {
+    const isFavorite = favorites.includes(i);
     musicList.innerHTML += `
-      <div class="music-item" onclick="songsavailable(${i})">
+      <div class="music-item movie-card" onclick="songsavailable(${i})">
           <img src="${indexMovies.icon[i]}" alt="${indexMovies.title[i]}">
           <div class="music-info">
               <h5 style="font-size: 10.5px;">${indexMovies.title[i]}</h5>
@@ -418,6 +451,7 @@ function displayMovies() {
                 ${indexMovies.artist[i]}
               </p>
           </div>
+          <button class="favorite-btn ${isFavorite ? "is-favorite" : ""}" onclick="toggleMovieFavorite(${i}, event)">${isFavorite ? "Saved" : "Save"}</button>
           <button onclick="songsavailable(${i})" class="gobtn">▶</button><br>
       </div>
     `;
@@ -425,7 +459,49 @@ function displayMovies() {
 }
 
 // 👇 ADD THIS
-displayMovies();
+// Home shows the complete song queue. The Movies navigation view shows movie cards.
+function renderAppView() {
+  const view =
+    new URLSearchParams(window.location.search).get("view") || "home";
+  const libraryView = document.getElementById("library-view");
+
+  if (view === "library") {
+    musicList.style.display = "none";
+    libraryView.hidden = false;
+    playlistContainer = libraryView;
+    displayPlaylist();
+  } else {
+    libraryView.hidden = true;
+    musicList.style.display = "";
+    if (view === "movies") {
+      displayMovies();
+    } else {
+      displayAllSongs();
+    }
+  }
+
+  document.querySelectorAll("nav a").forEach((link) => {
+    const linkView = new URL(link.href).searchParams.get("view") || "home";
+    link.toggleAttribute("aria-current", linkView === view);
+  });
+}
+
+function navigateAppView(event) {
+  const link = event.currentTarget;
+  const url = new URL(link.href);
+  if (url.pathname !== window.location.pathname) return;
+  event.preventDefault();
+  window.history.pushState({}, "", `${url.pathname}${url.search}`);
+  renderAppView();
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('a[href*="index1.html"]').forEach((link) => {
+    link.addEventListener("click", navigateAppView);
+  });
+  window.addEventListener("popstate", renderAppView);
+  renderAppView();
+});
 
 // ── Search bar ─────────────────────────────────────────────────────────────
 const searchInput = document.querySelector(".search-bar input");
@@ -460,6 +536,23 @@ function doSearch() {
     musicList.appendChild(noResult);
   }
   noResult.style.display = found === 0 && query !== "" ? "block" : "none";
+
+  let status = document.getElementById("search-status");
+  if (!status) {
+    status = document.createElement("p");
+    status.id = "search-status";
+    status.className = "search-status";
+    musicList.prepend(status);
+  }
+  status.textContent = query
+    ? `${found} ${found === 1 ? "result" : "results"} for “${searchInput.value.trim()}”`
+    : "Browse all available music";
+}
+
+function clearHomeSearch() {
+  searchInput.value = "";
+  doSearch();
+  searchInput.focus();
 }
 
 searchBtn.addEventListener("click", doSearch);
@@ -477,6 +570,10 @@ function songsavailable(i) {
   musicList.innerHTML = "";
   musicList.innerHTML += `
 <button id="back-btn" onclick="displayMovies()">Back</button>
+<div class="movie-detail-heading">
+  <div><h3>${title}</h3><p>${list.length} ${list.length === 1 ? "song" : "songs"}</p></div>
+  <button onclick="shuffleMovie(${i})">Shuffle Movie</button>
+</div>
 `;
 
   for (let j = 0; j < indexMovies.songs[key].length; j++) {
@@ -491,12 +588,39 @@ function songsavailable(i) {
         </div>
 
     `;
-    
+
     musicList.innerHTML += content;
   }
 }
 
+function playRandomMovie() {
+  const movieIds = Object.keys(indexMovies.title);
+  const movieId = movieIds[Math.floor(Math.random() * movieIds.length)];
+  songsavailable(movieId);
+  shuffleMovie(movieId);
+}
+
+function shuffleMovie(movieId) {
+  const movieKey = indexMovies.songKey[movieId];
+  const songs = indexMovies.songs[movieKey] || [];
+  if (!songs.length) return;
+  // Avoid repeating the current song for this movie when possible
+  var idx = Math.floor(Math.random() * songs.length);
+  if (currentMovieKey === movieKey && songs.length > 1) {
+    var tries = 0;
+    while (idx === currentSongIndex && tries < 6) {
+      idx = Math.floor(Math.random() * songs.length);
+      tries++;
+    }
+    if (idx === currentSongIndex) idx = (currentSongIndex + 1) % songs.length;
+  }
+  playMusic(movieKey, idx);
+}
+
 function playMusic(movieKey, songIndex) {
+  // Movie view navigation should cycle only through this movie's songs.
+  queueModeActive = false;
+  activeSongSource = "movies";
   currentMovieKey = movieKey;
   currentSongIndex = songIndex;
 
@@ -514,85 +638,80 @@ function playMusic(movieKey, songIndex) {
   currentSong.innerHTML = songName;
 }
 
-
-
 // ── DISCLAIMER MODAL FUNCTIONS ───────────────────────────────────────────────
 
 function showDisclaimer() {
-    const modal = document.getElementById("disclaimerModal");
-    if (modal) {
-        modal.style.display = "flex";
-        document.body.style.overflow = "hidden"; // Prevent background scrolling
-    }
+  const modal = document.getElementById("disclaimerModal");
+  if (modal) {
+    modal.style.display = "flex";
+    document.body.style.overflow = "hidden"; // Prevent background scrolling
+  }
 }
 
 function closeDisclaimer() {
-    const modal = document.getElementById("disclaimerModal");
-    if (modal) {
-        modal.style.display = "none";
-        document.body.style.overflow = ""; // Restore scrolling
-    }
+  const modal = document.getElementById("disclaimerModal");
+  if (modal) {
+    modal.style.display = "none";
+    document.body.style.overflow = ""; // Restore scrolling
+  }
 }
 
 function acknowledgeDisclaimer() {
-    closeDisclaimer();
-    // Optional: Store in localStorage that user has seen disclaimer
-    localStorage.setItem("disclaimer_acknowledged", "true");
+  closeDisclaimer();
+  // Optional: Store in localStorage that user has seen disclaimer
+  localStorage.setItem("disclaimer_acknowledged", "true");
 }
 
 // Close modals when clicking outside the content
-window.onclick = function(event) {
-    const disclaimerModal = document.getElementById("disclaimerModal");
-    if (event.target === disclaimerModal) {
-        closeDisclaimer();
-    }
-    
-    const timerModal = document.getElementById("timerModal");
-    if (event.target === timerModal) {
-        closeTimerModal();
-    }
-    // 👇 PASTE location 3 RIGHT HERE, before the closing }
-    const aboutModal = document.getElementById("aboutModal");
-    if (event.target === aboutModal) closeAboutModal();
-}
+window.onclick = function (event) {
+  const disclaimerModal = document.getElementById("disclaimerModal");
+  if (event.target === disclaimerModal) {
+    closeDisclaimer();
+  }
 
-
+  const timerModal = document.getElementById("timerModal");
+  if (event.target === timerModal) {
+    closeTimerModal();
+  }
+  // 👇 PASTE location 3 RIGHT HERE, before the closing }
+  const aboutModal = document.getElementById("aboutModal");
+  if (event.target === aboutModal) closeAboutModal();
+};
 
 // Attach click event to logo when DOM is ready
-document.addEventListener("DOMContentLoaded", function() {
-    const logo = document.querySelector(".logo");
-    if (logo) {
-        logo.addEventListener("click", function(e) {
-            e.preventDefault();
-            showDisclaimer();
-        });
-        logo.style.cursor = "pointer";
-    }
-        // 👇 PASTE location 2 RIGHT HERE, before the closing });
-    const logoImg = document.getElementById("logoimg");
-    if (logoImg) { logoImg.addEventListener("click", openAboutModal); logoImg.style.cursor = "pointer"; }
+document.addEventListener("DOMContentLoaded", function () {
+  const logo = document.querySelector(".logo");
+  if (logo) {
+    logo.addEventListener("click", function (e) {
+      e.preventDefault();
+      showDisclaimer();
+    });
+    logo.style.cursor = "pointer";
+  }
+  // 👇 PASTE location 2 RIGHT HERE, before the closing });
+  const logoImg = document.getElementById("logoimg");
+  if (logoImg) {
+    logoImg.addEventListener("click", openAboutModal);
+    logoImg.style.cursor = "pointer";
+  }
 });
-
 
 // 1. Add at the very end of the file:
 function openAboutModal() {
-    document.getElementById("aboutModal").style.display = "flex";
-    document.body.style.overflow = "hidden";
+  document.getElementById("aboutModal").style.display = "flex";
+  document.body.style.overflow = "hidden";
 }
 function closeAboutModal() {
-    document.getElementById("aboutModal").style.display = "none";
-    document.body.style.overflow = "";
+  document.getElementById("aboutModal").style.display = "none";
+  document.body.style.overflow = "";
 }
-
-
 
 //------------------------------------
 
-function songsavailable2() {
-  document.getElementById("audio-player").style.display = "block";
-  const container    = document.getElementById("songsavailablelist");
-  const musicListDiv = document.getElementById("music-list");
-  const btn          = document.getElementById("songavailable");
+function displayAllSongs() {
+  const container = musicList;
+  const musicListDiv = musicList;
+  const btn = { textContent: "" };
 
   if (container.style.display === "flex") {
     container.style.display = "none";
@@ -613,12 +732,19 @@ function songsavailable2() {
 
   let html = `<h5 class="noteh6" style="text-align:center;margin-bottom:12px;">
     All Songs — Tap to <span class="logo">pLaY</span>
-  </h5>`;
+  </h5>
+  <div class="home-library-toolbar">
+    <span class="home-song-count">${allSongsQueue.length} songs ready</span>
+    <div class="home-toolbar-actions">
+      <button class="home-action-btn" onclick="shuffleAllSongs()">Shuffle All</button>
+      <a class="home-action-btn home-movies-link" href="index1.html?view=movies">Movies</a>
+    </div>
+  </div>`;
 
   // Use queue index for onclick so next/prev works correctly
   allSongsQueue.forEach((item, i) => {
     html += `
-      <div class="music-item" onclick="playQueueSong(${i})">
+      <div class="music-item" data-queue-index="${i}" onclick="playQueueSong(${i})">
         <img src="${item.img}" alt="${item.name}" onerror="this.style.display='none'">
         <div class="music-info">
           <h5 style="font-size:10.5px;">${item.name}</h5>
@@ -637,5 +763,19 @@ function playQueueSong(index) {
   playFromQueue(index);
 }
 
-
-
+function shuffleAllSongs() {
+  if (!allSongsQueue.length) buildAllSongsQueue();
+  if (!allSongsQueue.length) return;
+  // Choose a random queue index different from the currently playing one when possible
+  let idx = Math.floor(Math.random() * allSongsQueue.length);
+  if (queueModeActive && currentQueueIndex >= 0 && allSongsQueue.length > 1) {
+    let attempts = 0;
+    while (idx === currentQueueIndex && attempts < 8) {
+      idx = Math.floor(Math.random() * allSongsQueue.length);
+      attempts++;
+    }
+    if (idx === currentQueueIndex)
+      idx = (currentQueueIndex + 1) % allSongsQueue.length;
+  }
+  playQueueSong(idx);
+}
