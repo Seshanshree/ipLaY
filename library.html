@@ -12,18 +12,20 @@
     <!-- Apple devices (iPhone/iPad) -->
     <link rel="apple-touch-icon" href="iconicon.jpeg" />
 
-    <!-- Android / PWA -->
-    <link rel="manifest" href="manifest.json" />
+    <!-- PWA manifest intentionally omitted here because dev tunnels block the auth redirect used by manifest.json; keep the app as a normal static web page. -->
   </head>
 
   <body>
     <!-- HEADER -->
     <header>
-      <a href="index.html" class="logo" style="cursor: pointer">ipLaY</a>
+      <a href="index1.html" class="logo" style="cursor: pointer">ipLaY</a>
       <button id="timer-btn" class="timer-nav-btn">⏱</button>
       <nav>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="javascript:void(0)" onclick="toggleSearchBar()">Search</a></li>
+        <li><a href="index1.html">Home</a></li>
+        <li><a href="index1.html?view=movies">Movies</a></li>
+        <li>
+          <a href="javascript:void(0)" onclick="toggleSearchBar()">Search</a>
+        </li>
         <li><a href="library.html">Library</a></li>
       </nav>
     </header>
@@ -54,13 +56,16 @@
     </main>
 
     <!-- AUDIO PLAYER -->
-    <div style="display: none;" id="audio-player" class="audio-player">
+    <div style="display: none" id="audio-player" class="audio-player">
       <div class="progress-container">
         <span id="current-time">0:00</span>
         <input type="range" id="progress" value="0" min="0" max="100" />
         <span id="duration">0:00</span>
       </div>
       <div id="current-song" class="current-song">No song playing</div>
+      <div class="player-visualizer" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </div>
       <div class="controls">
         <button id="prev-btn" class="control-btn" onclick="songDec()">
           ⏮
