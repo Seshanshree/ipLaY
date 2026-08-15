@@ -1,4 +1,3 @@
-
 var availableMovies = {
   songs: {
     1: [
@@ -12,7 +11,7 @@ var availableMovies = {
       "Singari",
       "Kannukulla",
       "Yumabaibesa",
-      "Nallaru Po"
+      "Nallaru Po",
     ],
     2: [
       "Po Urave",
@@ -136,11 +135,7 @@ var availableMovies = {
       "Raavana Mavandaa",
       "Thalapathy Kacheri",
     ],
-    7: [
-        "Chinna Chinna Kangal", 
-        "Matta", 
-        "Spark", 
-        "Whistle Podu"],
+    7: ["Chinna Chinna Kangal", "Matta", "Spark", "Whistle Podu"],
     8: [
       "Kallaliye Kallaliye",
       "Maalai Mangum Neram",
@@ -166,53 +161,53 @@ var availableMovies = {
       "https://res.cloudinary.com/seshancloudy/video/upload/v1780153994/Nallaru_Po_alkjpp.mp3",
     ],
     2: [
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239268/Po-Urave-MassTamilan.com_dvo20u.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239325/Pirai-Thedum_vaooai.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239378/Sakkarai_Nilave_iwhqkr.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239530/Poongkaatrilae_ppcgu5.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239549/Kanave-Kanave-MassTamilan.com_djvu27.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239508/Imaye-Imaye_rcvfti.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239547/Ava-Enna-Enna-MassTamilan.com_bpmone.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240113/Yamma-Yamma_nrw1bo.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239980/Kadhal-Oru-Aagayam-MassTamilan.com_wt5msw.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240094/Unna-Nenachu-MassTamilan.io_kviavs.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240001/Pona-Pogattum-MassTamilan.io_zic8ip.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240107/Thanimaye-Thanimaye-MassTamilan.io_xyccaz.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240112/Ennai-Vittu-MassTamilan.dev_tiwtiy.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240125/Po_Nee_Po_Remix_-_The_Scream_of_Love_palppu.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240197/Ennai-Kollathey-MassTamilan.fm_x1l827.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240204/Thodu-Vaanam_btcktc.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239816/Enakenna_Yaarum_Illaye_eai0kr.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239803/Marappadhilai-Nenje-_Additional-Song_-MassTamilan.io_hoakqg.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240255/Yedho-Ondru-Ennai_swojgg.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240349/Venmegam-Pennaga_xc07ig.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240405/Adiyae-Azhagae_ucw7yg.mp3",
-        "https://res.cloudinary.com/seshancloudy/video/upload/v1780680105/Dheivathukke-Maaruvesama_n0sd9b.mp3",
-        "https://res.cloudinary.com/seshancloudy/video/upload/v1782024527/Po_Indru_Neeyaga_wfftvp.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239268/Po-Urave-MassTamilan.com_dvo20u.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239325/Pirai-Thedum_vaooai.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239378/Sakkarai_Nilave_iwhqkr.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239530/Poongkaatrilae_ppcgu5.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239549/Kanave-Kanave-MassTamilan.com_djvu27.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239508/Imaye-Imaye_rcvfti.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239547/Ava-Enna-Enna-MassTamilan.com_bpmone.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240113/Yamma-Yamma_nrw1bo.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239980/Kadhal-Oru-Aagayam-MassTamilan.com_wt5msw.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240094/Unna-Nenachu-MassTamilan.io_kviavs.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240001/Pona-Pogattum-MassTamilan.io_zic8ip.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240107/Thanimaye-Thanimaye-MassTamilan.io_xyccaz.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240112/Ennai-Vittu-MassTamilan.dev_tiwtiy.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240125/Po_Nee_Po_Remix_-_The_Scream_of_Love_palppu.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240197/Ennai-Kollathey-MassTamilan.fm_x1l827.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240204/Thodu-Vaanam_btcktc.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239816/Enakenna_Yaarum_Illaye_eai0kr.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239803/Marappadhilai-Nenje-_Additional-Song_-MassTamilan.io_hoakqg.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240255/Yedho-Ondru-Ennai_swojgg.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240349/Venmegam-Pennaga_xc07ig.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780240405/Adiyae-Azhagae_ucw7yg.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780680105/Dheivathukke-Maaruvesama_n0sd9b.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1782024527/Po_Indru_Neeyaga_wfftvp.mp3",
     ],
     3: [
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780295858/Macha-Kanni_taiimn.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780296020/Machi-Open-The-Bottle_fmqngh.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780296066/Mascara-Pottu_gvff7i.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780296049/En-Chella-Peru-Apple_zbcvng.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780296035/Daddy_Mummy_ntzlr7.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780296075/En-Peru-Meenakumari-MassTamilan.io_gedqbc.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780297890/Manogari_wf70zp.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780298725/Piya_Piya_-_Vijay_Antony_Chorus_cs0w6g.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780298934/Thanjavoor-Jillakkari_ruxdet.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780299422/Dailamo-Dailamo_s1l83z.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780298176/Heartukulla-Pachakuthiye-MassTamilan.com_oihbnb.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780299315/Jingunamani_z4n2gf.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780299010/Oru-Kuchi-Oru-Kulfi-MassTamilan.com_uxsafb.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780298843/Vadi-Vadi-Nattukkattai_hxy79m.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780299000/Achacho_sgoczw.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780299184/Kaavaalaa-MassTamilan.dev_x2njtl.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780299501/Kannu-Rendum_aaltkq.mp3",
-        "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780299493/Chiku-Chiku-Boom_zceqxj.mp3",
-        "https://res.cloudinary.com/seshancloudy/video/upload/v1780196687/Pavazha_Malli_hkdbcp.mp3",
-        "meesaya murukku 2/Aura 10-10.mp3",
-        "https://res.cloudinary.com/seshancloudy/video/upload/v1780133545/Karuppa_Kooda_Va_kknomo.mp3",
-        "https://res.cloudinary.com/seshancloudy/video/upload/v1780680108/Kodambakkam-Area_qfnir7.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780295858/Macha-Kanni_taiimn.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780296020/Machi-Open-The-Bottle_fmqngh.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780296066/Mascara-Pottu_gvff7i.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780296049/En-Chella-Peru-Apple_zbcvng.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780296035/Daddy_Mummy_ntzlr7.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780296075/En-Peru-Meenakumari-MassTamilan.io_gedqbc.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780297890/Manogari_wf70zp.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780298725/Piya_Piya_-_Vijay_Antony_Chorus_cs0w6g.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780298934/Thanjavoor-Jillakkari_ruxdet.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780299422/Dailamo-Dailamo_s1l83z.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780298176/Heartukulla-Pachakuthiye-MassTamilan.com_oihbnb.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780299315/Jingunamani_z4n2gf.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780299010/Oru-Kuchi-Oru-Kulfi-MassTamilan.com_uxsafb.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780298843/Vadi-Vadi-Nattukkattai_hxy79m.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780299000/Achacho_sgoczw.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780299184/Kaavaalaa-MassTamilan.dev_x2njtl.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780299501/Kannu-Rendum_aaltkq.mp3",
+      "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780299493/Chiku-Chiku-Boom_zceqxj.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780196687/Pavazha_Malli_hkdbcp.mp3",
+      "meesaya murukku 2/Aura 10-10.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780133545/Karuppa_Kooda_Va_kknomo.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1780680108/Kodambakkam-Area_qfnir7.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1780680105/Ada-Ennatha-Solvenungo_ijrvkd.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1780680108/Vaada-Vaada_kqyrfx.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1782025168/Udhungada_Sangu_w0vkx8.mp3",
@@ -222,7 +217,7 @@ var availableMovies = {
       "https://res.cloudinary.com/seshancloudy/video/upload/v1782028917/Nada-Da-Raja-MassTamilan.com_mskvcd.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1782028916/The-Empress-Arrives-MassTamilan.com_rbdmg6.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1782028920/Ucchathula-MassTamilan.com_c4ky79.mp3",
-    ],  
+    ],
     4: [
       "https://res.cloudinary.com/seshancloudy/video/upload/v1780739144/Vaseegara_qdunim.mp3",
       "varisu/Jimikki-Ponnu-MassTamilan.dev.mp3",
@@ -339,7 +334,7 @@ var availableMovies = {
       "https://www.masstamilan.dev/w/yaradi-nee-mohini.webp",
       "https://www.masstamilan.dev/w/oru-naal-koothu.webp",
       "https://www.masstamilan.dev/w/sivakasi-2005.webp",
-      "https://www.masstamilan.dev/w/velaiyilla-pattathari-vip-tamil-2014.webp",      
+      "https://www.masstamilan.dev/w/velaiyilla-pattathari-vip-tamil-2014.webp",
     ],
     3: [
       "https://www.masstamilan.dev/w/naan-avanillai-2007.webp",
@@ -372,7 +367,7 @@ var availableMovies = {
       "https://www.masstamilan.dev/w/velaiilla-pattadhari-2-vip-2017.webp",
       "https://www.masstamilan.dev/w/velaiilla-pattadhari-2-vip-2017.webp",
       "https://www.masstamilan.dev/w/velaiilla-pattadhari-2-vip-2017.webp",
-      "https://www.masstamilan.dev/w/velaiilla-pattadhari-2-vip-2017.webp"
+      "https://www.masstamilan.dev/w/velaiilla-pattadhari-2-vip-2017.webp",
     ],
     4: [
       "https://www.masstamilan.dev/w/minnale-tamil-2001.webp",
@@ -438,19 +433,21 @@ var availableMovies = {
 // ── PLAYLIST GRID METADATA ────────────────────────────────────────────────────
 var playlists = {
   1: {
-    title :'Sai Abhyankkar',
+    title: "Sai Abhyankkar",
     movieKey: 1,
-    imageUrl: "https://www.masstamilan.dev/w/pavazha-malli-indie-tamil-2026.webp"
+    imageUrl:
+      "https://www.masstamilan.dev/w/pavazha-malli-indie-tamil-2026.webp",
   },
   2: {
-    title : "Drugs",
+    title: "Drugs",
     movieKey: 2,
     imageUrl: "https://www.masstamilan.dev/w/master-tamil-2021.webp",
   },
   3: {
-    title : "Vibe Aaa",
+    title: "Vibe Aaa",
     movieKey: 3,
-    imageUrl: "https://thf.bing.com/th/id/OIP.bGeVSpwJ4cADL7v_eGRrbwAAAA?w=311&h=169&c=7&r=0&o=7&cb=thfc1falcon&dpr=1.1&pid=1.7&rm=3"
+    imageUrl:
+      "https://thf.bing.com/th/id/OIP.bGeVSpwJ4cADL7v_eGRrbwAAAA?w=311&h=169&c=7&r=0&o=7&cb=thfc1falcon&dpr=1.1&pid=1.7&rm=3",
   },
   4: {
     title: "Kadhal Veesum",
@@ -486,26 +483,54 @@ var playlists = {
 
 // ── DOM ───────────────────────────────────────────────────────────────────────
 var playlistContainer = document.getElementById("playlist-container");
+var activeLibraryPlaylistId = null;
+var playlistFavoritesKey = "iplay_favorite_playlists";
+
+function getPlaylistFavorites() {
+  try {
+    return JSON.parse(localStorage.getItem(playlistFavoritesKey) || "[]");
+  } catch (error) {
+    return [];
+  }
+}
+
+function togglePlaylistFavorite(playlistId, event) {
+  event.stopPropagation();
+  var favorites = getPlaylistFavorites();
+  var index = favorites.indexOf(Number(playlistId));
+  if (index === -1) favorites.push(Number(playlistId));
+  else favorites.splice(index, 1);
+  localStorage.setItem(playlistFavoritesKey, JSON.stringify(favorites));
+  displayPlaylist();
+}
 
 // ── RENDER PLAYLIST GRID ──────────────────────────────────────────────────────
 function displayPlaylist() {
   if (!playlistContainer) return;
   playlistContainer.style.display = "";
   playlistContainer.innerHTML = "";
+  var favorites = getPlaylistFavorites();
 
   for (var id in playlists) {
+    var playlist = playlists[id];
+    var songCount = availableMovies.songs[playlist.movieKey]?.length || 0;
+    var isFavorite = favorites.includes(Number(id));
     playlistContainer.innerHTML += `
-      <div class="playlist-item" onclick="displayPlaylistSongs(${id})">
-        <img src="${playlists[id].imageUrl || ""}" alt="${playlists[id].title}" onerror="this.style.display='none'" />
+      <div class="playlist-item" role="button" tabindex="0" onclick="displayPlaylistSongs(${id})" onkeydown="if(event.key === 'Enter') displayPlaylistSongs(${id})">
+        <img src="${playlist.imageUrl || ""}" alt="${playlist.title}" onerror="this.style.display='none'" />
         <div class="playlist-info">
-          <h5>${playlists[id].title}</h5>
+          <h5>${playlist.title}</h5>
+          <p>${songCount} ${songCount === 1 ? "song" : "songs"}</p>
+          <div class="playlist-card-actions">
+            <button class="playlist-play-btn" onclick="event.stopPropagation(); playLibrarySong(${playlist.movieKey}, 0)">Play</button>
+            <button class="playlist-favorite-btn ${isFavorite ? "is-favorite" : ""}" onclick="togglePlaylistFavorite(${id}, event)">${isFavorite ? "Saved" : "Save"}</button>
+          </div>
         </div>
       </div>`;
   }
 }
 
 if (playlistContainer) displayPlaylist();
-
 
 // ── RENDER SONGS INSIDE A PLAYLIST ───────────────────────────────────────────
 function displayPlaylistSongs(playlistId) {
@@ -515,6 +540,7 @@ function displayPlaylistSongs(playlistId) {
   var title = pl.title;
   var songs = movieKey ? availableMovies.songs[movieKey] : [];
   var pictures = movieKey ? availableMovies.songlistpicture[movieKey] : [];
+  activeLibraryPlaylistId = playlistId;
 
   playlistContainer.style.display = "block";
 
@@ -525,7 +551,7 @@ function displayPlaylistSongs(playlistId) {
   } else {
     for (var j = 0; j < songs.length; j++) {
       songsHTML += `
-        <div class="music-item" onclick="playLibrarySong(${movieKey}, ${j})">
+        <div class="music-item" data-library-song="${j}" onclick="playLibrarySong(${movieKey}, ${j})">
           <img src="${pictures[j] || ""}"
               onerror="this.style.display='none'"
               alt="${songs[j]}" />
@@ -535,20 +561,47 @@ function displayPlaylistSongs(playlistId) {
           </div>
           <button class="gobtn" onclick="event.stopPropagation(); playLibrarySong(${movieKey}, ${j})">▶</button>
         </div>`;
-        document.getElementById("audio-player").style.display = "block";
     }
   }
 
   playlistContainer.innerHTML = `
     <button id="back-buttoninlib" onclick="displayPlaylist()">Back</button>
     <div class="songs-list1">
-      <h3>${title}</h3>
+      <div class="playlist-detail-heading">
+        <div>
+          <h3>${title}</h3>
+          <p>${songs.length} ${songs.length === 1 ? "song" : "songs"}</p>
+        </div>
+        <button class="shuffle-play-btn" onclick="shuffleLibraryPlaylist()">Shuffle Play</button>
+      </div>
       ${songsHTML}
     </div>`;
 }
 
+function shuffleLibraryPlaylist() {
+  if (activeLibraryPlaylistId === null) return;
+  var playlist = playlists[activeLibraryPlaylistId];
+  var songs = availableMovies.songs[playlist.movieKey] || [];
+  if (!songs.length) return;
+  // Pick a random index that is not the currently playing song for this movie
+  var songIndex = Math.floor(Math.random() * songs.length);
+  if (currentMovieKey === playlist.movieKey && songs.length > 1) {
+    var attempts = 0;
+    while (songIndex === currentSongIndex && attempts < 6) {
+      songIndex = Math.floor(Math.random() * songs.length);
+      attempts++;
+    }
+    // If after attempts it still equals, advance by one as fallback
+    if (songIndex === currentSongIndex)
+      songIndex = (currentSongIndex + 1) % songs.length;
+  }
+  playLibrarySong(playlist.movieKey, songIndex);
+}
+
 // ── PLAY A SONG ───────────────────────────────────────────────────────────────
 function playLibrarySong(movieKey, songIndex) {
+  activeSongSource = "library";
+  queueModeActive = false;
   currentMovieKey = movieKey;
   currentSongIndex = songIndex;
 
@@ -557,52 +610,60 @@ function playLibrarySong(movieKey, songIndex) {
 
   currentSong.innerText = availableMovies.songs[movieKey][songIndex];
   playBtn.innerHTML = "<p style='color:#000;'>||</p>";
+  document.getElementById("audio-player").style.display = "block";
+
+  document.querySelectorAll("[data-library-song]").forEach((item) => {
+    item.classList.toggle(
+      "is-current-song",
+      Number(item.dataset.librarySong) === songIndex,
+    );
+  });
 }
 
 // ── SEARCH SONGS FUNCTION ─────────────────────────────────────────────────────
 function searchSongs() {
   const searchInput = document.getElementById("search-input");
   if (!searchInput) return;
-  
+
   const query = searchInput.value.trim().toLowerCase();
-  
+
   if (!query) {
     displayPlaylist();
     return;
   }
-  
+
   const results = [];
-  
+
   for (let id in playlists) {
     const pl = playlists[id];
     const movieKey = pl.movieKey;
-    
+
     // Skip if no valid movieKey or songs don't exist
     if (!movieKey) continue;
     if (!availableMovies.songs[movieKey]) continue;
     if (!availableMovies.songs[movieKey].length) continue;
-    
+
     const songs = availableMovies.songs[movieKey];
     const pictures = availableMovies.songlistpicture?.[movieKey] || [];
-    
+
     for (let j = 0; j < songs.length; j++) {
       const songTitle = songs[j].toLowerCase();
       const playlistTitle = pl.title.toLowerCase();
-      
+
       if (songTitle.includes(query) || playlistTitle.includes(query)) {
         results.push({
           movieKey: movieKey,
           songIndex: j,
           title: songs[j],
           playlistName: pl.title,
-          imageUrl: pictures[j] || pl.imageUrl || ""
+          imageUrl: pictures[j] || pl.imageUrl || "",
         });
       }
     }
   }
-  
+
   playlistContainer.style.display = "block";
-  
+
   if (results.length === 0) {
     playlistContainer.innerHTML = `
       <button id="back-buttoninlib" onclick="displayPlaylist()">← Back</button>
@@ -613,28 +674,28 @@ function searchSongs() {
     `;
     return;
   }
-  
+
   let resultsHTML = `
     <button id="back-buttoninlib" onclick="displayPlaylist()">← Back to Library</button>
     <div class="songs-list1">
       <h3>Search Results (${results.length})</h3>
   `;
-  
+
   for (let r of results) {
     // Escape special characters in title to prevent HTML issues
-    const safeTitle = r.title.replace(/[&<>]/g, function(m) {
-      if (m === '&') return '&amp;';
-      if (m === '<') return '&lt;';
-      if (m === '>') return '&gt;';
+    const safeTitle = r.title.replace(/[&<>]/g, function (m) {
+      if (m === "&") return "&amp;";
+      if (m === "<") return "&lt;";
+      if (m === ">") return "&gt;";
       return m;
     });
-    const safePlaylist = r.playlistName.replace(/[&<>]/g, function(m) {
-      if (m === '&') return '&amp;';
-      if (m === '<') return '&lt;';
-      if (m === '>') return '&gt;';
+    const safePlaylist = r.playlistName.replace(/[&<>]/g, function (m) {
+      if (m === "&") return "&amp;";
+      if (m === "<") return "&lt;";
+      if (m === ">") return "&gt;";
       return m;
     });
-    
+
     resultsHTML += `
       <div class="music-item" onclick="playLibrarySong(${r.movieKey}, ${r.songIndex})">
         <img src="${r.imageUrl}" onerror="this.style.display='none'" alt="${safeTitle}" />
@@ -645,7 +706,7 @@ function searchSongs() {
         <button class="gobtn" onclick="event.stopPropagation(); playLibrarySong(${r.movieKey}, ${r.songIndex})">▶</button>
       </div>`;
   }
-  
+
   resultsHTML += `</div>`;
   playlistContainer.innerHTML = resultsHTML;
 }
@@ -653,11 +714,11 @@ function searchSongs() {
 // ── TOGGLE SEARCH BAR ─────────────────────────────────────────────────────────
 function toggleSearchBar() {
   const searchBar = document.querySelector(".search-bar");
-  
+
   if (window.searchTimeout) {
     clearTimeout(window.searchTimeout);
   }
-  
+
   if (searchBar) {
     if (searchBar.style.display === "none" || searchBar.style.display === "") {
       searchBar.style.display = "flex";
@@ -668,7 +729,7 @@ function toggleSearchBar() {
         searchInput.removeEventListener("input", searchSongs);
         searchInput.addEventListener("input", searchSongs);
       }
-      
+
       window.searchTimeout = setTimeout(() => {
         searchBar.style.display = "none";
         const searchInput2 = document.getElementById("search-input");
@@ -692,47 +753,47 @@ function toggleSearchBar() {
 
 // ── DISCLAIMER MODAL FUNCTIONS ───────────────────────────────────────────────
 function showDisclaimer() {
-    const modal = document.getElementById("disclaimerModal");
-    if (modal) {
-        modal.style.display = "flex";
-        document.body.style.overflow = "hidden";
-    }
+  const modal = document.getElementById("disclaimerModal");
+  if (modal) {
+    modal.style.display = "flex";
+    document.body.style.overflow = "hidden";
+  }
 }
 
 function closeDisclaimer() {
-    const modal = document.getElementById("disclaimerModal");
-    if (modal) {
-        modal.style.display = "none";
-        document.body.style.overflow = "";
-    }
+  const modal = document.getElementById("disclaimerModal");
+  if (modal) {
+    modal.style.display = "none";
+    document.body.style.overflow = "";
+  }
 }
 
 function acknowledgeDisclaimer() {
+  closeDisclaimer();
+  localStorage.setItem("disclaimer_acknowledged", "true");
+}
+
+window.onclick = function (event) {
+  const disclaimerModal = document.getElementById("disclaimerModal");
+  if (event.target === disclaimerModal) {
     closeDisclaimer();
-    localStorage.setItem("disclaimer_acknowledged", "true");
-}
+  }
 
-window.onclick = function(event) {
-    const disclaimerModal = document.getElementById("disclaimerModal");
-    if (event.target === disclaimerModal) {
-        closeDisclaimer();
-    }
-    
-    const timerModal = document.getElementById("timerModal");
-    if (event.target === timerModal) {
-        if (typeof closeTimerModal === 'function') closeTimerModal();
-    }
-}
+  const timerModal = document.getElementById("timerModal");
+  if (event.target === timerModal) {
+    if (typeof closeTimerModal === "function") closeTimerModal();
+  }
+};
 
-document.addEventListener("DOMContentLoaded", function() {
-    const logo = document.querySelector(".logo");
-    if (logo) {
-        logo.addEventListener("click", function(e) {
-            e.preventDefault();
-            showDisclaimer();
-        });
-        logo.style.cursor = "pointer";
-    }
+document.addEventListener("DOMContentLoaded", function () {
+  const logo = document.querySelector(".logo");
+  if (logo) {
+    logo.addEventListener("click", function (e) {
+      e.preventDefault();
+      showDisclaimer();
+    });
+    logo.style.cursor = "pointer";
+  }
 });
 
 function clearSearch() {
@@ -740,6 +801,3 @@ function clearSearch() {
   if (searchInput) searchInput.value = "";
   displayPlaylist();
 }
-
-
-
