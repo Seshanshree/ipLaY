@@ -14,6 +14,9 @@ var availableMovies = {
       "Nallaru Po",
     ],
     2: [
+      "Yaaradi Nee Yaaradi"
+    ],
+    3: [
       "Po Urave",
       "Pirai Thedum",
       "Sakkra Nilave",
@@ -38,7 +41,7 @@ var availableMovies = {
       "Dheivathukke Maaruvesama",
       "Po Indru Neeyaga",
     ],
-    3: [
+    4: [
       "Macha Kanni",
       "Machi Open the Bottle",
       "Mascara",
@@ -71,7 +74,7 @@ var availableMovies = {
       "The Empress Arrives",
       "Ucchathula",
     ],
-    4: [
+    5: [
       "Vaseegara",
       "Jimikki Ponnu",
       "Ranjithame",
@@ -112,7 +115,7 @@ var availableMovies = {
       "Sai Pallavis Intro",
       "Iraivanai Thandha Iraiviye",
     ],
-    5: [
+    6: [
       "Naa Ready",
       "Badass",
       "Bloody Sweet",
@@ -129,14 +132,14 @@ var availableMovies = {
       "Spark",
       "Whistle Podu",
     ],
-    6: [
+    7: [
       "Chella Magale",
       "Oru Pere Varalaaru",
       "Raavana Mavandaa",
       "Thalapathy Kacheri",
     ],
-    7: ["Chinna Chinna Kangal", "Matta", "Spark", "Whistle Podu"],
-    8: [
+    8: ["Chinna Chinna Kangal", "Matta", "Spark", "Whistle Podu"],
+    9: [
       "Kallaliye Kallaliye",
       "Maalai Mangum Neram",
       "Pirai Thedum Neram",
@@ -160,7 +163,10 @@ var availableMovies = {
       "https://res.cloudinary.com/seshancloudy/video/upload/v1780153985/Yumabaibesa_n5dwdj.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1780153994/Nallaru_Po_alkjpp.mp3",
     ],
-    2: [
+    2:[
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1788633266/WhatsApp_Audio_2026-09-06_at_00.02.44_utwuok.m4a"
+    ],
+    3: [
       "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239268/Po-Urave-MassTamilan.com_dvo20u.mp3",
       "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239325/Pirai-Thedum_vaooai.mp3",
       "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239378/Sakkarai_Nilave_iwhqkr.mp3",
@@ -185,7 +191,7 @@ var availableMovies = {
       "https://res.cloudinary.com/seshancloudy/video/upload/v1780680105/Dheivathukke-Maaruvesama_n0sd9b.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1782024527/Po_Indru_Neeyaga_wfftvp.mp3",
     ],
-    3: [
+    4: [
       "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780295858/Macha-Kanni_taiimn.mp3",
       "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780296020/Machi-Open-The-Bottle_fmqngh.mp3",
       "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780296066/Mascara-Pottu_gvff7i.mp3",
@@ -218,7 +224,7 @@ var availableMovies = {
       "https://res.cloudinary.com/seshancloudy/video/upload/v1782028916/The-Empress-Arrives-MassTamilan.com_rbdmg6.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1782028920/Ucchathula-MassTamilan.com_c4ky79.mp3",
     ],
-    4: [
+    5: [
       "https://res.cloudinary.com/seshancloudy/video/upload/v1780739144/Vaseegara_qdunim.mp3",
       "varisu/Jimikki-Ponnu-MassTamilan.dev.mp3",
       "varisu/Ranjithame-MassTamilan.dev (1).mp3",
@@ -258,7 +264,7 @@ var availableMovies = {
       "https://res.cloudinary.com/seshancloudy/video/upload/v1781100356/05_-_sai-pallavis-intro_smto2g.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1782028911/Iraivanai-Thandha-Iraiviye-MassTamilan.com_jyvvfy.mp3",
     ],
-    5: [
+    6: [
       "leo/Naa-Ready-MassTamilan.dev.mp3",
       "leo/Badass-MassTamilan.dev.mp3",
       "leo/Bloody-Sweet-MassTamilan.dev.mp3",
@@ -275,19 +281,19 @@ var availableMovies = {
       "https://res.cloudinary.com/seshancloudy/video/upload/v1778677799/Spark_fyxqn8.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1778677857/Whistle_Podu_dykdzh.mp3",
     ],
-    6: [
+    7: [
       "https://res.cloudinary.com/seshancloudy/video/upload/v1778678628/Chella-Magale-MassTamilan.dev_qgjxyf.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1778678616/Oru-Pere-Varalaaru-MassTamilan.dev_yys7mt.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1778678616/Raavana-Mavandaa-MassTamilan.dev_t8o665.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1778678617/Thalapathy_Kacheri_ymxdbx.mp3",
     ],
-    7: [
+    8: [
       "https://res.cloudinary.com/seshancloudy/video/upload/v1778677796/Chinna_Chinna_Kangal_lhwhxb.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1778677816/Matta_dysr8z.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1778677799/Spark_fyxqn8.mp3",
       "https://res.cloudinary.com/seshancloudy/video/upload/v1778677857/Whistle_Podu_dykdzh.mp3",
     ],
-    8: [
+    9: [
       "akkaplaylist/Kallaliye Kallaliye.mp3",
       "akkaplaylist/Maalai-Mangum-Neram.mp3",
       "akkaplaylist/Pirai-Thedum.mp3",
@@ -311,7 +317,10 @@ var availableMovies = {
       "https://www.masstamilan.dev/w/dude-tamil-2025.webp",
       "https://www.masstamilan.dev/w/dude-tamil-2025.webp",
     ],
-    2: [
+    2:[
+      "https://res.cloudinary.com/seshancloudy/image/upload/v1788633442/WhatsApp_Image_2026-09-06_at_00.06.18_zls3lz.jpg"
+    ],
+    3: [
       "https://www.masstamilan.dev/w/kaatrin-mozhi-2018.webp",
       "https://www.masstamilan.dev/w/mayakkam-enna-2011.webp",
       "https://www.masstamilan.dev/w/youth-tamil-2002.webp",
@@ -336,7 +345,7 @@ var availableMovies = {
       "https://www.masstamilan.dev/w/sivakasi-2005.webp",
       "https://www.masstamilan.dev/w/velaiyilla-pattathari-vip-tamil-2014.webp",
     ],
-    3: [
+    4: [
       "https://www.masstamilan.dev/w/naan-avanillai-2007.webp",
       "https://www.masstamilan.dev/w/mankatha.webp",
       "https://www.masstamilan.dev/w/salim-2014.webp",
@@ -369,7 +378,7 @@ var availableMovies = {
       "https://www.masstamilan.dev/w/velaiilla-pattadhari-2-vip-2017.webp",
       "https://www.masstamilan.dev/w/velaiilla-pattadhari-2-vip-2017.webp",
     ],
-    4: [
+    5: [
       "https://www.masstamilan.dev/w/minnale-tamil-2001.webp",
       "https://www.masstamilan.dev/w/varisu-tamil-2023.webp",
       "https://www.masstamilan.dev/w/varisu-tamil-2023.webp",
@@ -410,17 +419,17 @@ var availableMovies = {
       "https://tse2.mm.bing.net/th/id/OIP.ejIzPJLnWOyeaH5yPYD3ygHaJQ?pid=Api&h=220&P=0",
       "https://www.masstamilan.dev/w/velaiilla-pattadhari-2-vip-2017.webp",
     ],
-    5: Array(15).fill("https://www.masstamilan.dev/w/leo-tamil-2023.webp"),
-    6: [
+    6: Array(15).fill("https://www.masstamilan.dev/w/leo-tamil-2023.webp"),
+    7: [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQXIk7h9nS9DsamRn_UWsukg4Pf7IlncK5cQ&s",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9784HdLZ52d8Q75xLrLLFIZm6upP_-ZJ98A&s",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQBqZHFpcQ6a4CqKn4OjWK0IQ9oMauquxlXQQ&s",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOx_Icl1S5PSzAuHwD1U-zoPcUTN3QorH8qQ&s",
     ],
-    7: Array(5).fill(
+    8: Array(5).fill(
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQbL8VaAb2GLq38_SAAYRy-dcir-hBjk4fomA&s",
     ),
-    8: [
+    9: [
       "https://www.masstamilan.dev/w/maaman-tamil-2025.webp",
       "https://www.masstamilan.dev/w/rowthiram-2011.webp",
       "https://www.masstamilan.dev/w/mayakkam-enna-2011.webp",
@@ -439,44 +448,50 @@ var playlists = {
       "https://www.masstamilan.dev/w/pavazha-malli-indie-tamil-2026.webp",
   },
   2: {
-    title: "Drugs",
+    title: "Barath Tracks",
     movieKey: 2,
-    imageUrl: "https://www.masstamilan.dev/w/master-tamil-2021.webp",
+    imageUrl:
+      "https://res.cloudinary.com/seshancloudy/image/upload/v1788633536/WhatsApp_Image_2026-09-06_at_00.08.38_kwot1n.jpg",
   },
   3: {
-    title: "Vibe Aaa",
+    title: "Drugs",
     movieKey: 3,
+    imageUrl: "https://www.masstamilan.dev/w/master-tamil-2021.webp",
+  },
+  4: {
+    title: "Vibe Aaa",
+    movieKey: 4,
     imageUrl:
       "https://thf.bing.com/th/id/OIP.bGeVSpwJ4cADL7v_eGRrbwAAAA?w=311&h=169&c=7&r=0&o=7&cb=thfc1falcon&dpr=1.1&pid=1.7&rm=3",
   },
-  4: {
+  5: {
     title: "Kadhal Veesum",
-    movieKey: 4,
+    movieKey: 5,
     imageUrl: "https://www.masstamilan.dev/w/jilla.webp",
   },
-  5: {
+  6: {
     title: "Thalapathy Hits",
-    movieKey: 5,
+    movieKey: 6,
     imageUrl: "https://www.masstamilan.dev/w/pokkiri-2007.webp",
   },
-  6: {
+  7: {
     title: "Anirudh's Best",
-    movieKey: 6,
+    movieKey: 7,
     imageUrl: "https://www.masstamilan.dev/w/aakko-tamil-2015.webp",
   },
-  7: {
+  8: {
     title: "Top Tamil Songs",
-    movieKey: 7,
+    movieKey: 8,
     imageUrl: "https://www.masstamilan.dev/w/oru-naal-koothu.webp",
   },
-  8: {
+  9: {
     title: "Songs",
-    movieKey: 8,
+    movieKey: 9,
     imageUrl: "https://www.masstamilan.dev/w/maaman-tamil-2025.webp",
   },
-  9: {
+  10: {
     title: "Romantic Songs",
-    movieKey: 9,
+    movieKey: 10,
     imageUrl: "",
   },
 };
@@ -611,6 +626,13 @@ function playLibrarySong(movieKey, songIndex) {
   currentSong.innerText = availableMovies.songs[movieKey][songIndex];
   playBtn.innerHTML = "<p style='color:#000;'>||</p>";
   document.getElementById("audio-player").style.display = "block";
+
+  // Set song icon
+  const songIcon = document.getElementById("song-icon");
+  const icon = availableMovies.songlistpicture?.[movieKey]?.[songIndex];
+  if (songIcon && icon) {
+    songIcon.src = icon;
+  }
 
   document.querySelectorAll("[data-library-song]").forEach((item) => {
     item.classList.toggle(
