@@ -14,7 +14,8 @@ var availableMovies = {
       "Nallaru Po",
     ],
     2: [
-      "Yaaradi Nee Yaaradi"
+      "Yaaradi Nee Yaaradi",
+      "Kanini Ulagam"
     ],
     3: [
       "Po Urave",
@@ -164,7 +165,8 @@ var availableMovies = {
       "https://res.cloudinary.com/seshancloudy/video/upload/v1780153994/Nallaru_Po_alkjpp.mp3",
     ],
     2:[
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1788633266/WhatsApp_Audio_2026-09-06_at_00.02.44_utwuok.m4a"
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1788633266/WhatsApp_Audio_2026-09-06_at_00.02.44_utwuok.m4a",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1789480815/WhatsApp_Audio_2026-09-14_at_21.32.51_oq9smy.mp3"
     ],
     3: [
       "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239268/Po-Urave-MassTamilan.com_dvo20u.mp3",
@@ -318,7 +320,8 @@ var availableMovies = {
       "https://www.masstamilan.dev/w/dude-tamil-2025.webp",
     ],
     2:[
-      "https://res.cloudinary.com/seshancloudy/image/upload/v1788633442/WhatsApp_Image_2026-09-06_at_00.06.18_zls3lz.jpg"
+      "https://res.cloudinary.com/seshancloudy/image/upload/v1788633442/WhatsApp_Image_2026-09-06_at_00.06.18_zls3lz.jpg",
+      "https://res.cloudinary.com/seshancloudy/image/upload/v1789480905/WhatsApp_Image_2026-09-15_at_10.53.19_y7tgol.jpg"
     ],
     3: [
       "https://www.masstamilan.dev/w/kaatrin-mozhi-2018.webp",
@@ -451,7 +454,7 @@ var playlists = {
     title: "Barath Tracks",
     movieKey: 2,
     imageUrl:
-      "https://res.cloudinary.com/seshancloudy/image/upload/v1788633536/WhatsApp_Image_2026-09-06_at_00.08.38_kwot1n.jpg",
+"https://res.cloudinary.com/seshancloudy/image/upload/v1789480916/WhatsApp_Image_2026-09-15_at_12.32.22_fmz6yf.jpg"
   },
   3: {
     title: "Drugs",
