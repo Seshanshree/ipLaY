@@ -15,7 +15,8 @@ var availableMovies = {
     ],
     2: [
       "Yaaradi Nee Yaaradi",
-      "Kanini Ulagam"
+      "Kanini Ulagam",
+      "Nee Irundalae"
     ],
     3: [
       "Po Urave",
@@ -166,7 +167,8 @@ var availableMovies = {
     ],
     2:[
       "https://res.cloudinary.com/seshancloudy/video/upload/v1788633266/WhatsApp_Audio_2026-09-06_at_00.02.44_utwuok.m4a",
-      "https://res.cloudinary.com/seshancloudy/video/upload/v1789480815/WhatsApp_Audio_2026-09-14_at_21.32.51_oq9smy.mp3"
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1789480815/WhatsApp_Audio_2026-09-14_at_21.32.51_oq9smy.mp3",
+      "https://res.cloudinary.com/seshancloudy/video/upload/v1790439716/WhatsApp_Audio_2026-09-26_at_18.26.54_e1o4ys.mp3"
     ],
     3: [
       "https://res.cloudinary.com/dmnlhl2xn/video/upload/v1780239268/Po-Urave-MassTamilan.com_dvo20u.mp3",
@@ -321,7 +323,8 @@ var availableMovies = {
     ],
     2:[
       "https://res.cloudinary.com/seshancloudy/image/upload/v1788633442/WhatsApp_Image_2026-09-06_at_00.06.18_zls3lz.jpg",
-      "https://res.cloudinary.com/seshancloudy/image/upload/v1789480905/WhatsApp_Image_2026-09-15_at_10.53.19_y7tgol.jpg"
+      "https://res.cloudinary.com/seshancloudy/image/upload/v1789480905/WhatsApp_Image_2026-09-15_at_10.53.19_y7tgol.jpg",
+      "https://res.cloudinary.com/seshancloudy/image/upload/v1790439736/WhatsApp_Image_2026-09-26_at_18.58.37_eohmq8.jpg"
     ],
     3: [
       "https://www.masstamilan.dev/w/kaatrin-mozhi-2018.webp",
@@ -451,7 +454,7 @@ var playlists = {
       "https://www.masstamilan.dev/w/pavazha-malli-indie-tamil-2026.webp",
   },
   2: {
-    title: "Barath Tracks",
+    title: "Bharath Tracks",
     movieKey: 2,
     imageUrl:
 "https://res.cloudinary.com/seshancloudy/image/upload/v1789480916/WhatsApp_Image_2026-09-15_at_12.32.22_fmz6yf.jpg"
