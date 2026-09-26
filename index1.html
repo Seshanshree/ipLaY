@@ -47,6 +47,14 @@
         </button>
       </search>
       <div class="container">
+        <button
+          type="button"
+          class="about-trigger"
+          onclick="openAboutModal()"
+          aria-label="Meet the developer"
+        >
+          Meet the Developer
+        </button>
         <h3>Welcome to <span class="logo">ipLaY</span> App</h3>
         <p>Discover and enjoy your favorite music..</p>
       </div>
@@ -66,9 +74,18 @@
         />
         <span id="duration">0:00</span>
       </div>
-      <div id="current-song" class="current-song">No song playing</div>
-      <div class="player-visualizer" aria-hidden="true">
-        <span></span><span></span><span></span><span></span>
+      <div class="player-content">
+        <div class="song-info-container">
+          <div class="visualizer-row">
+            <div class="song-icon-container">
+              <img id="song-icon" class="song-icon" src="" alt="Album art" />
+            </div>
+            <div class="player-visualizer" aria-hidden="true">
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+          <div id="current-song" class="current-song">No song playing</div>
+        </div>
       </div>
       <div class="controls">
         <button id="prev-btn" class="control-btn" onclick="songDec()">
